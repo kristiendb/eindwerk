@@ -1,9 +1,4 @@
-"use client";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-
 const page = () => {
-  const path = usePathname();
   return (
     <>
       <div className="bg-yellow-custom w-full h-screen ">
@@ -31,13 +26,9 @@ const page = () => {
                 placeholder="wachtwoord"
               />
               <button
-                className={`mt-9 pt-2 pb-2 pl-7 pr-7 text-black border-solid border-black border-0.25 mr-auto hover:bg-slate-800 hover:text-white hover:border-slate-800 hover:transition-all duration-700 ${
-                  path == "/login"
-                    ? "bg-slate-800 text-white border-slate-800"
-                    : ""
-                }`}
+                className={`mt-9 pt-2 pb-2 pl-7 pr-7 text-black border-solid border-black border-0.25 mr-auto hover:bg-slate-800 hover:text-white hover:border-slate-800 hover:transition-all duration-700`}
               >
-                <Link href="/login">Login</Link>
+                Log in
               </button>
             </form>
           </div>

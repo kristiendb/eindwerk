@@ -37,13 +37,17 @@ const Navigation = () => {
               </Link>
             </li>
           </ul>
-          <button
-            className={`pt-2 pb-2 pl-7 pr-7 text-black border-solid border-black border-0.25 ml-auto hover:bg-slate-800 hover:text-white hover:border-slate-800 hover:transition-all duration-700 ${
-              path == "/login" ? "bg-slate-800 text-white border-slate-800" : ""
-            }`}
-          >
-            <Link href="/login">Login</Link>
-          </button>
+          <Link href="/login" className="ml-auto">
+            <button
+              className={`pt-2 pb-2 pl-7 pr-7 text-black border-solid border-black border-0.25 hover:bg-slate-800 hover:text-white hover:border-slate-800 hover:transition-all duration-700 ${
+                path == "/login"
+                  ? "bg-slate-800 text-white border-slate-800"
+                  : ""
+              }`}
+            >
+              Log in
+            </button>
+          </Link>
         </nav>
       </header>
     </>
