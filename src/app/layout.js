@@ -8,7 +8,7 @@ export const metadata = {
 
 const layout = ({ children }) => {
   return (
-    <html lang="en">
+    <html lang="nl">
       <body className="font-space-grotesk">
         <div className="w-full p-8 mx-auto">
           <Navigation />

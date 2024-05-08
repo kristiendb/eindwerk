@@ -1,3 +1,6 @@
+"use client";
+import Link from "next/link";
+
 const page = () => {
   return (
     <>
@@ -12,24 +15,26 @@ const page = () => {
           <div>
             <form className="max-w-60 flex flex-col">
               <input
-                className="pl-3 rounded-md"
+                className="pl-3 pt-2 pb-2 rounded-md "
                 type="text"
                 id="username"
                 name="username"
                 placeholder="e-mailadres"
               />
               <input
-                className="pl-3 rounded-md mt-5"
+                className="pl-3 pt-2 pb-2 rounded-md mt-5"
                 type="password"
                 id="password"
                 name="password"
                 placeholder="wachtwoord"
               />
-              <button
-                className={`mt-9 pt-2 pb-2 pl-7 pr-7 text-black border-solid border-black border-0.25 mr-auto hover:bg-slate-800 hover:text-white hover:border-slate-800 hover:transition-all duration-700`}
-              >
-                Log in
-              </button>
+              <Link href="/home">
+                <button
+                  className={`mt-9 pt-2 pb-2 pl-7 pr-7  text-white border-solid bg-slate-800  border-slate-800 border-0.25 mr-auto hover:bg-transparent hover:text-black hover:border-black hover:transition-all duration-700`}
+                >
+                  Log in
+                </button>
+              </Link>
             </form>
           </div>
         </div>
