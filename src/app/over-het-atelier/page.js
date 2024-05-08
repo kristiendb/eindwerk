@@ -70,10 +70,10 @@ const page = () => {
                   Grafisch Ontwerp en Illustratie (starters)
                   <br /> Hier word je begeleid bij je eerste stappen in het
                   atelier of bij het ontdekken van jouw beeldtaal. Introductie
-                  tot de grote thema's van grafisch ontwerp en illustratie staan
-                  op de agenda. Je krijgt tijd en ruimte om via oefeningen je
-                  basisvaardigheden te ontwikkelen. In opdrachten pas je toe wat
-                  je leerde, op een persoonlijke en creatieve manier. <br />{" "}
+                  tot de grote thema&apos;s van grafisch ontwerp en illustratie
+                  staan op de agenda. Je krijgt tijd en ruimte om via oefeningen
+                  je basisvaardigheden te ontwikkelen. In opdrachten pas je toe
+                  wat je leerde, op een persoonlijke en creatieve manier. <br />{" "}
                   <br />
                   INTRODUCTIE & BASIS
                   <br />
