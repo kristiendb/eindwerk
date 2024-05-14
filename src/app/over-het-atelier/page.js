@@ -14,8 +14,8 @@ const page = () => {
             Introductie
           </AccordionTrigger>
           <AccordionContent>
-            <div className="flex space-x-10 w-3/4 pb-5 md:flex-col md:space-x-0 md:w-full md:space-y-8">
-              <div className="w-1/2 md:w-3/4">
+            <div className="md:flex md:w-3/4 pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
+              <div className="md:w-1/2">
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
                   ratione recusandae, vero velit impedit animi voluptatum? Neque
@@ -34,7 +34,7 @@ const page = () => {
                   est rem et iusto? Non ab facilis ipsum reiciendis labore!
                 </p>
               </div>
-              <div className="w-1/2 md:w-3/4">
+              <div className="md:w-1/2">
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
                   ratione recusandae, vero velit impedit animi voluptatum? Neque
@@ -63,8 +63,8 @@ const page = () => {
             Aanpak
           </AccordionTrigger>
           <AccordionContent>
-            <div className="flex space-x-10 w-3/4 pb-5 md:flex-col md:space-x-0 md:w-full md:space-y-8">
-              <div className="w-1/2 md:w-3/4">
+            <div className="md:flex md:w-3/4 pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
+              <div className="md:w-1/2">
                 <p>
                   Heb je geen ervaring, dan volg je het atelier op maandag:
                   Grafisch Ontwerp en Illustratie (starters)
@@ -89,7 +89,7 @@ const page = () => {
                   </ul>
                 </p>
               </div>
-              <div className="w-1/2 md:w-3/4">
+              <div className="md:w-1/2">
                 <p>
                   Heb je al wat basiskennis, dan volg je het atelier op dinsdag:
                   Grafisch Ontwerp en Illustratie (Verdieping)
@@ -122,8 +122,8 @@ const page = () => {
             Materiaal
           </AccordionTrigger>
           <AccordionContent>
-            <div className="flex space-x-10 w-3/4 pb-5 md:flex-col md:space-x-0 md:w-full md:space-y-8">
-              <div className="w-1/2 md:w-3/4">
+            <div className="md:flex md:w-3/4 pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
+              <div className="md:w-1/2">
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
                   ratione recusandae, vero velit impedit animi voluptatum? Neque
@@ -142,7 +142,7 @@ const page = () => {
                   est rem et iusto? Non ab facilis ipsum reiciendis labore!
                 </p>
               </div>
-              <div className="w-1/2 md:w-3/4">
+              <div className="md:w-1/2">
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
                   ratione recusandae, vero velit impedit animi voluptatum? Neque
@@ -171,8 +171,8 @@ const page = () => {
             Studietraject
           </AccordionTrigger>
           <AccordionContent>
-            <div className="flex space-x-10 w-3/4 pb-5 md:flex-col md:space-x-0 md:w-full md:space-y-8">
-              <div className="w-1/2 md:w-3/4">
+            <div className="md:flex md:w-3/4 pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
+              <div className="md:w-1/2">
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
                   ratione recusandae, vero velit impedit animi voluptatum? Neque
@@ -191,7 +191,7 @@ const page = () => {
                   est rem et iusto? Non ab facilis ipsum reiciendis labore!
                 </p>
               </div>
-              <div className="w-1/2 md:w-3/4">
+              <div className="md:w-1/2">
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
                   ratione recusandae, vero velit impedit animi voluptatum? Neque
@@ -220,8 +220,8 @@ const page = () => {
             Uurrooster
           </AccordionTrigger>
           <AccordionContent>
-            <div className="flex space-x-10 w-3/4 pb-5 md:flex-col md:space-x-0 md:w-full md:space-y-8">
-              <div className="w-1/2 md:w-3/4">
+            <div className="md:flex md:w-3/4 pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
+              <div className="md:w-1/2">
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
                   ratione recusandae, vero velit impedit animi voluptatum? Neque
@@ -240,7 +240,7 @@ const page = () => {
                   est rem et iusto? Non ab facilis ipsum reiciendis labore!
                 </p>
               </div>
-              <div className="w-1/2 md:w-3/4">
+              <div className="md:w-1/2">
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
                   ratione recusandae, vero velit impedit animi voluptatum? Neque
@@ -269,8 +269,8 @@ const page = () => {
             Locatie
           </AccordionTrigger>
           <AccordionContent>
-            <div className="flex space-x-10 w-3/4 pb-5 md:flex-col md:space-x-0 md:w-full md:space-y-8">
-              <div className="w-1/2 md:w-3/4">
+            <div className="md:flex md:w-3/4 pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
+              <div className="md:w-1/2">
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
                   ratione recusandae, vero velit impedit animi voluptatum? Neque
@@ -289,7 +289,7 @@ const page = () => {
                   est rem et iusto? Non ab facilis ipsum reiciendis labore!
                 </p>
               </div>
-              <div className="w-1/2 md:w-3/4">
+              <div className="md:w-1/2">
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
                   ratione recusandae, vero velit impedit animi voluptatum? Neque
@@ -318,8 +318,8 @@ const page = () => {
             Contact
           </AccordionTrigger>
           <AccordionContent>
-            <div className="flex space-x-10 w-3/4 pb-5 md:flex-col md:space-x-0 md:w-full md:space-y-8">
-              <div className="w-1/2 md:w-3/4">
+            <div className="md:flex md:w-3/4 pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
+              <div className="md:w-1/2">
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
                   ratione recusandae, vero velit impedit animi voluptatum? Neque
@@ -338,7 +338,7 @@ const page = () => {
                   est rem et iusto? Non ab facilis ipsum reiciendis labore!
                 </p>
               </div>
-              <div className="w-1/2 md:w-3/4">
+              <div className="md:w-1/2">
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
                   ratione recusandae, vero velit impedit animi voluptatum? Neque
