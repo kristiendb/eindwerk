@@ -41,6 +41,9 @@ module.exports = {
         "light-green-custom": "#70F0B3",
         "purple-custom": "#C284EF",
         "light-blue-custom": "#8DC1E5",
+        "beige-custom": "#E8E5DE",
+        "pink-custom": "#ED7BAC",
+        "light-pink-custom": "#FED6CC",
       },
       fontFamily: {
         "space-grotesk": ['"Space Grotesk"', "sans-serif"],
