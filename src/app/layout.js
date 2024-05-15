@@ -9,7 +9,7 @@ export const metadata = {
 const layout = ({ children }) => {
   return (
     <html lang="nl">
-      <body className="font-space-grotesk overflow-hidden">
+      <body className="font-space-grotesk overflow-x-hidden">
         <div className="w-full p-8 mx-auto">
           <Navigation />
           <section>{children}</section>

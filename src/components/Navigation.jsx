@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { logout } from "@/app/logout/actions";
 
 const Navigation = () => {
   const path = usePathname();
@@ -129,29 +130,33 @@ const Navigation = () => {
               </ul>
             </div>
           </div>
-          {/* /*{" "}
-          {user ? (
+        </nav>
+        {/* {user ? (
+          <Link href="/login" className="hidden md:flex md:ml-auto">
             <button
-              onClick={logout}
-              className={`pt-2 pb-2 pl-7 pr-7 text-black border-solid border-black border-0.25 hover:bg-slate-800 hover:text-white hover:border-slate-800 hover:transition-all duration-700`}
+              className={`pt-2 pb-2 pl-7 pr-7 text-black border-solid border-black border-0.25 hover:bg-slate-800 hover:text-white hover:border-slate-800 hover:transition-all duration-700 ${
+                path == "/login"
+                  ? "bg-slate-800 text-white border-slate-800"
+                  : ""
+              }`}
             >
               Log out
             </button>
-          ) : (
-            <Link href="/login" className="ml-auto">
-              <button
-                className={`pt-2 pb-2 pl-7 pr-7 text-black border-solid border-black border-0.25 hover:bg-slate-800 hover:text-white hover:border-slate-800 hover:transition-all duration-700 ${
-                  path == "/login"
-                    ? "bg-slate-800 text-white border-slate-800"
-                    : ""
-                }`}
-              >
-                Log in
-              </button>
-            </Link>
-          )}{" "}
-          */}
-        </nav>
+          </Link>
+        ) : (
+          <Link href="/login" className="hidden md:flex md:ml-auto">
+            <button
+              className={`pt-2 pb-2 pl-7 pr-7 text-black border-solid border-black border-0.25 hover:bg-slate-800 hover:text-white hover:border-slate-800 hover:transition-all duration-700 ${
+                path == "/login"
+                  ? "bg-slate-800 text-white border-slate-800"
+                  : ""
+              }`}
+            >
+              Log in
+            </button>
+          </Link>
+        )} */}
+
         <Link href="/login" className="hidden md:flex md:ml-auto">
           <button
             className={`pt-2 pb-2 pl-7 pr-7 text-black border-solid border-black border-0.25 hover:bg-slate-800 hover:text-white hover:border-slate-800 hover:transition-all duration-700 ${

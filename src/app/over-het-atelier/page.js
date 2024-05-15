@@ -4,17 +4,24 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { ChevronDown } from "lucide-react";
 
 const page = () => {
   return (
     <>
-      <Accordion type="single" collapsible className="font-libre-franklin">
+      <Accordion
+        type="single"
+        defaultValue="item-1"
+        collapsible
+        className="font-libre-franklin"
+      >
         <AccordionItem value="item-1">
           <AccordionTrigger className="font-medium text-xl">
             Introductie
+            <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
           </AccordionTrigger>
           <AccordionContent>
-            <div className="md:flex md:w-3/4 pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
+            <div className="md:flex text-base md:w-3/4 pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
               <div className="md:w-1/2">
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
@@ -56,14 +63,13 @@ const page = () => {
             </div>
           </AccordionContent>
         </AccordionItem>
-      </Accordion>
-      <Accordion type="single" collapsible className="font-libre-franklin">
         <AccordionItem value="item-2">
           <AccordionTrigger className="font-medium text-xl">
             Aanpak
+            <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
           </AccordionTrigger>
           <AccordionContent>
-            <div className="md:flex md:w-3/4 pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
+            <div className="md:flex md:w-3/4 text-base pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
               <div className="md:w-1/2">
                 <p>
                   Heb je geen ervaring, dan volg je het atelier op maandag:
@@ -115,14 +121,13 @@ const page = () => {
             </div>
           </AccordionContent>
         </AccordionItem>
-      </Accordion>
-      <Accordion type="single" collapsible className="font-libre-franklin">
-        <AccordionItem value="item-4">
+        <AccordionItem value="item-3">
           <AccordionTrigger className="font-medium text-xl">
             Materiaal
+            <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
           </AccordionTrigger>
           <AccordionContent>
-            <div className="md:flex md:w-3/4 pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
+            <div className="md:flex md:w-3/4 text-base pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
               <div className="md:w-1/2">
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
@@ -164,14 +169,14 @@ const page = () => {
             </div>
           </AccordionContent>
         </AccordionItem>
-      </Accordion>
-      <Accordion type="single" collapsible className="font-libre-franklin">
-        <AccordionItem value="item-1">
+
+        <AccordionItem value="item-4">
           <AccordionTrigger className="font-medium text-xl">
             Studietraject
+            <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
           </AccordionTrigger>
           <AccordionContent>
-            <div className="md:flex md:w-3/4 pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
+            <div className="md:flex md:w-3/4 text-base pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
               <div className="md:w-1/2">
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
@@ -213,14 +218,14 @@ const page = () => {
             </div>
           </AccordionContent>
         </AccordionItem>
-      </Accordion>
-      <Accordion type="single" collapsible className="font-libre-franklin">
-        <AccordionItem value="item-1">
+
+        <AccordionItem value="item-5">
           <AccordionTrigger className="font-medium text-xl">
             Uurrooster
+            <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
           </AccordionTrigger>
           <AccordionContent>
-            <div className="md:flex md:w-3/4 pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
+            <div className="md:flex md:w-3/4 text-base pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
               <div className="md:w-1/2">
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
@@ -262,14 +267,14 @@ const page = () => {
             </div>
           </AccordionContent>
         </AccordionItem>
-      </Accordion>
-      <Accordion type="single" collapsible className="font-libre-franklin">
-        <AccordionItem value="item-1">
+
+        <AccordionItem value="item-6">
           <AccordionTrigger className="font-medium text-xl">
             Locatie
+            <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
           </AccordionTrigger>
           <AccordionContent>
-            <div className="md:flex md:w-3/4 pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
+            <div className="md:flex md:w-3/4 text-base pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
               <div className="md:w-1/2">
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
@@ -311,14 +316,14 @@ const page = () => {
             </div>
           </AccordionContent>
         </AccordionItem>
-      </Accordion>
-      <Accordion type="single" collapsible className="font-libre-franklin">
-        <AccordionItem value="item-1">
+
+        <AccordionItem value="item-7">
           <AccordionTrigger className="font-medium text-xl">
             Contact
+            <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
           </AccordionTrigger>
           <AccordionContent>
-            <div className="md:flex md:w-3/4 pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
+            <div className="md:flex md:w-3/4 text-base pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
               <div className="md:w-1/2">
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
