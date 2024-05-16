@@ -17,7 +17,7 @@ const page = () => {
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage>TBeelden</BreadcrumbPage>
+            <BreadcrumbPage>Beelden</BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>

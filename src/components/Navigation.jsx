@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { logout } from "@/app/logout/actions";
 
 const Navigation = () => {
@@ -11,6 +11,11 @@ const Navigation = () => {
 
   const handleMenu = () => {
     setMenu(!menu);
+  };
+
+  const handleLogout = async () => {
+    await logout(); // Call the logout function
+    setUser(null); // Update the user state
   };
 
   return (
@@ -114,6 +119,30 @@ const Navigation = () => {
                     Over het atelier
                   </Link>
                 </li>
+                {/* {user ? (
+                  <button
+                    onClick={handleLogout}
+                    className={`pt-2 pb-2 pl-7 pr-7 text-black border-solid border-black border-0.25 hover:bg-slate-800 hover:text-white hover:border-slate-800 hover:transition-all duration-700 ${
+                      path == "/logout"
+                        ? "bg-slate-800 text-white border-slate-800"
+                        : ""
+                    }`}
+                  >
+                    Logout
+                  </button>
+                ) : (
+                  <Link href="/login" className="hidden md:flex md:ml-auto">
+                    <button
+                      className={`pt-2 pb-2 pl-7 pr-7 text-black border-solid border-black border-0.25 hover:bg-slate-800 hover:text-white hover:border-slate-800 hover:transition-all duration-700 ${
+                        path == "/login"
+                          ? "bg-slate-800 text-white border-slate-800"
+                          : ""
+                      }`}
+                    >
+                      Login
+                    </button>
+                  </Link>
+                )} */}
                 <li
                   onClick={handleMenu}
                   className="border-b-0.25 border-solid border-black pt-6 pb-6"
