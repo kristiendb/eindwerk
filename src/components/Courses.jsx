@@ -22,7 +22,7 @@ const Courses = () => {
     <>
       {courses &&
         courses.map((course) => (
-          <li className="p-2">
+          <li className="p-2" key={course.id}>
             <Link
               href={`/home/cursus/${course.slug}`}
               className={` text-black hover:font-bold ${
