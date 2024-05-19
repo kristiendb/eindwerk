@@ -48,6 +48,7 @@ module.exports = {
       fontFamily: {
         "space-grotesk": ['"Space Grotesk"', "sans-serif"],
         "libre-franklin": ['"Libre Franklin"', "sans-serif"],
+        "hepta-slab": ['"Hepta Slab"', "serif"],
       },
       width: {
         100: "25rem", // 400px

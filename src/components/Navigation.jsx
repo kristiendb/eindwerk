@@ -2,20 +2,18 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { logout } from "@/app/logout/actions";
+import { useUser } from "@/utils/supabase/client";
+import LogoutButton from "./LogoutButton";
 
 const Navigation = () => {
   const path = usePathname();
   const [menu, setMenu] = useState(false);
+  const user = useUser();
 
   const handleMenu = () => {
     setMenu(!menu);
-  };
-
-  const handleLogout = async () => {
-    await logout(); // Call the logout function
-    setUser(null); // Update the user state
   };
 
   return (
@@ -50,6 +48,18 @@ const Navigation = () => {
                 Over het atelier
               </Link>
             </li>
+            {user && (
+              <li>
+                <Link
+                  href="/home"
+                  className={` text-black hover:font-bold ${
+                    path == "/home" ? "font-bold" : ""
+                  }`}
+                >
+                  Home
+                </Link>
+              </li>
+            )}
           </ul>
           <div onClick={handleMenu} className="md:hidden ml-auto">
             {menu ? (
@@ -87,8 +97,8 @@ const Navigation = () => {
           <div
             className={
               !menu
-                ? "md:hidden absolute top-[100px] right-0 bottom-0 transform translate-x-0 flex justify-center w-full h-screen bg-slate-300 text-white transition-transform duration-300 ease-in"
-                : "md:hidden absolute top-[100px] right-0 bottom-0 transform translate-x-full flex justify-center w-full h-screen bg-slate-300 text-white transition-transform duration-300 ease-out"
+                ? "md:hidden fixed top-[100px] right-0 bottom-0 transform translate-x-0 flex justify-center w-full h-screen bg-slate-300 text-white transition-transform duration-300 ease-in"
+                : "md:hidden fixed top-[100px] right-0 bottom-0 transform translate-x-full flex justify-center w-full h-screen bg-slate-300 text-white transition-transform duration-300 ease-out"
             }
           >
             <div className="w-full">
@@ -119,55 +129,121 @@ const Navigation = () => {
                     Over het atelier
                   </Link>
                 </li>
-                {/* {user ? (
-                  <button
-                    onClick={handleLogout}
-                    className={`pt-2 pb-2 pl-7 pr-7 text-black border-solid border-black border-0.25 hover:bg-slate-800 hover:text-white hover:border-slate-800 hover:transition-all duration-700 ${
-                      path == "/logout"
-                        ? "bg-slate-800 text-white border-slate-800"
-                        : ""
-                    }`}
-                  >
-                    Logout
-                  </button>
-                ) : (
-                  <Link href="/login" className="hidden md:flex md:ml-auto">
-                    <button
-                      className={`pt-2 pb-2 pl-7 pr-7 text-black border-solid border-black border-0.25 hover:bg-slate-800 hover:text-white hover:border-slate-800 hover:transition-all duration-700 ${
-                        path == "/login"
-                          ? "bg-slate-800 text-white border-slate-800"
-                          : ""
-                      }`}
-                    >
-                      Login
-                    </button>
-                  </Link>
-                )} */}
                 <li
                   onClick={handleMenu}
                   className="border-b-0.25 border-solid border-black pt-6 pb-6"
                 >
                   <Link
-                    href="/login"
+                    href="/home"
                     className={` text-black hover:font-bold pl-4 ${
-                      path == "/login" ? "font-bold" : ""
+                      path == "/home" ? "font-bold" : ""
                     }`}
                   >
-                    Login
+                    Home
                   </Link>
                 </li>
+                <li
+                  onClick={handleMenu}
+                  className="border-b-0.25 border-solid border-black pt-6 pb-6"
+                >
+                  <Link
+                    href="/home/agenda"
+                    className={` text-black hover:font-bold pl-4 ${
+                      path == "/home/agenda" ? "font-bold" : ""
+                    }`}
+                  >
+                    Agenda
+                  </Link>
+                </li>
+                <li
+                  onClick={handleMenu}
+                  className="border-b-0.25 border-solid border-black pt-6 pb-6"
+                >
+                  <Link
+                    href="/home/info"
+                    className={` text-black hover:font-bold pl-4 ${
+                      path == "/home/info" ? "font-bold" : ""
+                    }`}
+                  >
+                    Info
+                  </Link>
+                </li>
+                <li
+                  onClick={handleMenu}
+                  className="border-b-0.25 border-solid border-black pt-6 pb-6"
+                >
+                  <Link
+                    href="/home/cursus"
+                    className={` text-black hover:font-bold pl-4 ${
+                      path == "/home/cursus" ? "font-bold" : ""
+                    }`}
+                  >
+                    Cursus
+                  </Link>
+                </li>
+                <li
+                  onClick={handleMenu}
+                  className="border-b-0.25 border-solid border-black pt-6 pb-6"
+                >
+                  <Link
+                    href="/home/mijn-werk"
+                    className={` text-black hover:font-bold pl-4 ${
+                      path == "/home/mijn-werk" ? "font-bold" : ""
+                    }`}
+                  >
+                    Mijn werk
+                  </Link>
+                </li>
+                <li
+                  onClick={handleMenu}
+                  className="border-b-0.25 border-solid border-black pt-6 pb-6"
+                >
+                  <Link
+                    href="/home/showcases"
+                    className={` text-black hover:font-bold pl-4 ${
+                      path == "/home/showcases" ? "font-bold" : ""
+                    }`}
+                  >
+                    Showcases
+                  </Link>
+                </li>
+                {user ? (
+                  <li
+                    onClick={handleMenu}
+                    className="border-b-0.25 border-solid border-black pt-6 pb-6"
+                  >
+                    <Link
+                      href="/login"
+                      className={` text-black hover:font-bold pl-4 ${
+                        path == "/login" ? "font-bold" : ""
+                      }`}
+                    >
+                      Logout
+                    </Link>
+                  </li>
+                ) : (
+                  <li
+                    onClick={handleMenu}
+                    className="border-b-0.25 border-solid border-black pt-6 pb-6"
+                  >
+                    <Link
+                      href="/login"
+                      className={` text-black hover:font-bold pl-4 ${
+                        path == "/login" ? "font-bold" : ""
+                      }`}
+                    >
+                      Login
+                    </Link>
+                  </li>
+                )}
               </ul>
             </div>
           </div>
         </nav>
-        {/* {user ? (
+        {user ? (
           <Link href="/login" className="hidden md:flex md:ml-auto">
             <button
-              className={`pt-2 pb-2 pl-7 pr-7 text-black border-solid border-black border-0.25 hover:bg-slate-800 hover:text-white hover:border-slate-800 hover:transition-all duration-700 ${
-                path == "/login"
-                  ? "bg-slate-800 text-white border-slate-800"
-                  : ""
-              }`}
+              className={`pt-2 pb-2 pl-7 pr-7 ml-auto text-black border-solid border-black border-0.25 hover:bg-slate-800 hover:text-white hover:border-slate-800 hover:transition-all duration-700 `}
             >
               Log out
             </button>
@@ -184,17 +260,7 @@ const Navigation = () => {
               Log in
             </button>
           </Link>
-        )} */}
-
-        <Link href="/login" className="hidden md:flex md:ml-auto">
-          <button
-            className={`pt-2 pb-2 pl-7 pr-7 text-black border-solid border-black border-0.25 hover:bg-slate-800 hover:text-white hover:border-slate-800 hover:transition-all duration-700 ${
-              path == "/login" ? "bg-slate-800 text-white border-slate-800" : ""
-            }`}
-          >
-            Log in
-          </button>
-        </Link>
+        )}
       </header>
     </>
   );

@@ -6,21 +6,27 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import Levels from "@/components/Levels";
 
 const page = () => {
   return (
     <>
-      <Breadcrumb>
-        <BreadcrumbList className="text-xl">
-          <BreadcrumbItem>
-            <BreadcrumbLink href="/home/cursus">Cursus</BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator />
-          <BreadcrumbItem>
-            <BreadcrumbPage>Lay-out en compositie</BreadcrumbPage>
-          </BreadcrumbItem>
-        </BreadcrumbList>
-      </Breadcrumb>
+      <div>
+        <Breadcrumb>
+          <BreadcrumbList className="text-xl">
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/home/cursus">Cursus</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>Lay-out en compositie</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+      </div>
+      <div className="pt-10">
+        <Levels />
+      </div>
     </>
   );
 };

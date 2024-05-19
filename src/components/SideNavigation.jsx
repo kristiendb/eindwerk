@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import Courses from "./Courses";
 
 const SideNavigation = () => {
   const path = usePathname();
@@ -58,86 +59,7 @@ const SideNavigation = () => {
             </div>
             {showSublist && (
               <ul>
-                <li className="p-2">
-                  <Link
-                    href="/home/cursus/typografie"
-                    className={` text-black hover:font-bold ${
-                      path === "/home/cursus/typografie" ? "font-bold" : ""
-                    }`}
-                  >
-                    Typografie & lettering
-                  </Link>
-                </li>
-                <li className="p-2">
-                  <Link
-                    href="/home/cursus/layout"
-                    className={` text-black hover:font-bold ${
-                      path === "/home/cursus/layout" ? "font-bold" : ""
-                    }`}
-                  >
-                    Lay-out & compositie
-                  </Link>
-                </li>
-                <li className="p-2">
-                  <Link
-                    href="/home/cursus/communicatie"
-                    className={` text-black hover:font-bold ${
-                      path === "/home/cursus/communicatie" ? "font-bold" : ""
-                    }`}
-                  >
-                    Communicatie
-                  </Link>
-                </li>
-                <li className="p-2">
-                  <Link
-                    href="/home/cursus/concept"
-                    className={` text-black hover:font-bold ${
-                      path === "/home/cursus/concept" ? "font-bold" : ""
-                    }`}
-                  >
-                    Concept
-                  </Link>
-                </li>
-                <li className="p-2">
-                  <Link
-                    href="/home/cursus/kleur"
-                    className={` text-black hover:font-bold ${
-                      path === "/home/cursus/kleur" ? "font-bold" : ""
-                    }`}
-                  >
-                    Kleur
-                  </Link>
-                </li>
-                <li className="p-2">
-                  <Link
-                    href="/home/cursus/beelden"
-                    className={` text-black hover:font-bold ${
-                      path === "/home/cursus/beelden" ? "font-bold" : ""
-                    }`}
-                  >
-                    Beelden
-                  </Link>
-                </li>
-                <li className="p-2">
-                  <Link
-                    href="/home/cursus/productie"
-                    className={` text-black hover:font-bold ${
-                      path === "/home/cursus/productie" ? "font-bold" : ""
-                    }`}
-                  >
-                    Productie
-                  </Link>
-                </li>
-                <li className="p-2">
-                  <Link
-                    href="/home/cursus/creativiteit"
-                    className={` text-black hover:font-bold ${
-                      path === "/home/cursus/creativiteit" ? "font-bold" : ""
-                    }`}
-                  >
-                    Creativiteit
-                  </Link>
-                </li>
+                <Courses />
               </ul>
             )}
           </li>
@@ -159,6 +81,16 @@ const SideNavigation = () => {
               }`}
             >
               SHOWCASES
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/home/profiel"
+              className={` text-black hover:font-bold ${
+                path === "/home/profiel" ? "font-bold" : ""
+              }`}
+            >
+              MIJN PROFIEL
             </Link>
           </li>
         </ul>
