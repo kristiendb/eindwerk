@@ -43,8 +43,8 @@ const Calendar = () => {
 
   return (
     <>
-      <div className="flex w-full border-b-0.25 border-black">
-        <div className="w-3/4 h-auto pr-5 border-r-0.25  border-black">
+      <div className="md:flex w-full border-b-0.25 border-black">
+        <div className="md:w-3/4 w-full h-auto pr-5 md:border-r-0.25  md:border-black">
           <FullCalendar
             plugins={[dayGridPlugin, interactionPlugin]}
             initialView="dayGridMonth"
@@ -53,7 +53,7 @@ const Calendar = () => {
           />
         </div>
         {selectedEvent && (
-          <div className="ml-5 pt-16">
+          <div className="ml-5 md:pt-16 pt-6 pb-6">
             <h2 className="text-xl">
               {new Intl.DateTimeFormat("en-GB", {
                 year: "numeric",
