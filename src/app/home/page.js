@@ -1,6 +1,5 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/utils/supabase/server";
-import { logout } from "@/app/logout/actions";
 import Link from "next/link";
 
 const page = async () => {
@@ -48,9 +47,6 @@ const page = async () => {
             <div>Showcase</div>
           </Link>
         </div>
-        <form action={logout}>
-          <button type="submit">Logout</button>
-        </form>
       </div>
     </>
   );
