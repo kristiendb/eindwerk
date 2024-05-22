@@ -8,7 +8,7 @@ import { useUser } from "@/utils/supabase/client";
 
 const Navigation = () => {
   const path = usePathname();
-  const [menu, setMenu] = useState(false);
+  const [menu, setMenu] = useState(false); // menu state set to false by default
   const user = useUser();
 
   const handleMenu = () => {
@@ -21,7 +21,7 @@ const Navigation = () => {
 
   return (
     <>
-      <header className="display flex pb-10 border-b-0.25 border-solid border-black items-center justify-between">
+      <header className="overflow-x-hidden display flex pb-10 border-b-0.25 border-solid border-black items-center justify-between">
         <Link href="/" className="md:mr-24 mr-8">
           <img
             src="Logo_GO-I.jpg"
@@ -64,23 +64,8 @@ const Navigation = () => {
               </li>
             )}
           </ul>
-          <div onClick={handleMenu} className="md:hidden ml-auto">
+          <div onClick={handleMenu} className="md:hidden ml-auto ">
             {menu ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-10 h-10"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                />
-              </svg>
-            ) : (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -95,13 +80,28 @@ const Navigation = () => {
                   d="M6 18 18 6M6 6l12 12"
                 />
               </svg>
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-10 h-10"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
             )}
           </div>
           <div
             className={
-              !menu
-                ? "md:hidden absolute top-[100px] right-0 bottom-0 transform translate-x-0 flex justify-center w-full h-screen bg-slate-300 text-white transition-transform duration-300 ease-in  z-10"
-                : "md:hidden absolute top-[100px] right-0 bottom-0 transform translate-x-full flex justify-center w-full h-screen bg-slate-300 text-white transition-transform duration-300 ease-out  z-10"
+              menu
+                ? "md:hidden fixed top-[100px] right-0 bottom-0 w-full h-screen bg-slate-300 text-white transition-transform duration-300 ease-in z-10"
+                : "md:hidden fixed top-[100px] right-0 bottom-0 w-full h-screen bg-slate-300 text-white transform translate-x-full transition-transform duration-300 ease-out z-10"
             }
           >
             <div className="w-full">
@@ -263,4 +263,5 @@ const Navigation = () => {
     </>
   );
 };
+
 export default Navigation;

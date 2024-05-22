@@ -12,7 +12,7 @@ import {
 const page = () => {
   return (
     <>
-      <div className="mt-14 ml-14 mr-9  sm:mt-7 sm:ml-7 sm:mr-4 lg:mr-12">
+      <div className="md:ml-12 md:mr-9 lg:mr-12">
         <div>
           <Breadcrumb>
             <BreadcrumbList className="text-xl">
