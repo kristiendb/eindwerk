@@ -5,7 +5,7 @@ import { createClient } from "@/utils/supabase/client";
 import { selectAllCourses } from "@/functions/queries";
 import Link from "next/link";
 
-const page = () => {
+const Page = () => {
   const supabase = createClient();
   const [courses, setCourses] = useState([]);
 
@@ -51,7 +51,7 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
 
 // import Link from "next/link";
 

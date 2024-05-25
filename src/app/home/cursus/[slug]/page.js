@@ -14,7 +14,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 
-const page = () => {
+const Page = () => {
   const { slug } = useParams();
   const supabase = createClient();
   const [course, setCourse] = useState(null);
@@ -68,4 +68,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
