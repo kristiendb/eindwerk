@@ -1,6 +1,4 @@
-"use client";
-
-const Page = () => {
+const page = () => {
   return (
     <>
       <div></div>
@@ -8,4 +6,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default page;
