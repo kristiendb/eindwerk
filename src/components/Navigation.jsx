@@ -21,7 +21,7 @@ const Navigation = () => {
 
   return (
     <>
-      <header className="overflow-x-hidden display flex pb-10 border-b-0.25 border-solid border-black items-center justify-between">
+      <header className="display flex pb-10 border-b-0.25 border-solid border-black items-center justify-between">
         <Link href="/" className="md:mr-24 mr-8">
           <img
             src="Logo_GO-I.jpg"
@@ -100,8 +100,8 @@ const Navigation = () => {
           <div
             className={
               menu
-                ? "md:hidden fixed top-[100px] right-0 bottom-0 w-full h-screen bg-slate-300 text-white transition-transform duration-300 ease-in z-10"
-                : "md:hidden fixed top-[100px] right-0 bottom-0 w-full h-screen bg-slate-300 text-white transform translate-x-full transition-transform duration-300 ease-out z-10"
+                ? "md:hidden absolute top-[100px] right-0 bottom-0 w-full h-screen bg-slate-300 text-white transition-transform duration-300 ease-in z-10"
+                : "md:hidden absolute top-[100px] right-0 bottom-0 w-full h-screen bg-slate-300 text-white transform translate-x-full transition-transform duration-300 ease-out z-10"
             }
           >
             <div className="w-full">

@@ -1,3 +1,5 @@
+// /components/Levels.jsx
+
 "use client";
 import { selectLevels } from "@/functions/queries";
 import { createClient } from "@/utils/supabase/client";
@@ -10,7 +12,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-const Levels = () => {
+const Levels = ({ onSelectLevel }) => {
   const supabase = createClient();
   const [levels, setLevels] = useState([]);
 
@@ -22,17 +24,20 @@ const Levels = () => {
   useEffect(() => {
     getLevel();
   }, []);
+
   return (
     <>
       <div>
-        <Select>
+        <Select onValueChange={(value) => onSelectLevel(value)}>
           <SelectTrigger className="w-[180px]">
             <SelectValue placeholder="Selecteer een niveau" />
           </SelectTrigger>
           <SelectContent>
+            <SelectItem value="all">Alle niveaus</SelectItem>{" "}
+            {/* Toegevoegde optie */}
             {levels &&
               levels.map((level) => (
-                <SelectItem value={level.name} key={level.id}>
+                <SelectItem value={level.id} key={level.id}>
                   {level.name}
                 </SelectItem>
               ))}
@@ -42,4 +47,5 @@ const Levels = () => {
     </>
   );
 };
+
 export default Levels;
