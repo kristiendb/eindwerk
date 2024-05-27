@@ -2,13 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { logoutClient } from "@/app/logout/actions";
 import { useUser } from "@/utils/supabase/client";
 
 const Navigation = () => {
   const path = usePathname();
-  const [menu, setMenu] = useState(false); // menu state set to false by default
+  const [menu, setMenu] = useState(false);
   const user = useUser();
 
   const handleMenu = () => {

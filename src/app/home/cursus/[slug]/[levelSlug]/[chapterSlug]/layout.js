@@ -12,12 +12,14 @@ const Layout = ({ children }) => {
         <div>
           <Breadcrumb />
         </div>
-        <ChapterNavigation
-          slug={slug}
-          levelSlug={levelSlug}
-          chapterSlug={chapterSlug}
-        />
-        <div>{children}</div>
+        <div className="pt-7">
+          <ChapterNavigation
+            slug={slug}
+            levelSlug={levelSlug}
+            chapterSlug={chapterSlug}
+          />
+        </div>
+        <div className="w-3/4 pt-4">{children}</div>
       </div>
     </>
   );
