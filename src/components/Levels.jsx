@@ -1,5 +1,3 @@
-// /components/Levels.jsx
-
 "use client";
 import { selectLevels } from "@/functions/queries";
 import { createClient } from "@/utils/supabase/client";
@@ -33,8 +31,7 @@ const Levels = ({ onSelectLevel }) => {
             <SelectValue placeholder="Selecteer een niveau" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="all">Alle niveaus</SelectItem>{" "}
-            {/* Toegevoegde optie */}
+            <SelectItem value="all">Alle niveaus</SelectItem>
             {levels &&
               levels.map((level) => (
                 <SelectItem value={level.id} key={level.id}>

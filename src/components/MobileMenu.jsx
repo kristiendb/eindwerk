@@ -96,9 +96,9 @@ const MobileMenu = ({ user, path, handleLogout }) => {
                   </li>
                   <li className="py-2 border-b">
                     <Link
-                      href="/home/cursus"
+                      href="/home/cursussen"
                       className={`text-gray-800 ${
-                        path === "/home/cursus" ? "font-bold" : ""
+                        path === "/home/cursussen" ? "font-bold" : ""
                       }`}
                       onClick={handleLinkClick}
                     >

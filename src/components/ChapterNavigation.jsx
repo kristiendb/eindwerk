@@ -8,22 +8,6 @@ import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import { styled } from "@mui/system";
 
-// const TabPanel = (props) => {
-//   const { children, value, index, ...other } = props;
-
-//   return (
-//     <div
-//       role="tabpanel"
-//       hidden={value !== index}
-//       id={`simple-tabpanel-${index}`}
-//       aria-labelledby={`simple-tab-${index}`}
-//       {...other}
-//     >
-//       {value === index && <Box className="p-3">{children}</Box>}
-//     </div>
-//   );
-// };
-
 const StyledTabs = styled(Tabs)(() => ({
   borderBottom: "1px solid black",
   "& .MuiTabs-indicator": {

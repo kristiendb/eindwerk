@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
-import interactionPlugin from "@fullcalendar/interaction"; // needed for dayClick
+import interactionPlugin from "@fullcalendar/interaction";
 import { createClient } from "@/utils/supabase/client";
 
 const Calendar = () => {
@@ -38,7 +38,7 @@ const Calendar = () => {
       title: info.event.title,
       starttime: info.event.start,
       endtime: info.event.end,
-    }); // Update the selected event when an event is clicked
+    });
   };
 
   return (
@@ -50,6 +50,7 @@ const Calendar = () => {
             initialView="dayGridMonth"
             events={events}
             eventClick={handleEventClick}
+            height={"auto"}
           />
         </div>
         {selectedEvent && (
@@ -71,27 +72,5 @@ const Calendar = () => {
     </>
   );
 };
-
-//   const [events, setEvents] = useState([]);
-
-//   const handleDateClick = (arg) => {
-//     // Add a new event when a date is clicked
-//     const newEvent = {
-//       title: "New Event",
-//       start: arg.dateStr,
-//       allDay: true,
-//     };
-//     setEvents([...events, newEvent]);
-//   };
-
-//   return (
-//     <FullCalendar
-//       plugins={[dayGridPlugin, interactionPlugin]}
-//       initialView="dayGridMonth"
-//       events={events}
-//       dateClick={handleDateClick}
-//     />
-//   );
-// };
 
 export default Calendar;

@@ -29,7 +29,7 @@ const page = async () => {
             <div>Info</div>
           </Link>
           <Link
-            href="/home/cursus"
+            href="/home/cursussen"
             className="col-span-1 row-span-1 lg:col-span-2 h-40 md:h-72 sm:col-span-1 bg-yellow-custom rounded-3xl pl-6 pt-8 font-bold text-lg"
           >
             <div>Cursus</div>

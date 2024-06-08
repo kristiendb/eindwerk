@@ -1,11 +1,9 @@
-// /components/Chapters.jsx
-
 "use client";
 import { selectChaptersByCourseId } from "@/functions/queries";
 import { createClient } from "@/utils/supabase/client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import slugify from "slugify";
+import { slugit } from "@/helpers";
 
 const Chapters = ({ selectedLevel, courseId }) => {
   const supabase = createClient();
@@ -50,9 +48,10 @@ const Chapters = ({ selectedLevel, courseId }) => {
             default:
               color = "bg-opacity-100";
           }
-          const courseSlug = slugify(chapter.course.slug, { lower: true });
-          const levelSlug = slugify(chapter.level.name, { lower: true });
-          const chapterSlug = slugify(chapter.title, { lower: true });
+          const courseSlug = slugit(chapter.course.title);
+          const levelSlug = slugit(chapter.level.name);
+          const chapterSlug = slugit(chapter.title);
+
           return (
             <Link
               key={chapter.id}

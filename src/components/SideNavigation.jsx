@@ -49,9 +49,9 @@ const SideNavigation = () => {
           <li>
             <div onClick={handleSublist}>
               <Link
-                href="/home/cursus"
+                href="/home/cursussen"
                 className={` text-black hover:font-bold ${
-                  path === "/home/cursus" ? "font-bold" : ""
+                  path === "/home/cursussen" ? "font-bold" : ""
                 }`}
               >
                 CURSUS

@@ -11,50 +11,41 @@ const page = () => {
   );
 };
 export default page;
-
-// // /pages/page.js
-
+// Path: cursus/level/[levelSlug]/chapter/[chapterSlug]/layout.js
 // "use client";
 
-// import { useState } from "react";
-// import Chapters from "@/components/Chapters";
-// import Levels from "@/components/Levels";
-// import {
-//   Breadcrumb,
-//   BreadcrumbItem,
-//   BreadcrumbLink,
-//   BreadcrumbList,
-//   BreadcrumbPage,
-//   BreadcrumbSeparator,
-// } from "@/components/ui/breadcrumb";
+// import Breadcrumb from "@/components/BreadCrumb";
+// import ChapterNavigation from "@/components/ChapterNavigation";
+// import { useParams } from "next/navigation";
 
-// const Page = () => {
-//   const [selectedLevel, setSelectedLevel] = useState("all");
-
+// const Layout = ({ children }) => {
+//   const { slug, levelSlug, chapterSlug } = useParams();
 //   return (
 //     <>
 //       <div className="md:ml-12 md:mr-9 lg:mr-12">
 //         <div>
-//           <Breadcrumb>
-//             <BreadcrumbList className="text-xl">
-//               <BreadcrumbItem>
-//                 <BreadcrumbLink href="/home/cursus">Cursus</BreadcrumbLink>
-//               </BreadcrumbItem>
-//               <BreadcrumbSeparator />
-//               <BreadcrumbItem>
-//                 <BreadcrumbPage>Typografie en lettering</BreadcrumbPage>
-//               </BreadcrumbItem>
-//             </BreadcrumbList>
-//           </Breadcrumb>
+//           <Breadcrumb />
 //         </div>
-//         <div className="pt-10">
-//           <Levels onSelectLevel={setSelectedLevel} />
+//         <div className="pt-7">
+//           <ChapterNavigation
+//             slug={slug}
+//             levelSlug={levelSlug}
+//             chapterSlug={chapterSlug}
+//           />
 //         </div>
-//         <div>
-//           <Chapters selectedLevel={selectedLevel} />
-//         </div>
+//         <div className="w-3/4 pt-4">{children}</div>
 //       </div>
 //     </>
 //   );
 // };
-// export default Page;
+
+// export default Layout;
+// const page = () => {
+//   return (
+//     <>
+//       <div></div>
+//     </>
+//   );
+// };
+
+// export default page;
