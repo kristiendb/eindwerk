@@ -20,6 +20,7 @@ const Navigation = () => {
     };
     getUser();
   });
+
   const handleLogout = async () => {
     await logoutClient();
   };
@@ -59,12 +60,12 @@ const Navigation = () => {
             {user && (
               <li>
                 <Link
-                  href="/home"
+                  href="/start"
                   className={`text-black hover:font-bold ${
-                    path === "/home" ? "font-bold" : ""
+                    path === "/start" ? "font-bold" : ""
                   }`}
                 >
-                  Home
+                  Start
                 </Link>
               </li>
             )}

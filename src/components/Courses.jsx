@@ -1,9 +1,10 @@
 "use client";
-import { selectCourses } from "@/functions/queries";
+import { selectAllCourses } from "@/functions/queries";
 import { createClient } from "@/utils/supabase/client";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { slugit } from "@/helpers";
 
 const Courses = () => {
   const supabase = createClient();
@@ -11,7 +12,7 @@ const Courses = () => {
   const [courses, setCourses] = useState([]);
 
   const getCourses = async () => {
-    const data = await selectCourses(supabase);
+    const data = await selectAllCourses(supabase);
     setCourses(data);
   };
 
@@ -21,25 +22,20 @@ const Courses = () => {
   return (
     <>
       {courses &&
-        courses.map((course) => (
-          <li className="p-2" key={course.id}>
+        courses.map(({ id, title }) => (
+          <li className="p-2" key={id}>
             <Link
-              href={`/home/cursus/${course.slug}`}
+              href={`/start/cursussen/${id}-${slugit(title)}`}
               className={` text-black hover:font-bold ${
-                path === `/home/cursus/${course.slug}` ? "font-bold" : ""
+                path === `/start/cursussen/${id}-${slugit(title)}`
+                  ? "font-bold"
+                  : ""
               }`}
             >
-              {course.title}
+              {title}
             </Link>
           </li>
         ))}
-
-      {/* <Link
-            href="/home/cursus/typografie"
-            className="col-span-1 row-span-1 h-24 sm:h-40 md:h-72 bg-red-custom rounded-3xl pl-6 pt-8 font-bold text-lg"
-          >
-            <div>Typografie en lettering</div>
-          </Link> */}
     </>
   );
 };

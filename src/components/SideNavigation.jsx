@@ -18,19 +18,19 @@ const SideNavigation = () => {
         <ul className="display flex flex-col space-y-4 text-sm pt-6 pb-6  border-b-0.25  border-black">
           <li>
             <Link
-              href="/home"
+              href="/start"
               className={` text-black hover:font-bold ${
-                path === "/home" ? "font-bold" : ""
+                path === "/start" ? "font-bold" : ""
               }`}
             >
-              HOME
+              START
             </Link>
           </li>
           <li>
             <Link
-              href="/home/agenda"
+              href="/start/agenda"
               className={` text-black hover:font-bold ${
-                path === "/home/agenda" ? "font-bold" : ""
+                path === "/start/agenda" ? "font-bold" : ""
               }`}
             >
               AGENDA
@@ -38,9 +38,9 @@ const SideNavigation = () => {
           </li>
           <li>
             <Link
-              href="/home/info"
+              href="/start/info"
               className={` text-black hover:font-bold ${
-                path === "/home/info" ? "font-bold" : ""
+                path === "/start/info" ? "font-bold" : ""
               }`}
             >
               INFO
@@ -49,9 +49,9 @@ const SideNavigation = () => {
           <li>
             <div onClick={handleSublist}>
               <Link
-                href="/home/cursussen"
+                href="/start/cursussen"
                 className={` text-black hover:font-bold ${
-                  path === "/home/cursussen" ? "font-bold" : ""
+                  path === "/start/cursussen" ? "font-bold" : ""
                 }`}
               >
                 CURSUS
@@ -65,9 +65,9 @@ const SideNavigation = () => {
           </li>
           <li>
             <Link
-              href="/home/mijn-werk"
+              href="/start/mijn-werk"
               className={` text-black hover:font-bold ${
-                path === "/home/mijn-werk" ? "font-bold" : ""
+                path === "/start/mijn-werk" ? "font-bold" : ""
               }`}
             >
               MIJN WERK
@@ -75,9 +75,9 @@ const SideNavigation = () => {
           </li>
           <li>
             <Link
-              href="/home/showcases"
+              href="/start/showcases"
               className={` text-black hover:font-bold ${
-                path === "/home/showcases" ? "font-bold" : ""
+                path === "/start/showcases" ? "font-bold" : ""
               }`}
             >
               SHOWCASES
@@ -85,9 +85,9 @@ const SideNavigation = () => {
           </li>
           <li>
             <Link
-              href="/home/profiel"
+              href="/start/profiel"
               className={` text-black hover:font-bold ${
-                path === "/home/profiel" ? "font-bold" : ""
+                path === "/start/profiel" ? "font-bold" : ""
               }`}
             >
               MIJN PROFIEL

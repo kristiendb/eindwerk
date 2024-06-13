@@ -13,8 +13,8 @@ export async function logout() {
     redirect("/error");
   }
 
-  revalidatePath("/home", "layout");
-  redirect("/home");
+  revalidatePath("/start", "layout");
+  redirect("/start");
 }
 
 export async function logoutClient() {
@@ -26,5 +26,5 @@ export async function logoutClient() {
     redirect("/error");
   }
 
-  redirect("/home");
+  redirect("/start");
 }

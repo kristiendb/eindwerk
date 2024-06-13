@@ -63,20 +63,20 @@ const MobileMenu = ({ user, path, handleLogout }) => {
                 <>
                   <li className="py-2 border-b">
                     <Link
-                      href="/home"
+                      href="/start"
                       className={`text-gray-800 ${
-                        path === "/home" ? "font-bold" : ""
+                        path === "/start" ? "font-bold" : ""
                       }`}
                       onClick={handleLinkClick}
                     >
-                      Home
+                      Start
                     </Link>
                   </li>
                   <li className="py-2 border-b">
                     <Link
-                      href="/home/agenda"
+                      href="/start/agenda"
                       className={`text-gray-800 ${
-                        path === "/home/agenda" ? "font-bold" : ""
+                        path === "/start/agenda" ? "font-bold" : ""
                       }`}
                       onClick={handleLinkClick}
                     >
@@ -85,9 +85,9 @@ const MobileMenu = ({ user, path, handleLogout }) => {
                   </li>
                   <li className="py-2 border-b">
                     <Link
-                      href="/home/info"
+                      href="/start/info"
                       className={`text-gray-800 ${
-                        path === "/home/info" ? "font-bold" : ""
+                        path === "/start/info" ? "font-bold" : ""
                       }`}
                       onClick={handleLinkClick}
                     >
@@ -96,9 +96,9 @@ const MobileMenu = ({ user, path, handleLogout }) => {
                   </li>
                   <li className="py-2 border-b">
                     <Link
-                      href="/home/cursussen"
+                      href="/start/cursussen"
                       className={`text-gray-800 ${
-                        path === "/home/cursussen" ? "font-bold" : ""
+                        path === "/start/cursussen" ? "font-bold" : ""
                       }`}
                       onClick={handleLinkClick}
                     >
@@ -107,9 +107,9 @@ const MobileMenu = ({ user, path, handleLogout }) => {
                   </li>
                   <li className="py-2 border-b">
                     <Link
-                      href="/home/mijn-werk"
+                      href="/start/mijn-werk"
                       className={`text-gray-800 ${
-                        path === "/home/mijn-werk" ? "font-bold" : ""
+                        path === "/start/mijn-werk" ? "font-bold" : ""
                       }`}
                       onClick={handleLinkClick}
                     >
@@ -118,9 +118,9 @@ const MobileMenu = ({ user, path, handleLogout }) => {
                   </li>
                   <li className="py-2 border-b">
                     <Link
-                      href="/home/showcases"
+                      href="/start/showcases"
                       className={`text-gray-800 ${
-                        path === "/home/showcases" ? "font-bold" : ""
+                        path === "/start/showcases" ? "font-bold" : ""
                       }`}
                       onClick={handleLinkClick}
                     >

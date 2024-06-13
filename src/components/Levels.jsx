@@ -13,35 +13,38 @@ import {
 const Levels = ({ onSelectLevel }) => {
   const supabase = createClient();
   const [levels, setLevels] = useState([]);
+  const [selectedLevel, setSelectedLevel] = useState("all");
 
-  const getLevel = async () => {
+  const getLevels = async () => {
     const data = await selectLevels(supabase);
     setLevels(data);
   };
 
   useEffect(() => {
-    getLevel();
+    getLevels();
   }, []);
 
+  const handleLevelChange = (value) => {
+    setSelectedLevel(value);
+    onSelectLevel(value);
+  };
+
   return (
-    <>
-      <div>
-        <Select onValueChange={(value) => onSelectLevel(value)}>
-          <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Selecteer een niveau" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="all">Alle niveaus</SelectItem>
-            {levels &&
-              levels.map((level) => (
-                <SelectItem value={level.id} key={level.id}>
-                  {level.name}
-                </SelectItem>
-              ))}
-          </SelectContent>
-        </Select>
-      </div>
-    </>
+    <div>
+      <Select onValueChange={handleLevelChange} value={selectedLevel}>
+        <SelectTrigger className="w-[180px]">
+          <SelectValue placeholder="Selecteer een niveau" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="all">Alle niveaus</SelectItem>
+          {levels.map((level) => (
+            <SelectItem value={level.id} key={level.id}>
+              {level.name}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
+    </div>
   );
 };
 

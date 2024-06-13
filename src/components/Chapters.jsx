@@ -1,24 +1,11 @@
-"use client";
-import { selectChaptersByCourseId } from "@/functions/queries";
-import { createClient } from "@/utils/supabase/client";
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import { slugit } from "@/helpers";
+import { selectChaptersByCourseId } from "@/functions/queries";
+import { createClient } from "@/utils/supabase/client";
 
-const Chapters = ({ selectedLevel, courseId }) => {
+const Chapters = async ({ selectedLevel, courseId }) => {
   const supabase = createClient();
-  const [chapters, setChapters] = useState([]);
-
-  const getChapters = async () => {
-    const data = await selectChaptersByCourseId(supabase, courseId);
-    setChapters(data);
-  };
-
-  useEffect(() => {
-    if (courseId) {
-      getChapters();
-    }
-  }, [courseId]);
+  const chapters = await selectChaptersByCourseId(supabase, courseId);
 
   const filteredChapters =
     selectedLevel && selectedLevel !== "all"
@@ -55,7 +42,7 @@ const Chapters = ({ selectedLevel, courseId }) => {
           return (
             <Link
               key={chapter.id}
-              href={`/home/cursus/${courseSlug}/${levelSlug}/${chapterSlug}`}
+              href={`/start/cursus/${courseSlug}/${levelSlug}/${chapterSlug}`}
             >
               <div
                 className={`bg-red-custom ${color} h-72 rounded-3xl`}

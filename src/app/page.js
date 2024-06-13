@@ -1,8 +1,12 @@
 import ButtonGreen from "@/components/ButtonGreen";
 import Link from "next/link";
 import Image from "next/image";
+import { redirect } from "next/navigation";
 
-const Page = () => {
+const Page = ({ searchParams }) => {
+  if (searchParams.type === "recovery" && searchParams.access_token) {
+    redirect("/recovery?access_token=" + searchParams.access_token);
+  }
   return (
     <>
       <div className="grid gap-2 lg:grid-cols-6 md:grid-cols-4 md:gap-4 mt-10">

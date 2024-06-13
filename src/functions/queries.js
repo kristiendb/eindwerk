@@ -1,12 +1,17 @@
-// import { createClient } from "@/utils/supabase/server";
-
 export const selectCourses = async (supabase) => {
-  let { data } = await supabase.from("courses").select("title , slug, id");
+  let { data } = await supabase.from("courses").select("title , color, id");
   return data;
 };
 
 export const selectLevels = async (supabase) => {
   let { data } = await supabase.from("level").select("*");
+  return data;
+};
+export const selectChaptersByLevel = async (supabase, level) => {
+  const { data, error } = await supabase
+    .from("chapters")
+    .select("*")
+    .eq("level_id", level === "all" ? undefined : level);
   return data;
 };
 
@@ -23,10 +28,38 @@ export const selectLevelName = async (supabase, id) => {
   return data;
 };
 
-export const selectUser = async (supabase) => {
-  let { data } = await supabase.from("users").select("*");
+export const selectUser = async (supabase, userId) => {
+  let { data } = await supabase
+    .from("users")
+    .select("*")
+    .eq("userid", userId)
+    .single();
   return data;
 };
+
+export const selectStudents = async (supabase) => {
+  const { data, error } = await supabase
+    .from("users")
+    .select("*")
+    .eq("isteacher", true);
+
+  if (error) {
+    console.error("Error fetching students:", error);
+    return null;
+  }
+
+  console.log("SelectStudents data:", data); // Voeg extra logging toe
+
+  return data;
+};
+
+// export const selectStudents = async (supabase, student) => {
+//   let { data } = await supabase
+//     .from("users")
+//     .select("*")
+//     .eq("isteacher", student);
+//   return data;
+// };
 
 export const selectAllCourses = async (supabase) => {
   // const supabase = createClient();
@@ -44,7 +77,7 @@ export const selectCoursesById = async (supabase, id) => {
 export const selectChaptersByCourseId = async (supabase, courseId) => {
   let { data, error } = await supabase
     .from("chapters")
-    .select("*, level (name), course: courses (slug, title, id)")
+    .select("*, level (name), course: courses (color, title, id)")
     .eq("courses_idcourses", courseId);
   if (error) throw error;
   return data;
@@ -87,44 +120,10 @@ export const selectExampleByChapterId = async (supabase, chapterId) => {
   return data;
 };
 
-export const getChapterDetails = async (supabase, chapterSlug, levelSlug) => {
-  const { data: levelData, error: levelError } = await supabase
-    .from("level")
-    .select("id")
-    .ilike("name", levelSlug)
-    .single();
-
-  if (levelError) {
-    console.error("Error fetching level data:", levelError);
-    return { data: null, error: levelError };
-  }
-
-  const levelId = levelData.id;
-
-  const { data: chapterData, error: chapterError } = await supabase
-    .from("chapters")
-    .select("id, title, description, level_idlevel")
-    .ilike("title", chapterSlug)
-    .eq("level_idlevel", levelId)
-    .single();
-
-  if (chapterError) {
-    console.error("Error fetching chapter data:", chapterError);
-    return { data: null, error: chapterError };
-  }
-
-  return { data: chapterData, error: null };
+export const selectPortfolio = async (supabase) => {
+  const { data } = await supabase.from("portfolio").select("*");
+  return data;
 };
-
-// export const selectTheoryByChapterId = async (supabase, chapterId) => {
-//   let { data, error } = await supabase
-//     .from("theory")
-//     .select("description, introduction, theorypdf")
-//     .eq("chapters_idchapters", chapterId)
-//     .single();
-//   if (error) throw error;
-//   return data;
-// };
 
 // export const getChapterDetails = async (supabase, chapterSlug, levelSlug) => {
 //   const { data: levelData, error: levelError } = await supabase
@@ -133,7 +132,10 @@ export const getChapterDetails = async (supabase, chapterSlug, levelSlug) => {
 //     .ilike("name", levelSlug)
 //     .single();
 
-//   if (levelError) return { error: levelError };
+//   if (levelError) {
+//     console.error("Error fetching level data:", levelError);
+//     return { data: null, error: levelError };
+//   }
 
 //   const levelId = levelData.id;
 
@@ -144,7 +146,10 @@ export const getChapterDetails = async (supabase, chapterSlug, levelSlug) => {
 //     .eq("level_idlevel", levelId)
 //     .single();
 
-//   if (chapterError) return { error: chapterError };
+//   if (chapterError) {
+//     console.error("Error fetching chapter data:", chapterError);
+//     return { data: null, error: chapterError };
+//   }
 
-//   return { data: chapterData };
+//   return { data: chapterData, error: null };
 // };

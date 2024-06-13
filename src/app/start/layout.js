@@ -7,7 +7,7 @@ const layout = ({ children }) => {
         <div className="hidden md:block">
           <SideNavigation />
         </div>
-        <section className="p-8 w-full">{children}</section>
+        <section className="w-full pt-8 p-3 md:p-8 mx-auto">{children}</section>
       </div>
     </>
   );

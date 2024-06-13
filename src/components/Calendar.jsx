@@ -13,7 +13,7 @@ const Calendar = () => {
     const fetchEvents = async () => {
       const { data, error } = await supabase
         .from("agenda")
-        .select("id, title, starttime, endtime, description");
+        .select("id, title, starttime, endtime, description, link");
       if (error) {
         console.error(error);
       } else {
@@ -24,6 +24,7 @@ const Calendar = () => {
           start: event.starttime,
           end: event.endtime,
           description: event.description,
+          link: event.link,
         }));
         setEvents(formattedEvents);
       }
@@ -66,6 +67,16 @@ const Calendar = () => {
             </h2>
             <p>{selectedEvent.title}</p>
             <p>{selectedEvent.description}</p>
+            {selectedEvent.link ? (
+              <a
+                href={selectedEvent.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+              >
+                {selectedEvent.link}
+              </a>
+            ) : null}
           </div>
         )}
       </div>

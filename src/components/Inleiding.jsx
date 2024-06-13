@@ -9,7 +9,7 @@ const Inleiding = async ({ params }) => {
   return (
     <div className="flex space-x-6">
       {theory ? (
-        <p className="w-2/3">{theory.introduction}</p>
+        <p className="md:w-2/3 w-full text-base">{theory.introduction}</p>
       ) : (
         <p>Geen inleiding beschikbaar</p>
       )}
