@@ -86,7 +86,7 @@ export const selectChaptersByCourseId = async (supabase, courseId) => {
 export const selectTheoryByChapterId = async (supabase, chapterId) => {
   const { data } = await supabase
     .from("theory")
-    .select("description, introduction, theorypdf")
+    .select("id,description, introduction, theorypdf")
     .eq("chapters_idchapters", chapterId)
     .single();
   return data;
@@ -95,28 +95,44 @@ export const selectTheoryByChapterId = async (supabase, chapterId) => {
 export const selectTaskByChapterId = async (supabase, chapterId) => {
   const { data } = await supabase
     .from("tasks")
-    .select("title, description, taskpdf, isassignment")
+    .select("id,title, description, taskpdf, isassignment")
     .eq("chapters_idchapters", chapterId)
-    .eq("isassignment", false)
-    .single();
+    .eq("isassignment", false);
   return data;
 };
 
 export const selectAssignmentByChapterId = async (supabase, chapterId) => {
   const { data } = await supabase
     .from("tasks")
-    .select("title, description, taskpdf, isassignment")
+    .select("*")
     .eq("chapters_idchapters", chapterId)
-    .eq("isassignment", true)
-    .single();
+    .eq("isassignment", true);
   return data;
 };
+
+// export const selectAssignmentByChapterId = async (supabase, chapterId) => {
+//   const { data } = await supabase
+//     .from("tasks")
+//     .select("title, description, taskpdf, isassignment")
+//     .eq("chapters_idchapters", chapterId)
+//     .eq("isassignment", true)
+//     .single();
+//   return data;
+// };
 
 export const selectExampleByChapterId = async (supabase, chapterId) => {
   const { data } = await supabase
     .from("examples")
-    .select("description, exampleimage, id")
+    .select("*")
     .eq("chapters_idchapters", chapterId);
+  return data;
+};
+
+export const selectWorkByTaskId = async (supabase, taskId) => {
+  const { data } = await supabase
+    .from("work")
+    .select("*")
+    .eq("tasks_idtasks", taskId);
   return data;
 };
 

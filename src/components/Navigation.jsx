@@ -19,7 +19,7 @@ const Navigation = () => {
       setUser(data.user);
     };
     getUser();
-  });
+  }, []);
 
   const handleLogout = async () => {
     await logoutClient();
@@ -33,6 +33,8 @@ const Navigation = () => {
             alt="Logo van Grafisch Ontwerp en Illustratie"
             width={160}
             height={80}
+            style={{ width: "auto", height: "auto" }}
+            priority
           />
         </Link>
         <nav className="flex flex-row">

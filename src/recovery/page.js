@@ -1,25 +1,23 @@
-import { redirect } from "next/navigation";
 import { createClient } from "@/utils/supabase/server";
 
-const Page = async ({ searchParams }) => {
+const Page = async ({ searchParams, params }) => {
+  // console.log(searchParams);
+  // console.log(params);
   if (!searchParams.access_token) {
     redirect("/");
-    return;
   }
 
-  const supabase = createClient();
+  // const { data: user, error } = await supabase.auth.api.getUser(
+  //   searchParams.access_token
+  // );
 
-  const { data: user, error } = await supabase.auth.api.getUser(
-    searchParams.access_token
-  );
-
-  if (error || !user) {
-    redirect("/");
-    return;
-  }
+  // if (error || !user) {
+  //   redirect("/");
+  // }
 
   const recoverPass = async (formData) => {
     "use server";
+    const supabase = createClient();
     const newPassword = formData.get("pass1");
     const confirmPassword = formData.get("pass2");
 
@@ -29,12 +27,10 @@ const Page = async ({ searchParams }) => {
 
     const { data, error } = await supabase.auth.api.updateUser(
       searchParams.access_token,
-      { password: newPassword }
+      {
+        password: newPassword,
+      }
     );
-
-    if (error) {
-      return { error: error.message };
-    }
 
     redirect("/login");
   };
@@ -42,7 +38,7 @@ const Page = async ({ searchParams }) => {
   return (
     <div>
       <form action={recoverPass}>
-        <input type="email" disabled value={user.email} />
+        {/* <input type="email" disabled value={user.email} /> */}
         <input type="password" name="pass1" placeholder="New Password" />
         <input type="password" name="pass2" placeholder="Confirm Password" />
         <button type="submit">Wijzig wachtwoord</button>

@@ -1,7 +1,6 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/utils/supabase/server";
 import Link from "next/link";
-import { selectUser } from "@/functions/queries";
 
 const page = async () => {
   const supabase = createClient();
@@ -10,12 +9,12 @@ const page = async () => {
   if (error || !data?.user) {
     redirect("/login");
   }
-  const userId = data.user.id;
-  const user = await selectUser(supabase, userId);
+  const user = data.user;
+  const { firstname } = user.user_metadata;
   return (
     <>
       <div className=" md:ml-12 md:mr-9 lg:mr-12">
-        <h2 className="text-4xl pb-8">Welkom, {user?.firstname}!</h2>
+        <h2 className="text-4xl pb-8">Welkom, {firstname}!</h2>
 
         <div className="grid grid-cols-2 grid-rows-2 gap-4  lg:grid-cols-4">
           <Link

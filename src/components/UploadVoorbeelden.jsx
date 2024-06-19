@@ -1,9 +1,9 @@
-import { uploadTheoryAction } from "@/functions/actions";
+import { uploadExampleAction } from "@/functions/actions";
 
-const UploadTheory = ({ chapterId, params }) => {
+const UploadVoorbeelden = ({ chapterId, params }) => {
   return (
     <div>
-      <form action={uploadTheoryAction}>
+      <form action={uploadExampleAction}>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2">
             Omschrijving
@@ -16,13 +16,23 @@ const UploadTheory = ({ chapterId, params }) => {
         </div>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2">
-            PDF File
+            Afbeelding File
           </label>
           <input
             type="file"
             name="file"
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             required
+          />
+        </div>
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2">
+            URL (optioneel)
+          </label>
+          <input
+            type="url"
+            name="url"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           />
         </div>
         <input type="hidden" name="chapterId" value={chapterId} />
@@ -33,7 +43,7 @@ const UploadTheory = ({ chapterId, params }) => {
         />
         <button
           type="submit"
-          className="bg-black hover:bg-slate-300 hover:text-black  hover:transition-all hover:duration-300 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          className="bg-black hover:bg-slate-300 hover:text-black hover:transition-all hover:duration-300 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
         >
           Upload
         </button>
@@ -42,4 +52,4 @@ const UploadTheory = ({ chapterId, params }) => {
   );
 };
 
-export default UploadTheory;
+export default UploadVoorbeelden;

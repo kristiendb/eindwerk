@@ -1,9 +1,20 @@
-import { uploadTheoryAction } from "@/functions/actions";
+import { uploadResultAction } from "@/functions/actions";
 
-const UploadTheory = ({ chapterId, params }) => {
+const UploadResultaat = ({ taskId, params }) => {
   return (
     <div>
-      <form action={uploadTheoryAction}>
+      <form action={uploadResultAction}>
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2">
+            Titel
+          </label>
+          <input
+            name="title"
+            type="text"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            required
+          />
+        </div>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2">
             Omschrijving
@@ -16,7 +27,7 @@ const UploadTheory = ({ chapterId, params }) => {
         </div>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2">
-            PDF File
+            Resultaat File
           </label>
           <input
             type="file"
@@ -25,7 +36,7 @@ const UploadTheory = ({ chapterId, params }) => {
             required
           />
         </div>
-        <input type="hidden" name="chapterId" value={chapterId} />
+        <input type="hidden" name="taskId" value={taskId} />
         <input
           type="hidden"
           name="path"
@@ -33,7 +44,7 @@ const UploadTheory = ({ chapterId, params }) => {
         />
         <button
           type="submit"
-          className="bg-black hover:bg-slate-300 hover:text-black  hover:transition-all hover:duration-300 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          className="bg-black hover:bg-slate-300 hover:text-black hover:transition-all hover:duration-300 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
         >
           Upload
         </button>
@@ -42,4 +53,4 @@ const UploadTheory = ({ chapterId, params }) => {
   );
 };
 
-export default UploadTheory;
+export default UploadResultaat;
