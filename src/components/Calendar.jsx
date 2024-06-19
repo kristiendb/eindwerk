@@ -31,7 +31,7 @@ const Calendar = () => {
     };
 
     fetchEvents();
-  }, []);
+  }, [supabase]);
 
   const handleEventClick = (info) => {
     setSelectedEvent({

@@ -102,7 +102,7 @@ const ChapterNavigation = ({ slug, levelSlug, chapterSlug }) => {
         `/home/cursus/${slug}/${levelSlug}/${chapterSlug}/inleiding`
       );
     }
-  }, [path, tabs, router, slug, levelSlug, chapterSlug]);
+  }, [path, tabs, router, slug, levelSlug, chapterSlug, supabase]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);

@@ -25,7 +25,7 @@ const BreadCrumb = () => {
     };
 
     fetchCourse();
-  }, [params.cursus]);
+  }, [params.cursus, supabase]);
   const hoofdstukParts = params.hoofdstuk?.split("-").slice(1).join(" ");
 
   return (
