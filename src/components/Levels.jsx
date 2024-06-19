@@ -22,7 +22,7 @@ const Levels = ({ onSelectLevel }) => {
 
   useEffect(() => {
     getLevels();
-  }, [supabase]);
+  }, []);
 
   const handleLevelChange = (value) => {
     setSelectedLevel(value);
