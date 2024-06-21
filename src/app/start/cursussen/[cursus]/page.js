@@ -1,15 +1,19 @@
 import { selectChaptersByCourseId } from "@/functions/queries";
 import { createClient } from "@/utils/supabase/server";
+import Levels from "@/components/Levels";
 import { slugit } from "@/helpers";
 import Link from "next/link";
 
-const page = async ({ params }) => {
+const page = async ({ params, searchParams }) => {
   const [id] = params.cursus.split("-");
   const supabase = createClient();
-  const chapters = await selectChaptersByCourseId(supabase, id);
+  const chapters = await selectChaptersByCourseId(supabase, id, searchParams);
 
   return (
     <>
+      <div className="pt-10">
+        <Levels selectedLevel={searchParams.levelId || "all"} />
+      </div>
       <div className="grid grid-cols-1 grid-rows-2 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pt-10">
         {chapters &&
           chapters.map((chapter) => {

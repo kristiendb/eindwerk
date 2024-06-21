@@ -1,15 +1,7 @@
 import { createClient } from "@/utils/supabase/server";
 import { selectAssignmentByChapterId } from "@/functions/queries";
 import { deleteTaskAction } from "@/functions/actions";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import UploadOpdrachten from "@/components/UploadOpdrachten";
+import OpdrachtenDialog from "./OpdrachtenDialog";
 
 const Opdrachten = async ({ params }) => {
   const supabase = createClient();
@@ -26,10 +18,12 @@ const Opdrachten = async ({ params }) => {
   return (
     <div className="w-full flex flex-col space-y-4">
       {tasks && tasks.length > 0 ? (
-        tasks.map((task) => (
+        tasks.map((task, index) => (
           <div
             key={task.id}
-            className="flex flex-col space-y-4 w-full border-b border-gray-300 pb-4"
+            className={`flex flex-col space-y-4 w-full pb-4 ${
+              index !== tasks.length - 1 ? "border-b border-gray-300" : ""
+            }`}
           >
             <div className="flex justify-between items-center">
               <div className="w-full md:w-3/5 text-base flex flex-col">
@@ -69,22 +63,7 @@ const Opdrachten = async ({ params }) => {
       )}
       {isAdmin && (
         <div className="flex justify-start">
-          <Dialog>
-            <DialogTrigger asChild>
-              <button className="mt-4 pt-3 pb-3 pl-6 pr-6 bg-black text-white rounded-full">
-                Upload opdracht
-              </button>
-            </DialogTrigger>
-            <DialogContent>
-              <DialogHeader>
-                <DialogTitle>Upload Opdracht</DialogTitle>
-                <DialogDescription>
-                  Vul de volgende velden in om de opdracht te uploaden.
-                </DialogDescription>
-              </DialogHeader>
-              <UploadOpdrachten chapterId={id} params={params} />
-            </DialogContent>
-          </Dialog>
+          <OpdrachtenDialog id={id} params={params} />
         </div>
       )}
     </div>

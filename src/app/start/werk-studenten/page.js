@@ -1,0 +1,70 @@
+import { createClient } from "@/utils/supabase/server";
+import { selectWorkByFeedback } from "@/functions/queries";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import Image from "next/image";
+import UploadFeedback from "@/components/UploadFeedback";
+import FeedbackDialog from "@/components/FeedbackDialog";
+
+const page = async ({ params }) => {
+  const supabase = createClient();
+  const { data: userData } = await supabase.auth.getUser();
+  const userId = userData.user.id;
+  const workData = await selectWorkByFeedback(supabase);
+
+  return (
+    <div className="flex flex-wrap -mx-2 md:ml-12 md:mr-9 lg:mr-12">
+      <div className="w-full">
+        <h2 className="text-4xl pb-8">Werk studenten</h2>
+      </div>
+      {workData.length > 0 ? (
+        workData.map((work) => (
+          <div key={work.id} className="w-full sm:w-1/2 lg:w-1/4 p-2">
+            <div className="w-full relative border p-4 rounded-lg shadow-lg">
+              {work.uploadwork.endsWith(".pdf") ? (
+                <a
+                  href={work.uploadwork}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="h-60 flex items-center justify-center bg-gray-200 rounded"
+                >
+                  <p className="text-center underline">Bekijk PDF</p>
+                </a>
+              ) : (
+                <div className="h-60 relative">
+                  <Image
+                    src={work.uploadwork}
+                    alt={work.description}
+                    layout="fill"
+                    objectFit="cover"
+                    sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    className="rounded"
+                  />
+                </div>
+              )}
+              <div className="mt-4">
+                <p className="font-bold">{work.title}</p>
+                <p>{work.description}</p>
+                <p className="text-sm text-gray-500">
+                  Datum: {new Date(work.date).toLocaleDateString()}
+                </p>
+              </div>
+              <div className="mt-4">
+                <FeedbackDialog workId={work.id} />
+              </div>
+            </div>
+          </div>
+        ))
+      ) : (
+        <p>Nog geen werk ingediend</p>
+      )}
+    </div>
+  );
+};
+export default page;

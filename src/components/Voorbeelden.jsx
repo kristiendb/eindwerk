@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/dialog";
 import UploadVoorbeelden from "@/components/UploadVoorbeelden";
 import { deleteExampleAction, updateExampleAction } from "@/functions/actions";
+import VoorbeeldenDialog from "@/components/VoorbeeldenDialog";
 
 const Voorbeelden = async ({ params }) => {
   const supabase = createClient();
@@ -25,7 +26,7 @@ const Voorbeelden = async ({ params }) => {
   }
 
   return (
-    <div className="flex flex-wrap -mx-2">
+    <div className="flex flex-wrap">
       {voorbeelden ? (
         voorbeelden.map((voorbeeld) => (
           <div
@@ -132,6 +133,11 @@ const Voorbeelden = async ({ params }) => {
       )}
       {isAdmin && (
         <div className="w-full p-2">
+          <VoorbeeldenDialog id={id} params={params} />
+        </div>
+      )}
+      {/* {isAdmin && (
+        <div className="w-full p-2">
           <Dialog>
             <DialogTrigger asChild>
               <button className="mt-4 pt-3 pb-3 pl-6 pr-6 bg-black text-white rounded-full">
@@ -149,7 +155,7 @@ const Voorbeelden = async ({ params }) => {
             </DialogContent>
           </Dialog>
         </div>
-      )}
+      )} */}
     </div>
   );
 };

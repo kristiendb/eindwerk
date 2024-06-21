@@ -1,10 +1,7 @@
-import { Checkbox } from "@/components/ui/checkbox";
-import { uploadTasksAction } from "@/functions/actions";
-
-const UploadOefeningen = ({ chapterId, params }) => {
+const UploadOefeningen = ({ chapterId, params, formAction, state }) => {
   return (
     <div>
-      <form action={uploadTasksAction}>
+      <form action={formAction}>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2">
             Titel
@@ -35,12 +32,6 @@ const UploadOefeningen = ({ chapterId, params }) => {
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             required
           />
-        </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2">
-            Is Opdracht
-          </label>
-          <Checkbox name="isAssignment" />
         </div>
         <input type="hidden" name="chapterId" value={chapterId} />
         <input

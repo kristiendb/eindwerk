@@ -1,10 +1,9 @@
+"use server";
 import { createClient } from "@/utils/supabase/server";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 export async function deleteTheoryAction(formData) {
-  "use server";
-
   const supabase = createClient();
   const theorieId = formData.get("theorieId");
 
@@ -33,8 +32,6 @@ export async function deleteTheoryAction(formData) {
 }
 
 export async function deleteTaskAction(formData) {
-  "use server";
-
   const supabase = createClient();
   const taskId = formData.get("taskId");
 
@@ -59,9 +56,7 @@ export async function deleteTaskAction(formData) {
   revalidatePath(formData.get("path"));
 }
 
-export async function uploadTasksAction(formData) {
-  "use server";
-
+export async function uploadTasksAction(state, formData) {
   const supabase = createClient();
   const file = formData.get("file");
   const title = formData.get("title");
@@ -102,15 +97,15 @@ export async function uploadTasksAction(formData) {
     ]);
   if (insertError) {
     console.log("Insert Error:", insertError);
-    return { error: insertError.message };
+    return { msg: "error", error: insertError.message };
   }
 
   revalidatePath(formData.get("path"));
+
+  return { msg: "success" };
 }
 
-export async function updateIntroductionAction(formData) {
-  "use server";
-
+export async function updateIntroductionAction(state, formData) {
   const supabase = createClient();
   const chapterId = formData.get("chapterId");
   const introduction = formData.get("introduction");
@@ -140,11 +135,10 @@ export async function updateIntroductionAction(formData) {
       .insert([{ chapters_idchapters: chapterId, introduction }]);
   }
   revalidatePath(formData.get("path"));
+  return { msg: "success" };
 }
 
 export async function uploadTheoryAction(formData) {
-  "use server";
-
   const supabase = createClient();
   const {
     data: { user },
@@ -178,9 +172,7 @@ export async function uploadTheoryAction(formData) {
   revalidatePath(formData.get("path"));
 }
 
-export async function uploadExampleAction(formData) {
-  "use server";
-
+export async function uploadExampleAction(state, formData) {
   const supabase = createClient();
   const file = formData.get("file");
   const description = formData.get("description");
@@ -224,11 +216,10 @@ export async function uploadExampleAction(formData) {
 
   const path = formData.get("path");
   revalidatePath(path);
+  return { msg: "success" };
 }
 
 export async function deleteExampleAction(formData) {
-  "use server";
-
   const supabase = createClient();
   const exampleId = formData.get("exampleId");
 
@@ -255,8 +246,6 @@ export async function deleteExampleAction(formData) {
 }
 
 export async function updateExampleAction(formData) {
-  "use server";
-
   const supabase = createClient();
   const exampleId = formData.get("exampleId");
   const description = formData.get("description");
@@ -280,12 +269,11 @@ export async function updateExampleAction(formData) {
   }
 
   const path = formData.get("path");
+  console.log("revalidate van ", path);
   revalidatePath(path);
 }
 
 export async function uploadResultAction(formData) {
-  "use server";
-
   const supabase = createClient();
   const file = formData.get("file");
   const title = formData.get("title");
@@ -310,7 +298,7 @@ export async function uploadResultAction(formData) {
     return { error: uploadError.message };
   }
 
-  const fileUrl = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/results/${uploadData.path}`;
+  const fileUrl = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/results-pdf/${uploadData.path}`;
 
   const { data: insertData, error: insertError } = await supabase
     .from("work")
@@ -328,7 +316,63 @@ export async function uploadResultAction(formData) {
     console.log("Insert Error:", insertError);
     return { error: insertError.message };
   }
+  console.log("revalidate van ", path);
+  revalidatePath(path);
+}
+
+export async function filterChapterAction(formData) {
+  const levelId = formData.get("levelId");
+
+  redirect(`?levelId=${levelId}`);
+}
+
+export async function uploadFeedbackAction(state, formData) {
+  const supabase = createClient();
+  const feedback = formData.get("feedback");
+  const workId = formData.get("workId");
+  const isShowcase = formData.get("isshowcase") === "true";
+  const path = formData.get("path");
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (user?.user_metadata?.role !== "admin") {
+    throw new Error("Geen admin");
+  }
+
+  const { data, error } = await supabase
+    .from("work")
+    .update({ feedback, isshowcase: isShowcase })
+    .eq("id", workId);
+
+  if (error) {
+    console.log("Update Error:", error);
+    return { error: error.message };
+  }
 
   revalidatePath(path);
-  redirect(path);
+
+  return { msg: "success" };
+}
+
+export async function inviteUserAction(formData) {
+  const supabase = createClient();
+  const email = formData.get("email");
+
+  if (!email) {
+    return { error: "Email is required" };
+  }
+
+  try {
+    const { data, error } = await supabase.auth.admin.inviteUserByEmail(email);
+
+    if (error) {
+      throw error;
+    }
+
+    return { success: true, data };
+  } catch (error) {
+    return { success: false, error: error.message };
+  }
 }

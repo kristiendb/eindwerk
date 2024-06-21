@@ -1,9 +1,7 @@
-import { uploadExampleAction } from "@/functions/actions";
-
-const UploadVoorbeelden = ({ chapterId, params }) => {
+const UploadVoorbeelden = ({ chapterId, params, formAction, state }) => {
   return (
     <div>
-      <form action={uploadExampleAction}>
+      <form action={formAction}>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2">
             Omschrijving

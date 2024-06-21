@@ -1,9 +1,7 @@
-import { uploadTasksAction } from "@/functions/actions";
-
-const UploadOpdrachten = ({ chapterId, params }) => {
+const UploadOpdrachten = ({ chapterId, params, formAction, state }) => {
   return (
     <div>
-      <form action={uploadTasksAction}>
+      <form action={formAction}>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2">
             Titel

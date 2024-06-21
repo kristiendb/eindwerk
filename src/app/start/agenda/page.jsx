@@ -1,6 +1,5 @@
 "use client";
 import Calendar from "@/components/Calendar";
-import React from "react";
 
 const page = () => {
   return (

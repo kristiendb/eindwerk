@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import Courses from "./Courses";
 
-const SideNavigation = () => {
+const SideNavigation = ({ isAdmin }) => {
   const path = usePathname();
   const [showSublist, setShowSublist] = useState(false);
 
@@ -63,16 +63,30 @@ const SideNavigation = () => {
               </ul>
             )}
           </li>
-          <li>
-            <Link
-              href="/start/mijn-werk"
-              className={` text-black hover:font-bold ${
-                path === "/start/mijn-werk" ? "font-bold" : ""
-              }`}
-            >
-              MIJN WERK
-            </Link>
-          </li>
+          {!isAdmin && (
+            <li>
+              <Link
+                href="/start/mijn-werk"
+                className={` text-black hover:font-bold ${
+                  path === "/start/mijn-werk" ? "font-bold" : ""
+                }`}
+              >
+                MIJN WERK
+              </Link>
+            </li>
+          )}
+          {isAdmin && (
+            <li>
+              <Link
+                href="/start/werk-studenten"
+                className={` text-black hover:font-bold ${
+                  path === "/start/werk-studenten" ? "font-bold" : ""
+                }`}
+              >
+                WERK STUDENTEN
+              </Link>
+            </li>
+          )}
           <li>
             <Link
               href="/start/showcases"
@@ -81,16 +95,6 @@ const SideNavigation = () => {
               }`}
             >
               SHOWCASES
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/start/profiel"
-              className={` text-black hover:font-bold ${
-                path === "/start/profiel" ? "font-bold" : ""
-              }`}
-            >
-              MIJN PROFIEL
             </Link>
           </li>
         </ul>

@@ -74,14 +74,47 @@ export const selectCoursesById = async (supabase, id) => {
   return data;
 };
 
-export const selectChaptersByCourseId = async (supabase, courseId) => {
-  let { data, error } = await supabase
+export const selectChaptersByCourseId = async (
+  supabase,
+  courseId,
+  searchParams
+) => {
+  let query = supabase
     .from("chapters")
     .select("*, level (name), course: courses (color, title, id)")
     .eq("courses_idcourses", courseId);
+
+  if (searchParams.levelId && searchParams.levelId !== "all") {
+    query = query.eq("level_idlevel", searchParams.levelId);
+  }
+
+  const { data, error } = await query;
   if (error) throw error;
   return data;
 };
+
+// export const selectChaptersByCourseId = async (
+//   supabase,
+//   courseId,
+//   searchParams
+// ) => {
+//   if (Object.keys(searchParams).length > 0) {
+//     let { data, error } = await supabase
+//       .from("chapters")
+//       .select("*, level (name), course: courses (color, title, id)")
+//       .eq("courses_idcourses", courseId);
+//     if (error) throw error;
+//     return data;
+//   } else {
+//     let { data, error } = await supabase
+//       .from("chapters")
+//       .select("*, level (name), course: courses (color, title, id)")
+//       .eq("courses_idcourses", courseId)
+//       .where("level_id", "eq", searchParams.levelId);
+//     if (error) throw error;
+//     return data;
+//   }
+// };
 
 export const selectTheoryByChapterId = async (supabase, chapterId) => {
   const { data } = await supabase
@@ -133,6 +166,27 @@ export const selectWorkByTaskId = async (supabase, taskId) => {
     .from("work")
     .select("*")
     .eq("tasks_idtasks", taskId);
+  return data;
+};
+
+export const selectWorkByUserId = async (supabase, userId) => {
+  const { data } = await supabase
+    .from("work")
+    .select("*")
+    .eq("users_userid", userId);
+  return data;
+};
+
+export const selectWorkByFeedback = async (supabase) => {
+  const { data } = await supabase.from("work").select("*").is("feedback", null);
+  return data;
+};
+
+export const selectWorkByShowcase = async (supabase) => {
+  const { data } = await supabase
+    .from("work")
+    .select("*")
+    .eq("isshowcase", true);
   return data;
 };
 
