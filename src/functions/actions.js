@@ -376,3 +376,36 @@ export async function inviteUserAction(formData) {
     return { success: false, error: error.message };
   }
 }
+
+export async function addChapterAction(state, formData) {
+  const supabase = createClient();
+  const title = formData.get("title");
+  const description = formData.get("description");
+  const courseId = formData.get("courseId");
+  const levelId = formData.get("levelId");
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (user?.user_metadata?.role !== "admin") {
+    throw new Error("Geen admin");
+  }
+
+  const { data, error } = await supabase.from("chapters").insert([
+    {
+      title,
+      description,
+      courses_idcourses: courseId,
+      level_idlevel: levelId,
+    },
+  ]);
+
+  if (error) {
+    console.log("Insert Error:", error);
+    return { error: error.message };
+  }
+
+  revalidatePath(formData.get("path"));
+  return { msg: "success" };
+}

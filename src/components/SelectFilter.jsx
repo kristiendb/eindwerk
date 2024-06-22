@@ -16,11 +16,13 @@ const SelectFilter = ({ levels, selectedLevel }) => {
         e.target.form.requestSubmit();
       }}
       defaultValue={selectedLevel}
-      className="border border-black rounded-full p-2 w-52"
+      className="border appearance-none border-black  rounded-full pt-2 pb-2 pl-4 pr-4 w-52"
     >
-      <option value="all">Alle niveaus</option>
+      <option value="all" className="text-left">
+        - Filter hier op niveau -
+      </option>
       {levels.map((level) => (
-        <option value={level.id} key={level.id}>
+        <option value={level.id} key={level.id} className="text-left">
           {level.name}
         </option>
       ))}

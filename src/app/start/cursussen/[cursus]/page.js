@@ -3,11 +3,20 @@ import { createClient } from "@/utils/supabase/server";
 import Levels from "@/components/Levels";
 import { slugit } from "@/helpers";
 import Link from "next/link";
+import HoofdstukkenDialog from "@/components/HoofdstukkenDialog";
+import OefeningenDialog from "@/components/OefeningenDialog";
 
 const page = async ({ params, searchParams }) => {
   const [id] = params.cursus.split("-");
   const supabase = createClient();
   const chapters = await selectChaptersByCourseId(supabase, id, searchParams);
+  const { data: userData } = await supabase.auth.getUser();
+
+  let isAdmin = false;
+
+  if (userData?.user?.user_metadata?.role === "admin") {
+    isAdmin = true;
+  }
 
   return (
     <>
@@ -64,6 +73,11 @@ const page = async ({ params, searchParams }) => {
             );
           })}
       </div>
+      {isAdmin && (
+        <div className="flex justify-start mt-4">
+          <HoofdstukkenDialog id={id} params={params} />
+        </div>
+      )}
     </>
   );
 };

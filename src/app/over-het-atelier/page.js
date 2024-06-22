@@ -13,9 +13,12 @@ const page = () => {
         type="single"
         defaultValue="item-1"
         collapsible
-        className="font-libre-franklin"
+        className="font-libre-franklin mt-4"
       >
-        <AccordionItem value="item-1">
+        <AccordionItem
+          value="item-1"
+          className=" border-green-custom border-0.25 rounded-lg pl-2 pr-2"
+        >
           <AccordionTrigger className="font-medium text-xl">
             Introductie
             <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
@@ -63,7 +66,10 @@ const page = () => {
             </div>
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem value="item-2">
+        <AccordionItem
+          value="item-2"
+          className="mt-2 border-green-custom border-0.25 rounded-lg pl-2 pr-2"
+        >
           <AccordionTrigger className="font-medium text-xl">
             Aanpak
             <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
@@ -121,7 +127,10 @@ const page = () => {
             </div>
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem value="item-3">
+        <AccordionItem
+          value="item-3"
+          className="mt-2 border-green-custom border-0.25 rounded-lg pl-2 pr-2"
+        >
           <AccordionTrigger className="font-medium text-xl">
             Materiaal
             <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
@@ -170,7 +179,10 @@ const page = () => {
           </AccordionContent>
         </AccordionItem>
 
-        <AccordionItem value="item-4">
+        <AccordionItem
+          value="item-4"
+          className="mt-2 border-green-custom border-0.25 rounded-lg pl-2 pr-2"
+        >
           <AccordionTrigger className="font-medium text-xl">
             Studietraject
             <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
@@ -219,7 +231,10 @@ const page = () => {
           </AccordionContent>
         </AccordionItem>
 
-        <AccordionItem value="item-5">
+        <AccordionItem
+          value="item-5"
+          className="mt-2 border-green-custom border-0.25 rounded-lg pl-2 pr-2"
+        >
           <AccordionTrigger className="font-medium text-xl">
             Uurrooster
             <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
@@ -268,7 +283,10 @@ const page = () => {
           </AccordionContent>
         </AccordionItem>
 
-        <AccordionItem value="item-6">
+        <AccordionItem
+          value="item-6"
+          className="mt-2 border-green-custom border-0.25 rounded-lg pl-2 pr-2"
+        >
           <AccordionTrigger className="font-medium text-xl">
             Locatie
             <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
@@ -317,7 +335,10 @@ const page = () => {
           </AccordionContent>
         </AccordionItem>
 
-        <AccordionItem value="item-7">
+        <AccordionItem
+          value="item-7"
+          className="mt-2 border-green-custom border-0.25 rounded-lg pl-2 pr-2"
+        >
           <AccordionTrigger className="font-medium text-xl">
             Contact
             <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />

@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { createClient } from "@/utils/supabase/client";
 import {
   Sheet,
   SheetContent,
@@ -10,6 +11,17 @@ import {
 
 const MobileMenu = ({ user, path, handleLogout }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+  useEffect(() => {
+    const getUser = async () => {
+      const supabase = createClient();
+      const { data, error } = await supabase.auth.getUser();
+      if (data?.user?.user_metadata?.role === "admin") {
+        setIsAdmin(true);
+      }
+    };
+    getUser();
+  }, []);
 
   const handleLinkClick = () => {
     setIsOpen(false);
@@ -18,7 +30,7 @@ const MobileMenu = ({ user, path, handleLogout }) => {
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
-        <button className="p-2 rounded-md focus:outline-none md:hidden">
+        <button className="p-2 rounded-md focus:outline-none lg:hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -105,17 +117,33 @@ const MobileMenu = ({ user, path, handleLogout }) => {
                       Cursus
                     </Link>
                   </li>
-                  <li className="py-2 border-b">
-                    <Link
-                      href="/start/mijn-werk"
-                      className={`text-gray-800 ${
-                        path === "/start/mijn-werk" ? "font-bold" : ""
-                      }`}
-                      onClick={handleLinkClick}
-                    >
-                      Mijn werk
-                    </Link>
-                  </li>
+                  {!isAdmin && (
+                    <li className="py-2 border-b">
+                      <Link
+                        href="/start/mijn-werk"
+                        className={`text-gray-800 ${
+                          path === "/start/mijn-werk" ? "font-bold" : ""
+                        }`}
+                        onClick={handleLinkClick}
+                      >
+                        Mijn werk
+                      </Link>
+                    </li>
+                  )}
+                  {isAdmin && (
+                    <li className="py-2 border-b">
+                      <Link
+                        href="/start/werk-studenten"
+                        className={`text-gray-800 ${
+                          path === "/start/werk-studenten" ? "font-bold" : ""
+                        }`}
+                        onClick={handleLinkClick}
+                      >
+                        Werk studenten
+                      </Link>
+                    </li>
+                  )}
+
                   <li className="py-2 border-b">
                     <Link
                       href="/start/showcases"

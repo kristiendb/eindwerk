@@ -19,7 +19,7 @@ const page = async ({ params }) => {
   const workData = await selectWorkByFeedback(supabase);
 
   return (
-    <div className="flex flex-wrap -mx-2 md:ml-12 md:mr-9 lg:mr-12">
+    <div className="flex flex-wrap -mx-2 lg:ml-12 lg:mr-12">
       <div className="w-full">
         <h2 className="text-4xl pb-8">Werk studenten</h2>
       </div>

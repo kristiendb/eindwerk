@@ -17,7 +17,7 @@ const Page = async () => {
   const workData = await selectWorkByUserId(supabase, userId);
 
   return (
-    <div className="flex flex-wrap -mx-2 md:ml-12 md:mr-9 lg:mr-12">
+    <div className="flex flex-wrap -mx-2 lg:ml-12 lg:mr-12">
       <div className="w-full">
         <h2 className="text-4xl pb-8">Mijn werk</h2>
       </div>

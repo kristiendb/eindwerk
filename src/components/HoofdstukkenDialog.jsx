@@ -9,14 +9,28 @@ import {
 } from "@/components/ui/dialog";
 import { useFormState } from "react-dom";
 import { useEffect, useState } from "react";
-import { updateIntroductionAction } from "@/functions/actions";
-import UpdateInleiding from "./UpdateInleiding";
+import { addChapterAction } from "@/functions/actions";
+import UploadHoofdstukken from "@/components/UploadHoofdstukken";
+import { selectLevels } from "@/functions/queries";
+import { createClient } from "@/utils/supabase/client";
 
-const InleidingDialog = ({ params, id, theory }) => {
-  const [state, formAction] = useFormState(updateIntroductionAction, {
+const HoofdstukkenDialog = ({ params, id }) => {
+  const [state, formAction] = useFormState(addChapterAction, {
     msg: "pending",
   });
   const [open, setOpen] = useState(false);
+  const [levels, setLevels] = useState([]);
+
+  useEffect(() => {
+    const fetchLevels = async () => {
+      const supabase = createClient();
+      const levels = await selectLevels(supabase);
+      setLevels(levels);
+    };
+
+    fetchLevels();
+  }, []);
+
   useEffect(() => {
     if (state.msg === "success") {
       setOpen(false);
@@ -30,28 +44,26 @@ const InleidingDialog = ({ params, id, theory }) => {
         }}
         className="pt-1 pb-1 pl-3 pr-3 bg-beige-custom text-black rounded-full border-0.25 border-beige-custom hover:bg-white hover:text-black hover:border-green hover:border-0.25  hover:transition-all duration-700"
       >
-        Wijzig Inleiding
+        Voeg hoofdstuk toe
       </button>
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>
-              Wijzig Inleiding
-              {/* {theory?.introduction
-                  ? "Bewerk Introductie"
-                  : "Voeg Introductie Toe"} */}
-            </DialogTitle>
+            <DialogTitle>Voeg een hoofdstuk toe</DialogTitle>
+            <DialogDescription>
+              Vul de volgende velden in om een hoofdstuk toe te voegen.
+            </DialogDescription>
           </DialogHeader>
-          <UpdateInleiding
+          <UploadHoofdstukken
             formAction={formAction}
             state={state}
+            courseId={id}
             params={params}
-            theory={theory}
-            id={id}
+            levels={levels}
           />
         </DialogContent>
       </Dialog>
     </div>
   );
 };
-export default InleidingDialog;
+export default HoofdstukkenDialog;

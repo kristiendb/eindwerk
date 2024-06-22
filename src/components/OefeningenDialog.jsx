@@ -28,7 +28,7 @@ const OefeningenDialog = ({ params, id }) => {
         onClick={(e) => {
           setOpen(true);
         }}
-        className="mt-4 pt-3 pb-3 pl-6 pr-6 bg-black text-white rounded-full"
+        className="pt-1 pb-1 pl-3 pr-3 bg-beige-custom text-black rounded-full border-0.25 border-beige-custom hover:bg-white hover:text-black hover:border-green hover:border-0.25  hover:transition-all duration-700"
       >
         Upload oefening
       </button>

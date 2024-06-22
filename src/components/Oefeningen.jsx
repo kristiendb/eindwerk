@@ -46,12 +46,12 @@ const Oefeningen = async ({ params }) => {
                 index !== tasks.length - 1 ? "border-b border-gray-300" : ""
               }`}
             >
-              <div className="flex justify-between items-center">
-                <div className="w-full md:w-3/5 text-base flex flex-col">
+              <div className="flex flex-col md:flex-row justify-between items-center">
+                <div className="w-full md:w-2/6 text-base flex flex-col">
                   <p className="font-bold">{task.title}</p>
                   <p>{task.description}</p>
                 </div>
-                <div className="flex items-center space-x-4">
+                <div className="flex items-center w-full mt-2 md:mt-0 md:justify-end space-x-4">
                   <a
                     href={task.taskpdf}
                     target="_blank"
@@ -70,8 +70,19 @@ const Oefeningen = async ({ params }) => {
                         }
                       />
                       <input type="hidden" name="taskId" value={task.id} />
-                      <button className="bg-slate-200 rounded-full p-3 text-red-600 font-bold">
-                        X
+                      <button className=" text-red-custom">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          className="size-10"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-1.72 6.97a.75.75 0 1 0-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 1 0 1.06 1.06L12 13.06l1.72 1.72a.75.75 0 1 0 1.06-1.06L13.06 12l1.72-1.72a.75.75 0 1 0-1.06-1.06L12 10.94l-1.72-1.72Z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
                       </button>
                     </form>
                   )}

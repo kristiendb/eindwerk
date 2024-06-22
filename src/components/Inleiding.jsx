@@ -25,7 +25,7 @@ const Inleiding = async ({ params }) => {
 
   return (
     <div className="w-full flex flex-col space-y-4">
-      <div className="w-full text-sm">
+      <div className="w-full text-base">
         <p>{theory?.introduction || "Geen inleiding beschikbaar"}</p>
         {isAdmin && (
           <div className="w-full flex mt-4">

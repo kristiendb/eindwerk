@@ -6,7 +6,7 @@ export default function LoginPage({ searchParams }) {
   return (
     <>
       <div className="bg-yellow-custom w-full h-screen ">
-        <div className="items-center pt-24 pl-12 pr-12 md:ml-60 md:w-100 md:pt-32">
+        <div className="items-center pt-24 pl-12 pr-12 md:w-100 md:ml-40 lg:ml-60 lg:w-100 lg:pt-32">
           <h3 className="font-medium text-4xl pb-5">Aan de slag!</h3>
           <p className="pb-8">
             Cursusmateriaal voor studenten van het atelier Grafisch ontwerp &

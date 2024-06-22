@@ -13,10 +13,10 @@ const layout = async ({ children }) => {
   return (
     <>
       <div className="display flex">
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <SideNavigation isAdmin={isAdmin} />
         </div>
-        <section className="w-full pt-8 p-3 md:p-8 mx-auto">{children}</section>
+        <section className="w-full pt-8 lg:p-8  mx-auto">{children}</section>
       </div>
     </>
   );
