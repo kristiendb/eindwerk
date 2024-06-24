@@ -21,7 +21,7 @@ const Page = async () => {
               <Link
                 key={id}
                 href={`/start/cursussen/${id}-${slugit(title)}`}
-                className={`${colSpanClass} row-span-1 h-40 md:h-72 ${color} rounded-3xl md:pl-6 md:pr-6 md:pt-8 pl-4 pr-4 pt-6 font-bold text-lg`}
+                className={`${colSpanClass} row-span-1 h-40 md:h-72 bg-${color} rounded-3xl md:pl-6 md:pr-6 md:pt-8 pl-4 pr-4 pt-6 font-bold text-lg`}
               >
                 <div>{title}</div>
               </Link>

@@ -159,16 +159,37 @@ export async function uploadTheoryAction(formData) {
 
   const fileUrl = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/theory-pdf/${uploadData.path}`;
 
-  const { data: insertData, error } = await supabase.from("theory").insert([
-    {
-      chapters_idchapters: parseInt(chapterId),
-      description: description,
-      theorypdf: fileUrl,
-    },
-  ]);
-  if (error) {
-    console.log(error);
+  const { data: existingData } = await supabase
+    .from("theory")
+    .select("id")
+    .eq("chapters_idchapters", chapterId)
+    .single();
+
+  if (existingData) {
+    const { data: updateData } = await supabase
+      .from("theory")
+      .update({ description, theorypdf: fileUrl })
+      .eq("chapters_idchapters", chapterId);
+  } else {
+    const { data: insertData } = await supabase.from("theory").insert([
+      {
+        chapters_idchapters: parseInt(chapterId),
+        description: description,
+        theorypdf: fileUrl,
+      },
+    ]);
   }
+
+  // const { data: insertData, error } = await supabase.from("theory").insert([
+  //   {
+  //     chapters_idchapters: parseInt(chapterId),
+  //     description: description,
+  //     theorypdf: fileUrl,
+  //   },
+  // ]);
+  // if (error) {
+  //   console.log(error);
+  // }
   revalidatePath(formData.get("path"));
 }
 

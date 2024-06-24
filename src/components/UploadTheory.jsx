@@ -1,6 +1,7 @@
 import { uploadTheoryAction } from "@/functions/actions";
 
-const UploadTheory = ({ chapterId, params }) => {
+const UploadTheory = ({ chapterId, params, theory }) => {
+  // const formAction = theory.introduction ? updateTheoryAction : uploadTheoryAction;
   return (
     <div>
       <form action={uploadTheoryAction}>

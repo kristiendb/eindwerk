@@ -80,7 +80,7 @@ const Theorie = async ({ params }) => {
                     Vul de volgende velden in om de theorie te uploaden.
                   </DialogDescription>
                 </DialogHeader>
-                <UploadTheory chapterId={id} params={params} />
+                <UploadTheory chapterId={id} params={params} theory={theory} />
               </DialogContent>
             </Dialog>
           ) : (
