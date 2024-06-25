@@ -53,6 +53,9 @@ module.exports = {
       width: {
         100: "25rem", // 400px
       },
+      animation: {
+        spin: "spin 1s linear infinite",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

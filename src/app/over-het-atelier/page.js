@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import "@/components/ui/accordion.css";
 import { ChevronDown } from "lucide-react";
 
 const page = () => {
@@ -13,18 +14,18 @@ const page = () => {
         type="single"
         defaultValue="item-1"
         collapsible
-        className="font-libre-franklin mt-4"
+        className="font-libre-franklin mt-4 transition-all"
       >
         <AccordionItem
           value="item-1"
-          className=" border-green-custom border-0.25 rounded-lg pl-2 pr-2"
+          className=" border-green-custom border-0.25 rounded-lg pl-2 pr-2 "
         >
           <AccordionTrigger className="font-medium text-xl">
             Introductie
             <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
           </AccordionTrigger>
-          <AccordionContent>
-            <div className="md:flex text-base md:w-3/4 pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
+          <AccordionContent className="AccordionContent">
+            <div className="md:flex text-base md:w-3/4 pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0 ">
               <div className="md:w-1/2">
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem

@@ -379,7 +379,7 @@ export async function uploadFeedbackAction(state, formData) {
   return { msg: "success" };
 }
 
-export async function inviteUserAction(formData) {
+export async function inviteUserAction(state, formData) {
   const supabase = createClient(true);
   const email = formData.get("email");
   const path = formData.get("path");

@@ -17,7 +17,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-
+import SubmitButton from "./SubmitButton";
 import { Button } from "@/components/ui/button";
 import { deleteUserAction } from "@/functions/actions";
 import { useFormState } from "react-dom";
@@ -61,12 +61,16 @@ const StudentsTable = ({ columns, data }) => {
                       value={"/start/studenten"}
                     />
                     <input type="hidden" name="id" value={row.original.id} />
-                    <button
+                    <SubmitButton
+                      label="Verwijder student"
+                      className={"bg-red-500 text-green-500"}
+                    />
+                    {/* <button
                       type="submit"
                       className="bg-red-custom border-0.25 border-red-custom hover:bg-white hover:text-red-custom  hover:transition-all hover:duration-300 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                     >
                       verwijder student
-                    </button>
+                    </button> */}
                   </form>
                 </div>
               </DialogContent>
