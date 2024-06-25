@@ -18,7 +18,7 @@ const Courses = () => {
 
   useEffect(() => {
     getCourses();
-  }, []);
+  }, [getCourses]);
   return (
     <>
       {courses &&
