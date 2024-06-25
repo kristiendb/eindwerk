@@ -4,7 +4,8 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { createClient } from "@/utils/supabase/server";
 
-export async function login(formData) {
+export async function login(state, formData) {
+  "use server";
   const supabase = createClient();
 
   const data = {
@@ -17,9 +18,11 @@ export async function login(formData) {
   if (error) {
     return redirect(`/login?error=Ongeldig%20e-mailadres%20of%20wachtwoord`);
   }
-
-  revalidatePath("/start", "layout");
-  redirect("/start");
+  return {
+    msg: "success",
+  };
+  // revalidatePath("/", "layout");
+  // redirect("/start");
 }
 
 export async function forgotPassword(formData) {

@@ -22,6 +22,7 @@ const Navigation = () => {
   }, []);
   const handleLogout = async () => {
     await logoutClient();
+    window.location.href = "/";
   };
   return (
     <>

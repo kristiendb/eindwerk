@@ -378,8 +378,9 @@ export async function uploadFeedbackAction(state, formData) {
 }
 
 export async function inviteUserAction(formData) {
-  const supabase = createClient();
+  const supabase = createClient(true);
   const email = formData.get("email");
+  const path = formData.get("path");
 
   if (!email) {
     return { error: "Email is required" };
@@ -391,7 +392,7 @@ export async function inviteUserAction(formData) {
     if (error) {
       throw error;
     }
-
+    revalidatePath(path);
     return { success: true, data };
   } catch (error) {
     return { success: false, error: error.message };
@@ -427,6 +428,18 @@ export async function addChapterAction(state, formData) {
     return { error: error.message };
   }
 
+  revalidatePath(formData.get("path"));
+  return { msg: "success" };
+}
+
+export async function deleteUserAction(state, formData) {
+  const id = formData.get("id");
+  // console.log(id);
+  const supabase = createClient(true);
+  const { data, error } = await supabase.auth.admin.deleteUser(id);
+  // console.log(data);
+
+  // console.log(error);
   revalidatePath(formData.get("path"));
   return { msg: "success" };
 }

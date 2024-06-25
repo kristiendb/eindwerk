@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import {
   Dialog,
@@ -6,24 +7,19 @@ import {
   DialogTitle,
   DialogTrigger,
   DialogClose,
-} from "@/components/ui/dialog"; // Zorg ervoor dat je een dialoog component hebt
-import { useFormState } from "react-dom";
+} from "@/components/ui/dialog";
 import { createClient } from "@/utils/supabase/client";
-import { useRouter } from "next/router";
 
 const AddEventDialog = ({ isAdmin, onEventAdded }) => {
   const [open, setOpen] = useState(false);
-  const [state, formAction] = useFormState(null, { msg: "pending" });
-  const router = useRouter();
+  const [title, setTitle] = useState("");
+  const [starttime, setStarttime] = useState("");
+  const [endtime, setEndtime] = useState("");
+  const [description, setDescription] = useState("");
+  const [link, setLink] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const formData = new FormData(event.target);
-    const title = formData.get("title");
-    const starttime = formData.get("starttime");
-    const endtime = formData.get("endtime");
-    const description = formData.get("description");
-    const link = formData.get("link");
 
     const supabase = createClient();
     const { data, error } = await supabase
@@ -31,11 +27,16 @@ const AddEventDialog = ({ isAdmin, onEventAdded }) => {
       .insert([{ title, starttime, endtime, description, link }]);
 
     if (error) {
-      console.error(error);
+      console.error("Insert Error:", error);
     } else {
-      onEventAdded(data[0]);
+      if (data && data.length > 0) {
+        onEventAdded(data[0]);
+      } else {
+        console.error("Insert succeeded but no data returned");
+      }
       setOpen(false);
     }
+    window.location.href = "/start/agenda";
   };
 
   return (
@@ -60,6 +61,8 @@ const AddEventDialog = ({ isAdmin, onEventAdded }) => {
                 <input
                   type="text"
                   name="title"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   required
                 />
@@ -71,6 +74,8 @@ const AddEventDialog = ({ isAdmin, onEventAdded }) => {
                 <input
                   type="datetime-local"
                   name="starttime"
+                  value={starttime}
+                  onChange={(e) => setStarttime(e.target.value)}
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   required
                 />
@@ -82,6 +87,8 @@ const AddEventDialog = ({ isAdmin, onEventAdded }) => {
                 <input
                   type="datetime-local"
                   name="endtime"
+                  value={endtime}
+                  onChange={(e) => setEndtime(e.target.value)}
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   required
                 />
@@ -92,6 +99,8 @@ const AddEventDialog = ({ isAdmin, onEventAdded }) => {
                 </label>
                 <textarea
                   name="description"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 ></textarea>
               </div>
@@ -102,6 +111,8 @@ const AddEventDialog = ({ isAdmin, onEventAdded }) => {
                 <input
                   type="url"
                   name="link"
+                  value={link}
+                  onChange={(e) => setLink(e.target.value)}
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 />
               </div>

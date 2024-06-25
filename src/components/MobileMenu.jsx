@@ -155,6 +155,20 @@ const MobileMenu = ({ user, path, handleLogout }) => {
                       Showcases
                     </Link>
                   </li>
+                  {isAdmin && (
+                    <li className="py-2 border-b">
+                      <Link
+                        href="/start/studenten"
+                        className={`text-gray-800 ${
+                          path === "/start/studenten" ? "font-bold" : ""
+                        }`}
+                        onClick={handleLinkClick}
+                      >
+                        Studenten
+                      </Link>
+                    </li>
+                  )}
+
                   <li
                     onClick={handleLogout}
                     className="cursor-pointer py-2 border-b text-gray-800"

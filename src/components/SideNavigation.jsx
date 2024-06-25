@@ -97,6 +97,18 @@ const SideNavigation = ({ isAdmin }) => {
               SHOWCASES
             </Link>
           </li>
+          {isAdmin && (
+            <li>
+              <Link
+                href="/start/studenten"
+                className={` text-black hover:font-bold ${
+                  path === "/start/studenten" ? "font-bold" : ""
+                }`}
+              >
+                STUDENTEN
+              </Link>
+            </li>
+          )}
         </ul>
       </nav>
     </>
