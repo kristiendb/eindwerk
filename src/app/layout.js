@@ -18,7 +18,7 @@ const layout = ({ children }) => {
           property="og:description"
           content="studentenplatform voor grafisch ontwerp en illustratie"
         />
-        <meta property="og:image" content="/go-i_building.jpg" />
+        <meta property="og:image" content="/GO-I_Building.jpg" />
         <NextTopLoader
           color="#70f0b3"
           initialPosition={0.08}
