@@ -6,10 +6,32 @@ import {
 } from "@/components/ui/accordion";
 import "@/components/ui/accordion.css";
 import { ChevronDown } from "lucide-react";
+import Image from "next/image";
 
 const page = () => {
   return (
     <>
+      <div className="flex flex-row mx-auto gap-20 pl-10 pr-10 pt-4 ">
+        <Image
+          src="/GO-I_Building.jpg"
+          alt="Grafisch ontwerp & illustratie - Sint-Lukas Academie Schaarbeek"
+          layout="responsive"
+          width={40} // De gewenste breedte van de afbeelding
+          height={60} // De hoogte van de afbeelding, ingesteld om de aspect ratio te behouden
+          objectFit="cover"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
+        <Image
+          src="/GO-I_Building-2.jpg"
+          alt="Grafisch ontwerp & illustratie - Sint-Lukas Academie Schaarbeek"
+          layout="responsive"
+          width={50} // De gewenste breedte van de afbeelding
+          height={70} // De hoogte van de afbeelding, ingesteld om de aspect ratio te behouden
+          objectFit="cover"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="hidden lg:block"
+        />
+      </div>
       <Accordion
         type="single"
         defaultValue="item-1"
@@ -28,40 +50,36 @@ const page = () => {
             <div className="md:flex text-base md:w-3/4 pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0 ">
               <div className="md:w-1/2">
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-                  ratione recusandae, vero velit impedit animi voluptatum? Neque
-                  odit fugiat consectetur adipisci fuga numquam accusamus sunt
-                  nostrum impedit unde iure eveniet minima, sed illum! Voluptas
-                  autem, voluptate excepturi voluptatum voluptatem animi? Lorem
-                  ipsum dolor sit amet consectetur adipisicing elit. Possimus,
-                  dicta sunt. Esse laborum, ipsum fuga, molestias molestiae ad
-                  doloremque aut expedita ut consequatur facere ex? Illum
-                  nostrum iste ducimus quia porro, explicabo numquam eveniet
-                  aspernatur commodi sint tempora doloribus quasi delectus
-                  molestias? Cupiditate modi vel unde officia! Inventore alias
-                  iste necessitatibus, recusandae cumque eum accusantium ratione
-                  incidunt tenetur velit, deserunt ad quisquam tempora
-                  veritatis, doloremque nostrum ipsa quae. Quidem consectetur
-                  est rem et iusto? Non ab facilis ipsum reiciendis labore!
+                  Binnen de opleiding Grafisch Ontwerp en Illustratie kies je
+                  ervoor als starter het vak Grafisch Ontwerp en Illustratie
+                  (starters) te volgen op maandag. Heb je meer ervaring, volg je
+                  het vak Grafisch Ontwerp en Illustratie (verdieping) op
+                  dinsdag. Het is ook mogelijk om de twee avonden te combineren
+                  en op die manier sneller in de praktijk te brengen wat je
+                  leert.
+                  <br />
+                  <br />
+                  Grafisch ontwerp en illustratie zijn sterk verbonden met de
+                  andere kunsten. Ook hier worden kleur, lijn, vorm en andere
+                  beeldelementen bewust ingezet. Vaak werkt een ontwerper of
+                  illustrator naar opdracht. Dat is geen beperking maar een
+                  uitdaging om conceptueel te denken en een eigen beeldtaal te
+                  ontwikkelen. Typisch voor dit atelier is het gebruik van
+                  typografie en lettering, de aandacht voor lay-out en
+                  realisatie. Denk aan affiches, boeken, zines, huisstijlen,
+                  websites, …
                 </p>
               </div>
               <div className="md:w-1/2">
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-                  ratione recusandae, vero velit impedit animi voluptatum? Neque
-                  odit fugiat consectetur adipisci fuga numquam accusamus sunt
-                  nostrum impedit unde iure eveniet minima, sed illum! Voluptas
-                  autem, voluptate excepturi voluptatum voluptatem animi? Lorem
-                  ipsum dolor sit amet consectetur adipisicing elit. Possimus,
-                  dicta sunt. Esse laborum, ipsum fuga, molestias molestiae ad
-                  doloremque aut expedita ut consequatur facere ex? Illum
-                  nostrum iste ducimus quia porro, explicabo numquam eveniet
-                  aspernatur commodi sint tempora doloribus quasi delectus
-                  molestias? Cupiditate modi vel unde officia! Inventore alias
-                  iste necessitatibus, recusandae cumque eum accusantium ratione
-                  incidunt tenetur velit, deserunt ad quisquam tempora
-                  veritatis, doloremque nostrum ipsa quae. Quidem consectetur
-                  est rem et iusto? Non ab facilis ipsum reiciendis labore!
+                  In het atelier ligt de nadruk op experiment, creatief denken
+                  en een kritische houding in het ontwerpproces. We proberen
+                  immers ontwerpen te maken met een sterke connectie tussen
+                  inhoud en vorm, niet enkel mooie plaatjes. Digitale technieken
+                  en computervaardigheden zijn belangrijk, maar je gebruikt ze
+                  zoals je wil. Mixed media tussen analoge en digitale
+                  technieken is uniek aan dit atelier. Adobe Photoshop, Adobe
+                  Illustrator en Adobe InDesign komen aan bod.
                 </p>
               </div>
             </div>
@@ -86,21 +104,21 @@ const page = () => {
                   tot de grote thema&apos;s van grafisch ontwerp en illustratie
                   staan op de agenda. Je krijgt tijd en ruimte om via oefeningen
                   je basisvaardigheden te ontwikkelen. In opdrachten pas je toe
-                  wat je leerde, op een persoonlijke en creatieve manier. <br />{" "}
-                  <br />
-                  INTRODUCTIE & BASIS
-                  <br />
-                  <ul className="list-disc list-inside">
-                    <li className="pl-2">Voor wie start of wil groeien</li>
-                    <li className="pl-2">
-                      Focus op basisvaardigheden en mogelijkheden
-                    </li>
-                    <li className="pl-2">
-                      Eigen grafische/illustratieve taal ontdekken
-                    </li>
-                    <li className="pl-2">Technisch basisvaardigheden</li>
-                  </ul>
+                  wat je leerde, op een persoonlijke en creatieve manier. <br />
                 </p>
+                <br />
+                INTRODUCTIE & BASIS
+                <br />
+                <ul className="list-disc list-inside">
+                  <li className="pl-2">Voor wie start of wil groeien</li>
+                  <li className="pl-2">
+                    Focus op basisvaardigheden en mogelijkheden
+                  </li>
+                  <li className="pl-2">
+                    Eigen grafische/illustratieve taal ontdekken
+                  </li>
+                  <li className="pl-2">Technisch basisvaardigheden</li>
+                </ul>
               </div>
               <div className="md:w-1/2">
                 <p>
@@ -114,16 +132,16 @@ const page = () => {
                   inzicht. Via grafische technieken als zeefdruk of risoprint
                   realiseer je ook zelf een ontwerp.
                   <br />
-                  <br /> VERDIEPING & VERFIJNING <br />
-                  <ul className="list-disc list-inside">
-                    <li className="pl-2">Voor wie al ervaring heeft</li>
-                    <li className="pl-2">Focus op realisatie en portfolio</li>
-                    <li className="pl-2">
-                      Eigen grafische/illustratieve taal verdiepen
-                    </li>
-                    <li className="pl-2">Technisch verfijnen</li>
-                  </ul>
                 </p>
+                <br /> VERDIEPING & VERFIJNING <br />
+                <ul className="list-disc list-inside">
+                  <li className="pl-2">Voor wie al ervaring heeft</li>
+                  <li className="pl-2">Focus op realisatie en portfolio</li>
+                  <li className="pl-2">
+                    Eigen grafische/illustratieve taal verdiepen
+                  </li>
+                  <li className="pl-2">Technisch verfijnen</li>
+                </ul>
               </div>
             </div>
           </AccordionContent>
@@ -140,41 +158,18 @@ const page = () => {
             <div className="md:flex md:w-3/4 text-base pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
               <div className="md:w-1/2">
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-                  ratione recusandae, vero velit impedit animi voluptatum? Neque
-                  odit fugiat consectetur adipisci fuga numquam accusamus sunt
-                  nostrum impedit unde iure eveniet minima, sed illum! Voluptas
-                  autem, voluptate excepturi voluptatum voluptatem animi? Lorem
-                  ipsum dolor sit amet consectetur adipisicing elit. Possimus,
-                  dicta sunt. Esse laborum, ipsum fuga, molestias molestiae ad
-                  doloremque aut expedita ut consequatur facere ex? Illum
-                  nostrum iste ducimus quia porro, explicabo numquam eveniet
-                  aspernatur commodi sint tempora doloribus quasi delectus
-                  molestias? Cupiditate modi vel unde officia! Inventore alias
-                  iste necessitatibus, recusandae cumque eum accusantium ratione
-                  incidunt tenetur velit, deserunt ad quisquam tempora
-                  veritatis, doloremque nostrum ipsa quae. Quidem consectetur
-                  est rem et iusto? Non ab facilis ipsum reiciendis labore!
+                  In het atelier kan je gebruikmaken van een computer, scanner,
+                  tekentablet en printer. Je mag uiteraard op je eigen tablet of
+                  laptop werken. Je kan als leerling van de academie voordelig
+                  een Adobe Creative Cloud abonnement aankopen voor 1 jaar. Er
+                  zijn een paar basis teken- en schildermaterialen aanwezig om
+                  uit te proberen. Dit kan je aanvullen met jouw eigen favoriete
+                  materialen. Tekenpapier, prints en uitstappen zijn niet
+                  inbegrepen in het inschrijvingsgeld.
                 </p>
               </div>
               <div className="md:w-1/2">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-                  ratione recusandae, vero velit impedit animi voluptatum? Neque
-                  odit fugiat consectetur adipisci fuga numquam accusamus sunt
-                  nostrum impedit unde iure eveniet minima, sed illum! Voluptas
-                  autem, voluptate excepturi voluptatum voluptatem animi? Lorem
-                  ipsum dolor sit amet consectetur adipisicing elit. Possimus,
-                  dicta sunt. Esse laborum, ipsum fuga, molestias molestiae ad
-                  doloremque aut expedita ut consequatur facere ex? Illum
-                  nostrum iste ducimus quia porro, explicabo numquam eveniet
-                  aspernatur commodi sint tempora doloribus quasi delectus
-                  molestias? Cupiditate modi vel unde officia! Inventore alias
-                  iste necessitatibus, recusandae cumque eum accusantium ratione
-                  incidunt tenetur velit, deserunt ad quisquam tempora
-                  veritatis, doloremque nostrum ipsa quae. Quidem consectetur
-                  est rem et iusto? Non ab facilis ipsum reiciendis labore!
-                </p>
+                <p></p>
               </div>
             </div>
           </AccordionContent>
@@ -192,41 +187,17 @@ const page = () => {
             <div className="md:flex md:w-3/4 text-base pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
               <div className="md:w-1/2">
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-                  ratione recusandae, vero velit impedit animi voluptatum? Neque
-                  odit fugiat consectetur adipisci fuga numquam accusamus sunt
-                  nostrum impedit unde iure eveniet minima, sed illum! Voluptas
-                  autem, voluptate excepturi voluptatum voluptatem animi? Lorem
-                  ipsum dolor sit amet consectetur adipisicing elit. Possimus,
-                  dicta sunt. Esse laborum, ipsum fuga, molestias molestiae ad
-                  doloremque aut expedita ut consequatur facere ex? Illum
-                  nostrum iste ducimus quia porro, explicabo numquam eveniet
-                  aspernatur commodi sint tempora doloribus quasi delectus
-                  molestias? Cupiditate modi vel unde officia! Inventore alias
-                  iste necessitatibus, recusandae cumque eum accusantium ratione
-                  incidunt tenetur velit, deserunt ad quisquam tempora
-                  veritatis, doloremque nostrum ipsa quae. Quidem consectetur
-                  est rem et iusto? Non ab facilis ipsum reiciendis labore!
+                  Leerlingen die de opleiding Grafisch Ontwerp en Illustratie
+                  volgen, kiezen uit een traject van 1 avond/week (lang traject,
+                  10 jaar) of 2 avonden/week (middellang traject, 5 jaar).
+                  Leerlingen die 1 avond/week volgen, kiezen op basis van hun
+                  voorkennis voor een specifieke avond. Opgelet! Voor een
+                  overstap tussen deze twee trajecten contacteer je best het
+                  onthaal van de academie: info.academie@sintlukas.brussels.
                 </p>
               </div>
               <div className="md:w-1/2">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-                  ratione recusandae, vero velit impedit animi voluptatum? Neque
-                  odit fugiat consectetur adipisci fuga numquam accusamus sunt
-                  nostrum impedit unde iure eveniet minima, sed illum! Voluptas
-                  autem, voluptate excepturi voluptatum voluptatem animi? Lorem
-                  ipsum dolor sit amet consectetur adipisicing elit. Possimus,
-                  dicta sunt. Esse laborum, ipsum fuga, molestias molestiae ad
-                  doloremque aut expedita ut consequatur facere ex? Illum
-                  nostrum iste ducimus quia porro, explicabo numquam eveniet
-                  aspernatur commodi sint tempora doloribus quasi delectus
-                  molestias? Cupiditate modi vel unde officia! Inventore alias
-                  iste necessitatibus, recusandae cumque eum accusantium ratione
-                  incidunt tenetur velit, deserunt ad quisquam tempora
-                  veritatis, doloremque nostrum ipsa quae. Quidem consectetur
-                  est rem et iusto? Non ab facilis ipsum reiciendis labore!
-                </p>
+                <p></p>
               </div>
             </div>
           </AccordionContent>
@@ -243,42 +214,10 @@ const page = () => {
           <AccordionContent>
             <div className="md:flex md:w-3/4 text-base pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
               <div className="md:w-1/2">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-                  ratione recusandae, vero velit impedit animi voluptatum? Neque
-                  odit fugiat consectetur adipisci fuga numquam accusamus sunt
-                  nostrum impedit unde iure eveniet minima, sed illum! Voluptas
-                  autem, voluptate excepturi voluptatum voluptatem animi? Lorem
-                  ipsum dolor sit amet consectetur adipisicing elit. Possimus,
-                  dicta sunt. Esse laborum, ipsum fuga, molestias molestiae ad
-                  doloremque aut expedita ut consequatur facere ex? Illum
-                  nostrum iste ducimus quia porro, explicabo numquam eveniet
-                  aspernatur commodi sint tempora doloribus quasi delectus
-                  molestias? Cupiditate modi vel unde officia! Inventore alias
-                  iste necessitatibus, recusandae cumque eum accusantium ratione
-                  incidunt tenetur velit, deserunt ad quisquam tempora
-                  veritatis, doloremque nostrum ipsa quae. Quidem consectetur
-                  est rem et iusto? Non ab facilis ipsum reiciendis labore!
-                </p>
+                <p>Elke les gaat door van 17:40 tot 21u.</p>
               </div>
               <div className="md:w-1/2">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-                  ratione recusandae, vero velit impedit animi voluptatum? Neque
-                  odit fugiat consectetur adipisci fuga numquam accusamus sunt
-                  nostrum impedit unde iure eveniet minima, sed illum! Voluptas
-                  autem, voluptate excepturi voluptatum voluptatem animi? Lorem
-                  ipsum dolor sit amet consectetur adipisicing elit. Possimus,
-                  dicta sunt. Esse laborum, ipsum fuga, molestias molestiae ad
-                  doloremque aut expedita ut consequatur facere ex? Illum
-                  nostrum iste ducimus quia porro, explicabo numquam eveniet
-                  aspernatur commodi sint tempora doloribus quasi delectus
-                  molestias? Cupiditate modi vel unde officia! Inventore alias
-                  iste necessitatibus, recusandae cumque eum accusantium ratione
-                  incidunt tenetur velit, deserunt ad quisquam tempora
-                  veritatis, doloremque nostrum ipsa quae. Quidem consectetur
-                  est rem et iusto? Non ab facilis ipsum reiciendis labore!
-                </p>
+                <p></p>
               </div>
             </div>
           </AccordionContent>
@@ -296,41 +235,12 @@ const page = () => {
             <div className="md:flex md:w-3/4 text-base pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
               <div className="md:w-1/2">
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-                  ratione recusandae, vero velit impedit animi voluptatum? Neque
-                  odit fugiat consectetur adipisci fuga numquam accusamus sunt
-                  nostrum impedit unde iure eveniet minima, sed illum! Voluptas
-                  autem, voluptate excepturi voluptatum voluptatem animi? Lorem
-                  ipsum dolor sit amet consectetur adipisicing elit. Possimus,
-                  dicta sunt. Esse laborum, ipsum fuga, molestias molestiae ad
-                  doloremque aut expedita ut consequatur facere ex? Illum
-                  nostrum iste ducimus quia porro, explicabo numquam eveniet
-                  aspernatur commodi sint tempora doloribus quasi delectus
-                  molestias? Cupiditate modi vel unde officia! Inventore alias
-                  iste necessitatibus, recusandae cumque eum accusantium ratione
-                  incidunt tenetur velit, deserunt ad quisquam tempora
-                  veritatis, doloremque nostrum ipsa quae. Quidem consectetur
-                  est rem et iusto? Non ab facilis ipsum reiciendis labore!
+                  Het atelier gaat door in de academie: Groenstraat 156, 1030
+                  Schaarbeek
                 </p>
               </div>
               <div className="md:w-1/2">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-                  ratione recusandae, vero velit impedit animi voluptatum? Neque
-                  odit fugiat consectetur adipisci fuga numquam accusamus sunt
-                  nostrum impedit unde iure eveniet minima, sed illum! Voluptas
-                  autem, voluptate excepturi voluptatum voluptatem animi? Lorem
-                  ipsum dolor sit amet consectetur adipisicing elit. Possimus,
-                  dicta sunt. Esse laborum, ipsum fuga, molestias molestiae ad
-                  doloremque aut expedita ut consequatur facere ex? Illum
-                  nostrum iste ducimus quia porro, explicabo numquam eveniet
-                  aspernatur commodi sint tempora doloribus quasi delectus
-                  molestias? Cupiditate modi vel unde officia! Inventore alias
-                  iste necessitatibus, recusandae cumque eum accusantium ratione
-                  incidunt tenetur velit, deserunt ad quisquam tempora
-                  veritatis, doloremque nostrum ipsa quae. Quidem consectetur
-                  est rem et iusto? Non ab facilis ipsum reiciendis labore!
-                </p>
+                <p></p>
               </div>
             </div>
           </AccordionContent>
@@ -348,40 +258,15 @@ const page = () => {
             <div className="md:flex md:w-3/4 text-base pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
               <div className="md:w-1/2">
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-                  ratione recusandae, vero velit impedit animi voluptatum? Neque
-                  odit fugiat consectetur adipisci fuga numquam accusamus sunt
-                  nostrum impedit unde iure eveniet minima, sed illum! Voluptas
-                  autem, voluptate excepturi voluptatum voluptatem animi? Lorem
-                  ipsum dolor sit amet consectetur adipisicing elit. Possimus,
-                  dicta sunt. Esse laborum, ipsum fuga, molestias molestiae ad
-                  doloremque aut expedita ut consequatur facere ex? Illum
-                  nostrum iste ducimus quia porro, explicabo numquam eveniet
-                  aspernatur commodi sint tempora doloribus quasi delectus
-                  molestias? Cupiditate modi vel unde officia! Inventore alias
-                  iste necessitatibus, recusandae cumque eum accusantium ratione
-                  incidunt tenetur velit, deserunt ad quisquam tempora
-                  veritatis, doloremque nostrum ipsa quae. Quidem consectetur
-                  est rem et iusto? Non ab facilis ipsum reiciendis labore!
+                  Heb je vragen over de inschrijvingen, het lessenrooster, …?
+                  Contacteer dan het onthaal via
+                  info.academie@sintlukas.brussels
                 </p>
               </div>
               <div className="md:w-1/2">
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-                  ratione recusandae, vero velit impedit animi voluptatum? Neque
-                  odit fugiat consectetur adipisci fuga numquam accusamus sunt
-                  nostrum impedit unde iure eveniet minima, sed illum! Voluptas
-                  autem, voluptate excepturi voluptatum voluptatem animi? Lorem
-                  ipsum dolor sit amet consectetur adipisicing elit. Possimus,
-                  dicta sunt. Esse laborum, ipsum fuga, molestias molestiae ad
-                  doloremque aut expedita ut consequatur facere ex? Illum
-                  nostrum iste ducimus quia porro, explicabo numquam eveniet
-                  aspernatur commodi sint tempora doloribus quasi delectus
-                  molestias? Cupiditate modi vel unde officia! Inventore alias
-                  iste necessitatibus, recusandae cumque eum accusantium ratione
-                  incidunt tenetur velit, deserunt ad quisquam tempora
-                  veritatis, doloremque nostrum ipsa quae. Quidem consectetur
-                  est rem et iusto? Non ab facilis ipsum reiciendis labore!
+                  Heb je vragen over het atelier, contacteer dan de leerkracht
+                  via anne.deboeck@sintlukas.brussels
                 </p>
               </div>
             </div>

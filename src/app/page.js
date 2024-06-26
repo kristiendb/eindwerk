@@ -21,7 +21,7 @@ const Page = () => {
             src="/Ellen Splinter 2.png"
             alt="Ellen Splinter - vaas"
             fill
-            style={{ objectFit: "cover" }}
+            objectFit="cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
@@ -30,7 +30,7 @@ const Page = () => {
             src="/648e8fed-e1be-4563-aaab-758530d29da1_rw_1920.png"
             alt=""
             fill
-            style={{ objectFit: "cover" }}
+            objectFit="cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
@@ -39,7 +39,7 @@ const Page = () => {
             src="/Ine Hendrickx 2.webp"
             alt=""
             fill
-            style={{ objectFit: "cover" }}
+            objectFit="cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
@@ -48,7 +48,7 @@ const Page = () => {
             src="/Inge Paemen.jpg"
             alt=""
             fill
-            style={{ objectFit: "cover" }}
+            objectFit="cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
@@ -57,7 +57,7 @@ const Page = () => {
             src="/Orla Verstraeten 2.jpg"
             alt=""
             fill
-            style={{ objectFit: "cover" }}
+            objectFit="cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
@@ -66,7 +66,7 @@ const Page = () => {
             src="/Bo Billiet 2.webp"
             alt=""
             fill
-            style={{ objectFit: "cover" }}
+            objectFit="cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
@@ -75,7 +75,7 @@ const Page = () => {
             src="/Inge Pieters 4.jpg"
             alt=""
             fill
-            style={{ objectFit: "cover" }}
+            objectFit="cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
@@ -84,7 +84,7 @@ const Page = () => {
             src="/Laure Baert.jpg"
             alt=""
             fill
-            style={{ objectFit: "cover" }}
+            objectFit="cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
@@ -93,7 +93,7 @@ const Page = () => {
             src="/Véronique De Pauw.png"
             alt=""
             fill
-            style={{ objectFit: "cover" }}
+            objectFit="cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
@@ -102,7 +102,7 @@ const Page = () => {
             src="/Sander Lambrix Expo Open Atelier 2024 Flyer A6-2.png"
             alt=""
             fill
-            style={{ objectFit: "cover" }}
+            objectFit="cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
@@ -111,7 +111,7 @@ const Page = () => {
             src="/Janey Stouten 4.webp"
             alt=""
             fill
-            style={{ objectFit: "cover" }}
+            objectFit="cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>

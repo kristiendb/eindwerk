@@ -29,15 +29,11 @@ const page = () => {
               <div className="md:flex text-base pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
                 <div className="md:w-1/3">
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Autem ratione recusandae, vero velit impedit animi
-                    voluptatum? Neque odit fugiat consectetur adipisci fuga
-                    numquam accusamus sunt nostrum impedit unde iure eveniet
-                    minima, sed illum! Voluptas autem, voluptate excepturi
-                    voluptatum voluptatem animi? Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Possimus, dicta sunt. Esse
-                    laborum, ipsum fuga, molestias molestiae ad doloremque aut
-                    expedita ut consequatur facere ex?
+                    Via deze websites kan je lezen over grafisch ontwerp en
+                    illustratie. Het zijn gekende bronnen met goede schrijvers.
+                    Vaak werd of wordt er ook een tijdschrift uitgebracht.
+                    Sommige websites geven inzicht in de geschiedenis, andere
+                    geven een goed beeld van de hedendaagse scene.
                   </p>
                 </div>
                 <div className="md:w-2/3">
@@ -142,22 +138,14 @@ const page = () => {
               <div className="md:flex text-base pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
                 <div className="md:w-1/2">
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Autem ratione recusandae, vero velit impedit animi
-                    voluptatum? Neque odit fugiat consectetur adipisci fuga
-                    numquam accusamus sunt nostrum impedit unde iure eveniet
-                    minima, sed illum! Voluptas autem, voluptate excepturi
-                    voluptatum voluptatem animi? Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Possimus, dicta sunt. Esse
-                    laborum, ipsum fuga, molestias molestiae ad doloremque aut
-                    expedita ut consequatur facere ex? Illum nostrum iste
-                    ducimus quia porro, explicabo numquam eveniet aspernatur
-                    commodi sint tempora doloribus quasi delectus molestias?
-                    Cupiditate modi vel unde officia! Inventore alias iste
-                    necessitatibus, recusandae cumque eum accusantium ratione
-                    incidunt tenetur velit, deserunt ad quisquam tempora
-                    veritatis, doloremque nostrum ipsa quae. Quidem consectetur
-                    est rem et iusto? Non ab facilis ipsum reiciendis labore!
+                    Wil je een oplage – meer dan een exemplaar – laten
+                    uitvoeren, dan kan je bij een drukkerij terecht. Online
+                    drukwerk (oplage, meer dan een exemplaar) bestellen bij
+                    o.a.: zwartopwit.be, peterprint.be, belprinto.be Tips in
+                    Brussel: Click Click Graphics, dit kaartje samengesteld door
+                    Grafik Tips voor boekbinden, letterpress, zeefdruk en riso
+                    over heel België: Type & Press​​​​​​​ Printen op formaat en
+                    papier kranten bij Newspaper Club (Londen)
                   </p>
                 </div>
                 <div className="md:w-1/2">
