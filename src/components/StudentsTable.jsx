@@ -63,7 +63,9 @@ const StudentsTable = ({ columns, data }) => {
                     <input type="hidden" name="id" value={row.original.id} />
                     <SubmitButton
                       label="Verwijder student"
-                      className={"bg-red-500 text-green-500"}
+                      className={
+                        "bg-red-custom text-white border-red-custom hover:bg-white hover:text-red-custom  hover:transition-all hover:duration-300"
+                      }
                     />
                     {/* <button
                       type="submit"

@@ -13,7 +13,6 @@ const Page = async () => {
         <h2 className="text-4xl pb-8">Cursus</h2>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {courses.map(({ title, id, color }, index) => {
-            // Dynamische col-span regels
             let colSpanClass = "col-span-1";
             if (index === 2 || index === 3) colSpanClass = "col-span-2";
 

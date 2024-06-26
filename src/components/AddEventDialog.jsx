@@ -9,6 +9,7 @@ import {
   DialogClose,
 } from "@/components/ui/dialog";
 import { createClient } from "@/utils/supabase/client";
+import SubmitButton from "./SubmitButton";
 
 const AddEventDialog = ({ isAdmin, onEventAdded }) => {
   const [open, setOpen] = useState(false);
@@ -116,12 +117,13 @@ const AddEventDialog = ({ isAdmin, onEventAdded }) => {
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 />
               </div>
-              <button
+              <SubmitButton label="Opslaan" />
+              {/* <button
                 type="submit"
                 className="bg-black hover:bg-slate-300 hover:text-black hover:transition-all hover:duration-300 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               >
                 Opslaan
-              </button>
+              </button> */}
             </form>
           </DialogContent>
         </Dialog>

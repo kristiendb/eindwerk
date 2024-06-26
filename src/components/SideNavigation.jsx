@@ -14,7 +14,7 @@ const SideNavigation = ({ isAdmin }) => {
   };
   return (
     <>
-      <nav className="border-r-0.25 border-black w-52 h-screen">
+      <nav className="w-52 h-screen">
         <ul className="display flex flex-col space-y-4 text-sm pt-6 pb-6  border-b-0.25  border-black">
           <li>
             <Link

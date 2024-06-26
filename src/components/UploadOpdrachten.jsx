@@ -1,3 +1,5 @@
+"use client";
+import SubmitButton from "./SubmitButton";
 const UploadOpdrachten = ({ chapterId, params, formAction, state }) => {
   return (
     <div>
@@ -40,12 +42,13 @@ const UploadOpdrachten = ({ chapterId, params, formAction, state }) => {
           value={"/start/cursussen/" + Object.values(params).join("/")}
         />
         <input type="hidden" name="isAssignment" value="true" />
-        <button
+        <SubmitButton label="Upload" />
+        {/* <button
           type="submit"
           className="bg-black hover:bg-slate-300 hover:text-black  hover:transition-all hover:duration-300 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
         >
           Upload
-        </button>
+        </button> */}
       </form>
     </div>
   );

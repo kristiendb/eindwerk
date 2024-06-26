@@ -1,8 +1,10 @@
 import { useFormStatus } from "react-dom";
 import { AiOutlineLoading } from "react-icons/ai";
 import { twMerge } from "tailwind-merge";
+
 const SubmitButton = ({ label, className = "" }) => {
   const { pending, data, method, action } = useFormStatus();
+
   return (
     <button
       type="submit"

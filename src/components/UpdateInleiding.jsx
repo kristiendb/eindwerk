@@ -1,3 +1,4 @@
+import SubmitButton from "./SubmitButton";
 const UpdateInleiding = ({ theory, id, params, formAction, state }) => {
   return (
     <form action={formAction}>
@@ -13,12 +14,13 @@ const UpdateInleiding = ({ theory, id, params, formAction, state }) => {
         required
       ></textarea>
       <input type="hidden" name="chapterId" value={id} />
-      <button
+      <SubmitButton label="Opslaan" />
+      {/* <button
         type="submit"
         className="mt-4 bg-black text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
       >
         Opslaan
-      </button>
+      </button> */}
     </form>
   );
 };

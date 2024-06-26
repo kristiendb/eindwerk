@@ -1,6 +1,7 @@
 "use client";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useState } from "react";
+import SubmitButton from "./SubmitButton";
 
 const UploadFeedback = ({ workId, formAction, params, state }) => {
   const [isShowcase, setIsShowcase] = useState(false);
@@ -34,12 +35,13 @@ const UploadFeedback = ({ workId, formAction, params, state }) => {
         <input type="hidden" name="workId" value={workId} />
         <input type="hidden" name="isshowcase" value={isShowcase} />
         <input type="hidden" name="path" value={"/start/werk-studenten/"} />
-        <button
+        <SubmitButton label="Opslaan" />
+        {/* <button
           type="submit"
           className="bg-black hover:bg-slate-300 hover:text-black hover:transition-all hover:duration-300 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
         >
           Opslaan
-        </button>
+        </button> */}
       </form>
     </div>
   );

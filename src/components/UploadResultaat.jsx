@@ -1,4 +1,6 @@
+"use client";
 import { uploadResultAction } from "@/functions/actions";
+import SubmitButton from "./SubmitButton";
 
 const UploadResultaat = ({ taskId, params }) => {
   return (
@@ -42,12 +44,13 @@ const UploadResultaat = ({ taskId, params }) => {
           name="path"
           value={"/start/cursussen/" + Object.values(params).join("/")}
         />
-        <button
+        <SubmitButton label="Upload" />
+        {/* <button
           type="submit"
           className="bg-black hover:bg-slate-300 hover:text-black hover:transition-all hover:duration-300 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
         >
           Upload
-        </button>
+        </button> */}
       </form>
     </div>
   );

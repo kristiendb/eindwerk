@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import "./globals.css";
 import NextTopLoader from "nextjs-toploader";
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata = {
   title: "Grafisch ontwerp en illustratie",
@@ -30,6 +31,7 @@ const layout = ({ children }) => {
           <Navigation />
           <section>{children}</section>
         </div>
+        <Toaster />
       </body>
     </html>
   );
