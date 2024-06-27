@@ -12,7 +12,6 @@ const layout = async ({ children }) => {
   }
   return (
     <>
-      <link rel="icon" href="favicon.svg" />
       <div className="display flex">
         <div className="hidden h-100% border-black border-r-0.25 lg:block">
           <SideNavigation isAdmin={isAdmin} />

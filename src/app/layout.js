@@ -11,13 +11,13 @@ export const metadata = {
 const layout = ({ children }) => {
   return (
     <html lang="nl">
-      <link rel="icon" href="favicon.svg" />
+      {/* <link rel="icon" href="favicon.svg" />
       <meta property="og:title" content="Grafisch ontwerp en illustratie" />
       <meta
         property="og:description"
         content="studentenplatform voor grafisch ontwerp en illustratie"
       />
-      <meta property="og:image" content="/Logo_GO-I.jpg" />
+      <meta property="og:image" content="/Logo_GO-I.jpg" /> */}
 
       <body className="font-space-grotesk overflow-x-hidden">
         <NextTopLoader

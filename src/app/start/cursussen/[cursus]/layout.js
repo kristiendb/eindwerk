@@ -6,7 +6,6 @@ const layout = async ({ children, params }) => {
 
   return (
     <>
-      <link rel="icon" href="favicon.svg" />
       <div>
         <BreadCrumb params={params} />
       </div>
