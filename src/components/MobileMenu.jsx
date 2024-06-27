@@ -30,7 +30,10 @@ const MobileMenu = ({ user, path, handleLogout }) => {
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
-        <button className="p-2 rounded-md focus:outline-none lg:hidden">
+        <button
+          className="p-2 rounded-md focus:outline-none lg:hidden"
+          aria-label="open menu"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

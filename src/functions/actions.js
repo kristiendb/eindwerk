@@ -201,8 +201,12 @@ export async function uploadExampleAction(state, formData) {
   const description = formData.get("description");
   const chapterId = formData.get("chapterId");
   const url = formData.get("url");
-  const fileName = Math.random().toString(32).substring(2);
-
+  // const fileName = Math.random().toString(32).substring(2);
+  const fileNameParts = file.name.split(".");
+  const fileExtension = fileNameParts.length > 1 ? fileNameParts.pop() : "";
+  const fileName =
+    Math.random().toString(32).substring(2) +
+    (fileExtension ? `.${fileExtension}` : "");
   const {
     data: { user },
   } = await supabase.auth.getUser();
@@ -303,7 +307,12 @@ export async function uploadResultAction(formData) {
   const description = formData.get("description");
   const taskId = formData.get("taskId");
   const path = formData.get("path");
-  const fileName = Math.random().toString(32).substring(2) + ".pdf";
+  // const fileName = Math.random().toString(32).substring(2) + ".pdf";
+  const fileNameParts = file.name.split(".");
+  const fileExtension = fileNameParts.length > 1 ? fileNameParts.pop() : "";
+  const fileName =
+    Math.random().toString(32).substring(2) +
+    (fileExtension ? `.${fileExtension}` : "");
 
   const { data: userData } = await supabase.auth.getUser();
   const userId = userData?.user?.id;
@@ -442,6 +451,21 @@ export async function deleteUserAction(state, formData) {
   // console.log(data);
 
   // console.log(error);
+  revalidatePath(formData.get("path"));
+  return { msg: "success" };
+}
+
+export async function updateChapterAction(state, formData) {
+  const supabase = createClient();
+  const chapterId = formData.get("chapterId");
+  const title = formData.get("title");
+  const description = formData.get("description");
+
+  const { error } = await supabase
+    .from("chapters")
+    .update({ title, description })
+    .eq("id", chapterId);
+
   revalidatePath(formData.get("path"));
   return { msg: "success" };
 }

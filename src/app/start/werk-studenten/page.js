@@ -38,14 +38,20 @@ const page = async ({ params }) => {
                 </a>
               ) : (
                 <div className="h-60 relative">
-                  <Image
-                    src={work.uploadwork}
-                    alt={work.description}
-                    layout="fill"
-                    objectFit="cover"
-                    sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                    className="rounded"
-                  />
+                  <a
+                    href={work.uploadwork}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      src={work.uploadwork}
+                      alt={work.description}
+                      layout="fill"
+                      objectFit="cover"
+                      sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                      className="rounded"
+                    />
+                  </a>
                 </div>
               )}
               <div className="mt-4">

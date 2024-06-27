@@ -5,13 +5,14 @@ const layout = async ({ children, params }) => {
   const selectedLevel = params.level || "all";
 
   return (
-    <div>
+    <>
+      <link rel="icon" href="favicon.svg" />
       <div>
         <BreadCrumb params={params} />
       </div>
 
       <div>{children}</div>
-    </div>
+    </>
   );
 };
 export default layout;

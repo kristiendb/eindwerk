@@ -1,12 +1,5 @@
 "use client";
 import { filterChapterAction } from "@/functions/actions";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 
 const SelectFilter = ({ levels, selectedLevel }) => {
   return (

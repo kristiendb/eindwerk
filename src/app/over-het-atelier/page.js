@@ -7,36 +7,58 @@ import {
 import "@/components/ui/accordion.css";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
+import Head from "next/head";
 
 const page = () => {
   return (
     <>
-      <div className="flex flex-row mx-auto gap-20 pl-10 pr-10 pt-4 ">
+      <Head>
+        <title>Grafisch Ontwerp & Illustratie - Over het atelier</title>
+        <meta
+          name="description"
+          content="De opleiding Grafisch Ontwerp en Illustratie aan de Sint-Lukas Academie Schaarbeek biedt zowel beginners als gevorderden een uitgebreide leerervaring. Of je nu start met de basisvaardigheden op maandag of je verdiept in geavanceerde technieken op dinsdag, onze cursussen helpen je om je creatieve talenten te ontwikkelen. Combineer lessen voor een snellere vooruitgang en ontdek de sterke connectie tussen inhoud en vorm door middel van experimenten en kritische reflectie."
+        />
+        <meta
+          name="keywords"
+          content="Grafisch Ontwerp, Illustratie, Sint-Lukas Academie, Schaarbeek, Kunstopleiding, Grafisch ontwerp en illustratie, Typografie, Lettering, Affiches, Boeken, Huisstijlen, Websites"
+        />
+        <meta name="author" content="Sint-Lukas Academie" />
+        <meta
+          property="og:title"
+          content="Grafisch Ontwerp & Illustratie - Sint-Lukas Academie Schaarbeek"
+        />
+        <meta
+          property="og:description"
+          content="De opleiding Grafisch Ontwerp en Illustratie aan de Sint-Lukas Academie Schaarbeek biedt zowel beginners als gevorderden een uitgebreide leerervaring. Of je nu start met de basisvaardigheden op maandag of je verdiept in geavanceerde technieken op dinsdag, onze cursussen helpen je om je creatieve talenten te ontwikkelen. Combineer lessen voor een snellere vooruitgang en ontdek de sterke connectie tussen inhoud en vorm door middel van experimenten en kritische reflectie."
+        />
+        <meta property="og:image" content="/GO-I_Building.jpg" />
+        <meta property="og:type" content="website" />
+      </Head>
+      <div className="flex flex-row mr-auto gap-12 sm:w-full md:w-3/4 pt-4 ">
         <Image
           src="/GO-I_Building.jpg"
           alt="Grafisch ontwerp & illustratie - Sint-Lukas Academie Schaarbeek"
-          layout="responsive"
-          width={40} // De gewenste breedte van de afbeelding
-          height={60} // De hoogte van de afbeelding, ingesteld om de aspect ratio te behouden
+          width={40}
+          height={60}
           objectFit="cover"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="rounded-lg"
         />
         <Image
           src="/GO-I_Building-2.jpg"
           alt="Grafisch ontwerp & illustratie - Sint-Lukas Academie Schaarbeek"
-          layout="responsive"
-          width={50} // De gewenste breedte van de afbeelding
-          height={70} // De hoogte van de afbeelding, ingesteld om de aspect ratio te behouden
+          width={40}
+          height={60}
           objectFit="cover"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="hidden lg:block"
+          className="hidden lg:block rounded-lg"
         />
       </div>
       <Accordion
         type="single"
         defaultValue="item-1"
         collapsible
-        className="font-libre-franklin mt-4 transition-all"
+        className="font-libre-franklin mt-4 ease-in-out"
       >
         <AccordionItem
           value="item-1"
@@ -46,9 +68,9 @@ const page = () => {
             Introductie
             <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
           </AccordionTrigger>
-          <AccordionContent className="AccordionContent">
-            <div className="md:flex text-base md:w-3/4 pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0 ">
-              <div className="md:w-1/2">
+          <AccordionContent>
+            <div className="lg:flex text-base lg:w-3/4 pb-5 lg:flex-row space-x-0 space-y-8 w-full lg:space-x-12 lg:space-y-0 ">
+              <div className="lg:w-1/2">
                 <p>
                   Binnen de opleiding Grafisch Ontwerp en Illustratie kies je
                   ervoor als starter het vak Grafisch Ontwerp en Illustratie
@@ -70,7 +92,7 @@ const page = () => {
                   websites, …
                 </p>
               </div>
-              <div className="md:w-1/2">
+              <div className="lg:w-1/2">
                 <p>
                   In het atelier ligt de nadruk op experiment, creatief denken
                   en een kritische houding in het ontwerpproces. We proberen
@@ -94,8 +116,8 @@ const page = () => {
             <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
           </AccordionTrigger>
           <AccordionContent>
-            <div className="md:flex md:w-3/4 text-base pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
-              <div className="md:w-1/2">
+            <div className="lg:flex lg:w-3/4 text-base pb-5 lg:flex-row space-x-0 space-y-8 w-full lg:space-x-12 lg:space-y-0">
+              <div className="lg:w-1/2">
                 <p>
                   Heb je geen ervaring, dan volg je het atelier op maandag:
                   Grafisch Ontwerp en Illustratie (starters)
@@ -120,7 +142,7 @@ const page = () => {
                   <li className="pl-2">Technisch basisvaardigheden</li>
                 </ul>
               </div>
-              <div className="md:w-1/2">
+              <div className="lg:w-1/2">
                 <p>
                   Heb je al wat basiskennis, dan volg je het atelier op dinsdag:
                   Grafisch Ontwerp en Illustratie (Verdieping)
@@ -155,8 +177,8 @@ const page = () => {
             <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
           </AccordionTrigger>
           <AccordionContent>
-            <div className="md:flex md:w-3/4 text-base pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
-              <div className="md:w-1/2">
+            <div className="lg:flex lg:w-3/4 text-base pb-5 lg:flex-row space-x-0 space-y-8 w-full lg:space-x-12 lg:space-y-0">
+              <div className="lg:w-1/2">
                 <p>
                   In het atelier kan je gebruikmaken van een computer, scanner,
                   tekentablet en printer. Je mag uiteraard op je eigen tablet of
@@ -168,7 +190,7 @@ const page = () => {
                   inbegrepen in het inschrijvingsgeld.
                 </p>
               </div>
-              <div className="md:w-1/2">
+              <div className="lg:w-1/2">
                 <p></p>
               </div>
             </div>
@@ -184,8 +206,8 @@ const page = () => {
             <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
           </AccordionTrigger>
           <AccordionContent>
-            <div className="md:flex md:w-3/4 text-base pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
-              <div className="md:w-1/2">
+            <div className="lg:flex lg:w-3/4 text-base pb-5 lg:flex-row space-x-0 space-y-8 w-full lg:space-x-12 lg:space-y-0">
+              <div className="lg:w-1/2">
                 <p>
                   Leerlingen die de opleiding Grafisch Ontwerp en Illustratie
                   volgen, kiezen uit een traject van 1 avond/week (lang traject,
@@ -193,10 +215,17 @@ const page = () => {
                   Leerlingen die 1 avond/week volgen, kiezen op basis van hun
                   voorkennis voor een specifieke avond. Opgelet! Voor een
                   overstap tussen deze twee trajecten contacteer je best het
-                  onthaal van de academie: info.academie@sintlukas.brussels.
+                  onthaal van de academie:&nbsp;
+                  <a
+                    href="mailto:info.academie@sintlukas.brussels"
+                    className="underline"
+                  >
+                    info.academie@sintlukas.brussels
+                  </a>
+                  .
                 </p>
               </div>
-              <div className="md:w-1/2">
+              <div className="lg:w-1/2">
                 <p></p>
               </div>
             </div>
@@ -212,11 +241,14 @@ const page = () => {
             <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
           </AccordionTrigger>
           <AccordionContent>
-            <div className="md:flex md:w-3/4 text-base pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
-              <div className="md:w-1/2">
-                <p>Elke les gaat door van 17:40 tot 21u.</p>
+            <div className="lg:flex lg:w-3/4 text-base pb-5 lg:flex-row space-x-0 space-y-8 w-full lg:space-x-12 lg:space-y-0">
+              <div className="lg:w-1/2">
+                <p>
+                  Elke les gaat door van
+                  <span className="font-semibold">17:40 tot 21u</span>.
+                </p>
               </div>
-              <div className="md:w-1/2">
+              <div className="lg:w-1/2">
                 <p></p>
               </div>
             </div>
@@ -232,14 +264,16 @@ const page = () => {
             <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
           </AccordionTrigger>
           <AccordionContent>
-            <div className="md:flex md:w-3/4 text-base pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
-              <div className="md:w-1/2">
+            <div className="lg:flex lg:w-3/4 text-base pb-5 lg:flex-row space-x-0 space-y-8 w-full lg:space-x-12 lg:space-y-0">
+              <div className="lg:w-1/2">
                 <p>
-                  Het atelier gaat door in de academie: Groenstraat 156, 1030
-                  Schaarbeek
+                  Het atelier gaat door in de academie:
+                  <span className="font-semibold">
+                    Groenstraat 156, 1030 Schaarbeek
+                  </span>
                 </p>
               </div>
-              <div className="md:w-1/2">
+              <div className="lg:w-1/2">
                 <p></p>
               </div>
             </div>
@@ -255,18 +289,29 @@ const page = () => {
             <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
           </AccordionTrigger>
           <AccordionContent>
-            <div className="md:flex md:w-3/4 text-base pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
-              <div className="md:w-1/2">
+            <div className="lg:flex lg:w-3/4 text-base pb-5 lg:flex-row space-x-0 space-y-8 w-full lg:space-x-12 lg:space-y-0">
+              <div className="lg:w-1/2">
                 <p>
                   Heb je vragen over de inschrijvingen, het lessenrooster, …?
-                  Contacteer dan het onthaal via
-                  info.academie@sintlukas.brussels
+                  Contacteer dan het onthaal via&nbsp;
+                  <a
+                    href="mailto:info.academie@sintlukas.brussels"
+                    className="underline"
+                  >
+                    info.academie@sintlukas.brussels
+                  </a>
                 </p>
               </div>
-              <div className="md:w-1/2">
+              <div className="lg:w-1/2">
                 <p>
                   Heb je vragen over het atelier, contacteer dan de leerkracht
-                  via anne.deboeck@sintlukas.brussels
+                  via&nbsp;
+                  <a
+                    href="mailto:anne.deboeck@sintlukas.brussels"
+                    className="underline"
+                  >
+                    anne.deboeck@sintlukas.brussels
+                  </a>
                 </p>
               </div>
             </div>

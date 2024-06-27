@@ -26,8 +26,8 @@ const page = () => {
               <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
             </AccordionTrigger>
             <AccordionContent>
-              <div className="md:flex text-base pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
-                <div className="md:w-1/3">
+              <div className="lg:flex text-base pb-5 lg:flex-row space-x-0 space-y-8 w-full lg:space-x-12 lg:space-y-0">
+                <div className="lg:w-1/3">
                   <p>
                     Via deze websites kan je lezen over grafisch ontwerp en
                     illustratie. Het zijn gekende bronnen met goede schrijvers.
@@ -36,7 +36,7 @@ const page = () => {
                     geven een goed beeld van de hedendaagse scene.
                   </p>
                 </div>
-                <div className="md:w-2/3">
+                <div className="lg:w-2/3">
                   <div className="p-4 flex flex-row flex-wrap gap-4">
                     <a
                       href="https://www.itsnicethat.com/"
@@ -141,32 +141,27 @@ const page = () => {
                     Wil je een oplage – meer dan een exemplaar – laten
                     uitvoeren, dan kan je bij een drukkerij terecht. Online
                     drukwerk (oplage, meer dan een exemplaar) bestellen bij
-                    o.a.: zwartopwit.be, peterprint.be, belprinto.be Tips in
-                    Brussel: Click Click Graphics, dit kaartje samengesteld door
-                    Grafik Tips voor boekbinden, letterpress, zeefdruk en riso
-                    over heel België: Type & Press​​​​​​​ Printen op formaat en
-                    papier kranten bij Newspaper Club (Londen)
+                    o.a.:
+                    <a href="www.zwartopwit.be" className="underline">
+                      zwartopwit.be
+                    </a>
+                    ,
+                    <a href="www.peterprint.be" className="underline">
+                      peterprint.be
+                    </a>
+                    ,
+                    <a href="www.belprinto.be" className="underline">
+                      belprinto.be
+                    </a>
+                    . <br /> Tips in Brussel: Click Click Graphics, dit kaartje
+                    samengesteld door Grafik Tips voor boekbinden, letterpress,
+                    zeefdruk en riso over heel België: Type & Press​​​​​​​
+                    Printen op formaat en papier kranten bij Newspaper Club
+                    (Londen)
                   </p>
                 </div>
                 <div className="md:w-1/2">
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Autem ratione recusandae, vero velit impedit animi
-                    voluptatum? Neque odit fugiat consectetur adipisci fuga
-                    numquam accusamus sunt nostrum impedit unde iure eveniet
-                    minima, sed illum! Voluptas autem, voluptate excepturi
-                    voluptatum voluptatem animi? Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Possimus, dicta sunt. Esse
-                    laborum, ipsum fuga, molestias molestiae ad doloremque aut
-                    expedita ut consequatur facere ex? Illum nostrum iste
-                    ducimus quia porro, explicabo numquam eveniet aspernatur
-                    commodi sint tempora doloribus quasi delectus molestias?
-                    Cupiditate modi vel unde officia! Inventore alias iste
-                    necessitatibus, recusandae cumque eum accusantium ratione
-                    incidunt tenetur velit, deserunt ad quisquam tempora
-                    veritatis, doloremque nostrum ipsa quae. Quidem consectetur
-                    est rem et iusto? Non ab facilis ipsum reiciendis labore!
-                  </p>
+                  <p></p>
                 </div>
               </div>
             </AccordionContent>
@@ -180,46 +175,101 @@ const page = () => {
               <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
             </AccordionTrigger>
             <AccordionContent>
-              <div className="md:flex text-base pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
-                <div className="md:w-1/2">
+              <div className="lg:flex text-base pb-5 lg:flex-row space-x-0 space-y-8 w-full lg:space-x-12 lg:space-y-0">
+                <div className="lg:w-1/3">
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Autem ratione recusandae, vero velit impedit animi
-                    voluptatum? Neque odit fugiat consectetur adipisci fuga
-                    numquam accusamus sunt nostrum impedit unde iure eveniet
-                    minima, sed illum! Voluptas autem, voluptate excepturi
-                    voluptatum voluptatem animi? Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Possimus, dicta sunt. Esse
-                    laborum, ipsum fuga, molestias molestiae ad doloremque aut
-                    expedita ut consequatur facere ex? Illum nostrum iste
-                    ducimus quia porro, explicabo numquam eveniet aspernatur
-                    commodi sint tempora doloribus quasi delectus molestias?
-                    Cupiditate modi vel unde officia! Inventore alias iste
-                    necessitatibus, recusandae cumque eum accusantium ratione
-                    incidunt tenetur velit, deserunt ad quisquam tempora
-                    veritatis, doloremque nostrum ipsa quae. Quidem consectetur
-                    est rem et iusto? Non ab facilis ipsum reiciendis labore!
+                    Gebruik tags, maar vooral ook classificatie en eigenschappen
+                    tijdens je zoektocht. Herlees indien nodig de theorie over
+                    lettertypes en hun classificatie bij de cursus&nbsp;
+                    <a
+                      href="https://www.grafisch-ontwerp-en-illustratie.be/start/cursussen/2-typografie-en-lettering/2-lettertypes-introductie"
+                      className="underline"
+                    >
+                      lettertypes introductie
+                    </a>
+                    .
                   </p>
                 </div>
-                <div className="md:w-1/2">
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Autem ratione recusandae, vero velit impedit animi
-                    voluptatum? Neque odit fugiat consectetur adipisci fuga
-                    numquam accusamus sunt nostrum impedit unde iure eveniet
-                    minima, sed illum! Voluptas autem, voluptate excepturi
-                    voluptatum voluptatem animi? Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Possimus, dicta sunt. Esse
-                    laborum, ipsum fuga, molestias molestiae ad doloremque aut
-                    expedita ut consequatur facere ex? Illum nostrum iste
-                    ducimus quia porro, explicabo numquam eveniet aspernatur
-                    commodi sint tempora doloribus quasi delectus molestias?
-                    Cupiditate modi vel unde officia! Inventore alias iste
-                    necessitatibus, recusandae cumque eum accusantium ratione
-                    incidunt tenetur velit, deserunt ad quisquam tempora
-                    veritatis, doloremque nostrum ipsa quae. Quidem consectetur
-                    est rem et iusto? Non ab facilis ipsum reiciendis labore!
-                  </p>
+                <div className="lg:w-2/3">
+                  <div className="p-4 flex flex-row flex-wrap gap-4">
+                    <a
+                      href="https://fonts.adobe.com/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                    >
+                      Adobe fonts
+                    </a>
+                    <a
+                      href="https://fonts.google.com/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                    >
+                      Google fonts
+                    </a>
+                    <a
+                      href="https://www.fontsquirrel.com/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                    >
+                      Fontsquirrel
+                    </a>
+                    <a
+                      href="https://www.fontspring.com/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                    >
+                      Fontspring
+                    </a>
+                    <a
+                      href="https://open-foundry.com/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                    >
+                      Open Foundry
+                    </a>
+                    <a
+                      href="https://velvetyne.fr/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                    >
+                      Velvetyne
+                    </a>
+                    <a
+                      href="https://www.exljbris.com/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                    >
+                      ExjLibris
+                    </a>
+                    <a
+                      href="https://www.theleagueofmoveabletype.com/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                    >
+                      The League of Moveable Type
+                    </a>
+                    <a
+                      href="https://usemodify.com/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                    >
+                      Use & Modify
+                    </a>
+                    <a
+                      href="https://fontsinuse.com/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                    >
+                      fontsinuse.com
+                    </a>
+                    <a
+                      href="https://www.fontbrief.com/fontbrief"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                    >
+                      fontbrief.com
+                    </a>
+                  </div>
                 </div>
               </div>
             </AccordionContent>
@@ -234,46 +284,91 @@ const page = () => {
               <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
             </AccordionTrigger>
             <AccordionContent>
-              <div className="md:flex text-base pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
-                <div className="md:w-1/2">
+              <div className="lg:flex text-base pb-5 lg:flex-row space-x-0 space-y-8 w-full lg:space-x-12 lg:space-y-0">
+                <div className="lg:w-1/3">
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Autem ratione recusandae, vero velit impedit animi
-                    voluptatum? Neque odit fugiat consectetur adipisci fuga
-                    numquam accusamus sunt nostrum impedit unde iure eveniet
-                    minima, sed illum! Voluptas autem, voluptate excepturi
-                    voluptatum voluptatem animi? Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Possimus, dicta sunt. Esse
-                    laborum, ipsum fuga, molestias molestiae ad doloremque aut
-                    expedita ut consequatur facere ex? Illum nostrum iste
-                    ducimus quia porro, explicabo numquam eveniet aspernatur
-                    commodi sint tempora doloribus quasi delectus molestias?
-                    Cupiditate modi vel unde officia! Inventore alias iste
-                    necessitatibus, recusandae cumque eum accusantium ratione
-                    incidunt tenetur velit, deserunt ad quisquam tempora
-                    veritatis, doloremque nostrum ipsa quae. Quidem consectetur
-                    est rem et iusto? Non ab facilis ipsum reiciendis labore!
+                    Via deze links vind je vrij te gebruiken foto’s of icoontjes
+                    onder Creative Commons licentie CC0, uit publieke archieven
+                    of met vermelding van auteur. Vergeet zelf niet te
+                    fotograferen als je dat graag doet. Stockfoto's zijn handig,
+                    maar niet uniek. Je kan deze databases ook gebruiken ter
+                    inspiratie wanneer je zelf een icoontje aan het ontwerpen
+                    bent: hoe vereenvoudigen, hoe eenheid bewaren in een reeks?
                   </p>
                 </div>
-                <div className="md:w-1/2">
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Autem ratione recusandae, vero velit impedit animi
-                    voluptatum? Neque odit fugiat consectetur adipisci fuga
-                    numquam accusamus sunt nostrum impedit unde iure eveniet
-                    minima, sed illum! Voluptas autem, voluptate excepturi
-                    voluptatum voluptatem animi? Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Possimus, dicta sunt. Esse
-                    laborum, ipsum fuga, molestias molestiae ad doloremque aut
-                    expedita ut consequatur facere ex? Illum nostrum iste
-                    ducimus quia porro, explicabo numquam eveniet aspernatur
-                    commodi sint tempora doloribus quasi delectus molestias?
-                    Cupiditate modi vel unde officia! Inventore alias iste
-                    necessitatibus, recusandae cumque eum accusantium ratione
-                    incidunt tenetur velit, deserunt ad quisquam tempora
-                    veritatis, doloremque nostrum ipsa quae. Quidem consectetur
-                    est rem et iusto? Non ab facilis ipsum reiciendis labore!
-                  </p>
+                <div className="lg:w-2/3">
+                  <div className="p-4 flex flex-row flex-wrap gap-4">
+                    <a
+                      href="https://isorepublic.com/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                    >
+                      isorepublic
+                    </a>
+                    <a
+                      href="https://www.pexels.com/nl-nl/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                    >
+                      pexels
+                    </a>
+                    <a
+                      href="https://www.splitshire.com/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                    >
+                      splitshire
+                    </a>
+                    <a
+                      href="https://cupcake.nilssonlee.se/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                    >
+                      cupcake.nilssonlee
+                    </a>
+                    <a
+                      href="https://nos.twnsnd.co/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                    >
+                      nos.twnsnd
+                    </a>
+                    <a
+                      href="https://magdeleine.co/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                    >
+                      magdeleine
+                    </a>
+                    <a
+                      href="https://www.apollo-magazine.com/open-access-image-libraries-a-handy-list/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                    >
+                      Open acces image libraries
+                    </a>
+                    <a
+                      href="https://www.flaticon.com/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                    >
+                      flaticon
+                    </a>
+                    <a
+                      href="https://thenounproject.com/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                    >
+                      thenounproject
+                    </a>
+                    <a
+                      href="https://graphicburger.com/icons-set/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                    >
+                      graphicburger.com
+                    </a>
+                  </div>
                 </div>
               </div>
             </AccordionContent>

@@ -7,6 +7,8 @@ import { createClient } from "@/utils/supabase/client";
 const Calendar = () => {
   const [events, setEvents] = useState([]);
   const [selectedEvent, setSelectedEvent] = useState(null);
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [loading, setLoading] = useState(false);
   const supabase = createClient();
 
   useEffect(() => {
@@ -17,7 +19,6 @@ const Calendar = () => {
       if (error) {
         console.error(error);
       } else {
-        console.log("Fetched events:", data);
         const formattedEvents = data.map((event) => ({
           id: event.id,
           title: event.title,
@@ -30,11 +31,20 @@ const Calendar = () => {
       }
     };
 
+    const checkAdmin = async () => {
+      const { data: userData } = await supabase.auth.getUser();
+      if (userData?.user?.user_metadata?.role === "admin") {
+        setIsAdmin(true);
+      }
+    };
+
     fetchEvents();
+    checkAdmin();
   }, [supabase]);
 
   const handleEventClick = (info) => {
     setSelectedEvent({
+      id: info.event.id, // Ensure id is set correctly
       ...info.event.extendedProps,
       title: info.event.title,
       starttime: info.event.start,
@@ -42,10 +52,31 @@ const Calendar = () => {
     });
   };
 
+  const handleDeleteEvent = async () => {
+    if (!selectedEvent) return;
+
+    setLoading(true);
+
+    const { error } = await supabase
+      .from("agenda")
+      .delete()
+      .eq("id", selectedEvent.id);
+
+    if (error) {
+      console.error(error);
+    } else {
+      setEvents(events.filter((event) => event.id !== selectedEvent.id));
+      setSelectedEvent(null);
+      window.location.reload(); // Reload the page after deletion
+    }
+
+    setLoading(false);
+  };
+
   return (
     <>
       <div className="md:flex w-full border-b-0.25 border-black">
-        <div className="md:w-3/4 md:h-auto w-full h-full pr-5 md:border-r-0.25  md:border-black">
+        <div className="md:w-3/4 md:h-auto w-full h-full pr-5 md:border-r-0.25 md:border-black">
           <FullCalendar
             plugins={[dayGridPlugin, interactionPlugin]}
             initialView="dayGridMonth"
@@ -77,6 +108,17 @@ const Calendar = () => {
                 {selectedEvent.link}
               </a>
             ) : null}
+            {isAdmin && (
+              <div className="mt-4">
+                <button
+                  onClick={handleDeleteEvent}
+                  className="bg-red-500 text-white p-2 pl-3 pr-3 rounded-full"
+                  disabled={loading}
+                >
+                  {loading ? "Verwijderen..." : "Verwijder"}
+                </button>
+              </div>
+            )}
           </div>
         )}
       </div>

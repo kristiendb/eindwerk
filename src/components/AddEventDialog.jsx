@@ -118,12 +118,6 @@ const AddEventDialog = ({ isAdmin, onEventAdded }) => {
                 />
               </div>
               <SubmitButton label="Opslaan" />
-              {/* <button
-                type="submit"
-                className="bg-black hover:bg-slate-300 hover:text-black hover:transition-all hover:duration-300 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              >
-                Opslaan
-              </button> */}
             </form>
           </DialogContent>
         </Dialog>

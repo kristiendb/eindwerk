@@ -4,7 +4,7 @@ import Levels from "@/components/Levels";
 import { slugit } from "@/helpers";
 import Link from "next/link";
 import HoofdstukkenDialog from "@/components/HoofdstukkenDialog";
-import OefeningenDialog from "@/components/OefeningenDialog";
+import UpdateHoofdstukkenDialog from "@/components/UpdateHoofdstukkenDialog";
 
 const page = async ({ params, searchParams }) => {
   const [id] = params.cursus.split("-");
@@ -50,7 +50,7 @@ const page = async ({ params, searchParams }) => {
             // const pink = "bg-pink-custom";
             // const lightPink = "bg-light-pink-custom";
             return (
-              <div key={chapter.id}>
+              <div key={chapter.id} className="relative group">
                 <Link
                   href="/start/cursussen/[cursus]-[hoofdstuk]"
                   as={`/start/cursussen/${chapter.course.id}-${courseSlug}/${chapter.id}-${chapterSlug}-${levelSlug}`}
@@ -69,6 +69,15 @@ const page = async ({ params, searchParams }) => {
                     </p>
                   </div>
                 </Link>
+                {isAdmin && (
+                  <div className="absolute bottom-6 left-6 hidden group-hover:block">
+                    <UpdateHoofdstukkenDialog
+                      chapter={chapter}
+                      id={chapter.id}
+                      params={params}
+                    />
+                  </div>
+                )}
               </div>
             );
           })}

@@ -43,8 +43,8 @@ const Voorbeelden = async ({ params }) => {
                 <Image
                   src={voorbeeld.exampleimage}
                   alt={voorbeeld.description}
-                  layout="fill"
-                  objectFit="cover"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="rounded"
                 />
               </a>
@@ -55,8 +55,8 @@ const Voorbeelden = async ({ params }) => {
                     <Image
                       src={voorbeeld.exampleimage}
                       alt={voorbeeld.description}
-                      layout="fill"
-                      objectFit="cover"
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="rounded"
                     />
                   </div>
@@ -64,49 +64,46 @@ const Voorbeelden = async ({ params }) => {
                 <DialogContent>
                   <DialogHeader>
                     <DialogTitle>Voorbeeld</DialogTitle>
-                    {isAdmin ? (
-                      <form action={updateExampleAction}>
-                        <textarea
-                          name="description"
-                          defaultValue={voorbeeld.description}
-                          className="w-full border rounded p-2 mt-2"
-                        />
-                        <input
-                          type="hidden"
-                          name="exampleId"
-                          value={voorbeeld.id}
-                        />
-                        <input
-                          type="hidden"
-                          name="path"
-                          value={
-                            "/start/cursussen/" +
-                            Object.values(params).join("/")
-                          }
-                        />
-                        <button
-                          type="submit"
-                          className="mt-2 bg-black text-white px-4 py-2 rounded-full"
-                        >
-                          Bewerk Beschrijving
-                        </button>
-                      </form>
-                    ) : (
-                      <DialogDescription>
-                        {voorbeeld.description}
-                      </DialogDescription>
-                    )}
+                    <DialogDescription>
+                      {voorbeeld.description}
+                    </DialogDescription>
                   </DialogHeader>
                   <div className="w-full h-full relative">
                     <Image
                       src={voorbeeld.exampleimage}
                       alt={voorbeeld.description}
-                      layout="responsive"
-                      width={700}
-                      height={475}
-                      objectFit="contain"
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="rounded"
                     />
                   </div>
+                  {isAdmin && (
+                    <form action={updateExampleAction}>
+                      <textarea
+                        name="description"
+                        defaultValue={voorbeeld.description}
+                        className="w-full border rounded p-2 mt-2"
+                      />
+                      <input
+                        type="hidden"
+                        name="exampleId"
+                        value={voorbeeld.id}
+                      />
+                      <input
+                        type="hidden"
+                        name="path"
+                        value={
+                          "/start/cursussen/" + Object.values(params).join("/")
+                        }
+                      />
+                      <button
+                        type="submit"
+                        className="mt-2 bg-black text-white px-4 py-2 rounded-full"
+                      >
+                        Bewerk Beschrijving
+                      </button>
+                    </form>
+                  )}
                 </DialogContent>
               </Dialog>
             )}
@@ -136,26 +133,6 @@ const Voorbeelden = async ({ params }) => {
           <VoorbeeldenDialog id={id} params={params} />
         </div>
       )}
-      {/* {isAdmin && (
-        <div className="w-full p-2">
-          <Dialog>
-            <DialogTrigger asChild>
-              <button className="mt-4 pt-3 pb-3 pl-6 pr-6 bg-black text-white rounded-full">
-                Upload voorbeeld
-              </button>
-            </DialogTrigger>
-            <DialogContent>
-              <DialogHeader>
-                <DialogTitle>Upload Voorbeeld</DialogTitle>
-                <DialogDescription>
-                  Vul de volgende velden in om het voorbeeld te uploaden.
-                </DialogDescription>
-              </DialogHeader>
-              <UploadVoorbeelden chapterId={id} params={params} />
-            </DialogContent>
-          </Dialog>
-        </div>
-      )} */}
     </div>
   );
 };
