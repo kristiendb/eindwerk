@@ -287,9 +287,9 @@ const page = () => {
               <div className="lg:flex text-base pb-5 lg:flex-row space-x-0 space-y-8 w-full lg:space-x-12 lg:space-y-0">
                 <div className="lg:w-1/3">
                   <p>
-                    Via deze links vind je vrij te gebruiken foto’s of icoontjes
-                    onder Creative Commons licentie CC0, uit publieke archieven
-                    of met vermelding van auteur. Vergeet zelf niet te
+                    Via deze links vind je vrij te gebruiken foto&apos;s of
+                    icoontjes onder Creative Commons licentie CC0, uit publieke
+                    archieven of met vermelding van auteur. Vergeet zelf niet te
                     fotograferen als je dat graag doet. Stockfoto's zijn handig,
                     maar niet uniek. Je kan deze databases ook gebruiken ter
                     inspiratie wanneer je zelf een icoontje aan het ontwerpen
