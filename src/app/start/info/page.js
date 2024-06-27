@@ -290,10 +290,11 @@ const page = () => {
                     Via deze links vind je vrij te gebruiken foto&apos;s of
                     icoontjes onder Creative Commons licentie CC0, uit publieke
                     archieven of met vermelding van auteur. Vergeet zelf niet te
-                    fotograferen als je dat graag doet. Stockfoto's zijn handig,
-                    maar niet uniek. Je kan deze databases ook gebruiken ter
-                    inspiratie wanneer je zelf een icoontje aan het ontwerpen
-                    bent: hoe vereenvoudigen, hoe eenheid bewaren in een reeks?
+                    fotograferen als je dat graag doet. Stockfoto&apos;s zijn
+                    handig, maar niet uniek. Je kan deze databases ook gebruiken
+                    ter inspiratie wanneer je zelf een icoontje aan het
+                    ontwerpen bent: hoe vereenvoudigen, hoe eenheid bewaren in
+                    een reeks?
                   </p>
                 </div>
                 <div className="lg:w-2/3">
