@@ -35,20 +35,22 @@ const Page = async () => {
                   <p className="text-center underline">Bekijk PDF</p>
                 </a>
               ) : (
-                <div className="h-60 relative">
+                <div className="h-60 relative group">
                   <a
                     href={work.uploadwork}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Image
-                      src={work.uploadwork}
-                      alt={work.description}
-                      layout="fill"
-                      objectFit="cover"
-                      sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                      className="rounded"
-                    />
+                    <div className="relative w-full h-full">
+                      <Image
+                        src={work.uploadwork}
+                        alt={work.description}
+                        style={{ objectFit: "cover" }}
+                        fill
+                        sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                        className="rounded"
+                      />
+                    </div>
                   </a>
                 </div>
               )}
@@ -76,7 +78,7 @@ const Page = async () => {
                   </DialogContent>
                 </Dialog>
               ) : (
-                <div className="mt-2 bg-yellow-custom text-black py-1 px-3 rounded">
+                <div className="mt-2 bg-yellow-custom text-black py-1 px-3 w-fit rounded">
                   Nog geen Feedback
                 </div>
               )}

@@ -1,7 +1,19 @@
 import { createClient } from "@/utils/supabase/server";
-import { selectAssignmentByChapterId } from "@/functions/queries";
+import {
+  selectAssignmentByChapterId,
+  selectWorkByTaskId,
+} from "@/functions/queries";
 import { deleteTaskAction } from "@/functions/actions";
 import OpdrachtenDialog from "./OpdrachtenDialog";
+import UploadResultaat from "@/components/UploadResultaat";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const Opdrachten = async ({ params }) => {
   const supabase = createClient();
@@ -14,11 +26,19 @@ const Opdrachten = async ({ params }) => {
   if (userData?.user?.user_metadata?.role === "admin") {
     isAdmin = true;
   }
+  const workPromises = tasks.map((task) =>
+    selectWorkByTaskId(supabase, task.id)
+  );
+  const workDataArray = await Promise.all(workPromises);
 
   return (
     <div className="w-full flex flex-col space-y-4">
       {tasks && tasks.length > 0 ? (
-        tasks.map((task, index) => (
+        tasks.map((task, index) => {
+          const work = workDataArray[index];
+          const userWork = work.find(
+            (w) => w.users_userid === userData.user.id
+          );
           <div
             key={task.id}
             className={`flex flex-col space-y-4 w-full pb-4 ${
@@ -65,10 +85,55 @@ const Opdrachten = async ({ params }) => {
                     </button>
                   </form>
                 )}
+                {!isAdmin && (
+                  <>
+                    {userWork ? (
+                      userWork.feedback ? (
+                        <Dialog>
+                          <DialogTrigger asChild>
+                            <button className="ml-2 pt-3 pb-3 pl-6 pr-6 bg-green-custom text-black rounded-full">
+                              Bekijk feedback
+                            </button>
+                          </DialogTrigger>
+                          <DialogContent>
+                            <DialogHeader>
+                              <DialogTitle>Feedback</DialogTitle>
+                            </DialogHeader>
+                            <div className="p-4">
+                              <p>{userWork.feedback}</p>
+                            </div>
+                          </DialogContent>
+                        </Dialog>
+                      ) : (
+                        <div className="ml-2 pt-3 pb-3 pl-6 pr-6 bg-yellow-custom text-black rounded-full">
+                          Wachten op feedback
+                        </div>
+                      )
+                    ) : (
+                      <Dialog>
+                        <DialogTrigger asChild>
+                          <button className="ml-2 pt-3 pb-3 pl-6 pr-6 bg-white text-black border-0.25 border-black rounded-full">
+                            Upload resultaat
+                          </button>
+                        </DialogTrigger>
+                        <DialogContent>
+                          <DialogHeader>
+                            <DialogTitle>Upload Resultaat</DialogTitle>
+                            <DialogDescription>
+                              Vul de volgende velden in om je resultaat te
+                              uploaden.
+                            </DialogDescription>
+                          </DialogHeader>
+                          <UploadResultaat taskId={task.id} params={params} />
+                        </DialogContent>
+                      </Dialog>
+                    )}
+                  </>
+                )}
               </div>
             </div>
-          </div>
-        ))
+          </div>;
+        })
       ) : (
         <p>Geen opdrachten beschikbaar</p>
       )}
