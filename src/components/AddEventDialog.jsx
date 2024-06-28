@@ -45,7 +45,7 @@ const AddEventDialog = ({ isAdmin, onEventAdded }) => {
       <div>
         <button
           onClick={() => setOpen(true)}
-          className="mt-4 pt-3 pb-3 pl-6 pr-6 bg-black text-white rounded-full"
+          className="mt-4 pt-2 pb-2 pl-4 pr-4 bg-black text-white rounded-full hover:bg-white hover:text-black border border-black hover:border-black transition-all duration-300 ease-in-out"
         >
           Voeg Evenement Toe
         </button>

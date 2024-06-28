@@ -54,8 +54,9 @@ const Opdrachten = async ({ params }) => {
                 <a
                   href={task.taskpdf}
                   target="_blank"
+                  download={task.title}
                   rel="noopener noreferrer"
-                  className="pt-3 pb-3 pl-6 pr-6 bg-black text-white rounded-full text-sm"
+                  className="pt-3 pb-3 pl-6 pr-6 bg-black text-white border-black border-0.25 hover:bg-white hover:text-black duration-300 transition-all rounded-full text-sm"
                 >
                   Download PDF
                 </a>

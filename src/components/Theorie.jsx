@@ -29,12 +29,12 @@ const Theorie = async ({ params }) => {
       {theory?.theorypdf ? (
         <div className="flex flex-col space-y-4 w-full md:mt-4 md:mb-4 md:flex-row md:space-x-6">
           <p className="w-full md:w-3/5 text-base">{theory.description}</p>
-          <div className="flex items-center m-0 md:flex-row space-x-4 md:justify-end md:w-2/5">
+          <div className="flex items-center md:mt-0 md:flex-row space-x-4 md:justify-end md:w-2/5">
             <a
               href={theory.theorypdf}
               target="_blank"
               rel="noopener noreferrer"
-              className="pt-3 pb-3 pl-6 pr-6 bg-black text-white rounded-full text-sm h-fit"
+              className="pt-3 pb-3 pl-6 pr-6 bg-black text-white rounded-full border-black border-0.25 hover:bg-white hover:text-black text-sm transition-all duration-300 h-fit"
             >
               Download PDF
             </a>

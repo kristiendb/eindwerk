@@ -20,8 +20,8 @@ const page = async () => {
         <h2 className="text-4xl pb-8">Showcases</h2>
       </div>
       {showcases.map((showcase) => (
-        <div key={showcase.id} className="w-full sm:w-1/2 lg:w-1/4 p-2">
-          <div className="w-full relative border p-4 rounded-lg shadow-lg">
+        <div key={showcase.id} className="w-full sm:w-1/2 lg:w-1/3 p-2">
+          <div className="w-full relative border p-4 rounded-lg shadow-lg hover:bg-gray-100 transition-all duration-300 ease-in-out hover:shadow-xl">
             {showcase.uploadwork.endsWith(".pdf") ? (
               <a
                 href={showcase.uploadwork}

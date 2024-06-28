@@ -1,4 +1,4 @@
-const page = ({ params }) => {
-  return <div>pagina over {params.hoofdstuk}</div>;
+const page = () => {
+  return <div>page</div>;
 };
 export default page;

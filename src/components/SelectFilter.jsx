@@ -9,7 +9,7 @@ const SelectFilter = ({ levels, selectedLevel }) => {
         e.target.form.requestSubmit();
       }}
       defaultValue={selectedLevel}
-      className="border appearance-none border-black  rounded-full pt-2 pb-2 pl-4 pr-4 w-52"
+      className="border appearance-none border-black  rounded-full pt-2 pb-2 pl-4 pr-4 w-52 cursor-pointer"
     >
       <option value="all" className="text-left">
         - Filter hier op niveau -

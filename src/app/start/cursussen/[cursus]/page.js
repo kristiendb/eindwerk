@@ -56,7 +56,7 @@ const page = async ({ params, searchParams }) => {
                   as={`/start/cursussen/${chapter.course.id}-${courseSlug}/${chapter.id}-${chapterSlug}-${levelSlug}`}
                 >
                   <div
-                    className={`bg-${chapter.course.color} ${colorShade} h-72 rounded-3xl`}
+                    className={`bg-${chapter.course.color} ${colorShade} h-72 rounded-3xl hover:shadow-lg hover:shadow-slate-400 transition-all duration-300 ease-in-out shadow-md`}
                   >
                     <h4 className="pt-6 pl-6 pr-6 pb-2 border-b-0.25 border-black font-bold">
                       {chapter.level.name}

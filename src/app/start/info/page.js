@@ -37,60 +37,60 @@ const page = () => {
                   </p>
                 </div>
                 <div className="lg:w-2/3">
-                  <div className="p-4 flex flex-row flex-wrap gap-4">
+                  <div className="p-4 lg:pt-0 lg:pl-4 lg:pr-4 lg:pb-4 flex flex-row flex-wrap gap-4">
                     <a
                       href="https://www.itsnicethat.com/"
                       target="_blank"
-                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
                     >
                       itsnicethat.com
                     </a>
                     <a
                       href="https://www.creativeboom.com/"
                       target="_blank"
-                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
                     >
                       creativeboom.com
                     </a>
                     <a
                       href="https://www.typotalks.com/"
                       target="_blank"
-                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
                     >
                       typotalks.com
                     </a>
                     <a
                       href="https://www.slanted.de/"
                       target="_blank"
-                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
                     >
                       slanted.de
                     </a>
                     <a
                       href="https://eyeondesign.aiga.org/"
                       target="_blank"
-                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
                     >
                       eyeondesign.aiga.org
                     </a>
                     <a
                       href="https://www.eyemagazine.com/"
                       target="_blank"
-                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
                     >
                       eyemagazine.com
                     </a>
                     <a
                       href="https://www.dandad.org/en/d-ad-awards-pencil-winners/"
                       target="_blank"
-                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
                     >
                       dandad.org
                     </a>
                     <a
                       href="https://b-i-n-g-o.be/"
                       target="_blank"
-                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
                     >
                       b-i-n-g-o.be
                     </a>
@@ -142,15 +142,27 @@ const page = () => {
                     uitvoeren, dan kan je bij een drukkerij terecht. Online
                     drukwerk (oplage, meer dan een exemplaar) bestellen bij
                     o.a.:
-                    <a href="www.zwartopwit.be" className="underline">
+                    <a
+                      href="https://www.zwartopwit.be"
+                      target="_blank"
+                      className="underline"
+                    >
                       zwartopwit.be
                     </a>
                     ,
-                    <a href="www.peterprint.be" className="underline">
+                    <a
+                      href="https://www.peterprint.be"
+                      target="_blank"
+                      className="underline"
+                    >
                       peterprint.be
                     </a>
                     ,
-                    <a href="www.belprinto.be" className="underline">
+                    <a
+                      href="https://www.belprinto.be"
+                      target="_blank"
+                      className="underline"
+                    >
                       belprinto.be
                     </a>
                     . <br /> Tips in Brussel: Click Click Graphics, dit kaartje
@@ -191,81 +203,81 @@ const page = () => {
                   </p>
                 </div>
                 <div className="lg:w-2/3">
-                  <div className="p-4 flex flex-row flex-wrap gap-4">
+                  <div className="p-4 lg:pt-0 lg:pl-4 lg:pr-4 lg:pb-4 flex flex-row flex-wrap gap-4">
                     <a
                       href="https://fonts.adobe.com/"
                       target="_blank"
-                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
                     >
                       Adobe fonts
                     </a>
                     <a
                       href="https://fonts.google.com/"
                       target="_blank"
-                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
                     >
                       Google fonts
                     </a>
                     <a
                       href="https://www.fontsquirrel.com/"
                       target="_blank"
-                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
                     >
                       Fontsquirrel
                     </a>
                     <a
                       href="https://www.fontspring.com/"
                       target="_blank"
-                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
                     >
                       Fontspring
                     </a>
                     <a
                       href="https://open-foundry.com/"
                       target="_blank"
-                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
                     >
                       Open Foundry
                     </a>
                     <a
                       href="https://velvetyne.fr/"
                       target="_blank"
-                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
                     >
                       Velvetyne
                     </a>
                     <a
                       href="https://www.exljbris.com/"
                       target="_blank"
-                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
                     >
                       ExjLibris
                     </a>
                     <a
                       href="https://www.theleagueofmoveabletype.com/"
                       target="_blank"
-                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
                     >
                       The League of Moveable Type
                     </a>
                     <a
                       href="https://usemodify.com/"
                       target="_blank"
-                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
                     >
                       Use & Modify
                     </a>
                     <a
                       href="https://fontsinuse.com/"
                       target="_blank"
-                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
                     >
                       fontsinuse.com
                     </a>
                     <a
                       href="https://www.fontbrief.com/fontbrief"
                       target="_blank"
-                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
                     >
                       fontbrief.com
                     </a>
@@ -298,74 +310,74 @@ const page = () => {
                   </p>
                 </div>
                 <div className="lg:w-2/3">
-                  <div className="p-4 flex flex-row flex-wrap gap-4">
+                  <div className="p-4 lg:pt-0 lg:pl-4 lg:pr-4 lg:pb-4 flex flex-row flex-wrap gap-4">
                     <a
                       href="https://isorepublic.com/"
                       target="_blank"
-                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
                     >
                       isorepublic
                     </a>
                     <a
                       href="https://www.pexels.com/nl-nl/"
                       target="_blank"
-                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
                     >
                       pexels
                     </a>
                     <a
                       href="https://www.splitshire.com/"
                       target="_blank"
-                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
                     >
                       splitshire
                     </a>
                     <a
                       href="https://cupcake.nilssonlee.se/"
                       target="_blank"
-                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
                     >
                       cupcake.nilssonlee
                     </a>
                     <a
                       href="https://nos.twnsnd.co/"
                       target="_blank"
-                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
                     >
                       nos.twnsnd
                     </a>
                     <a
                       href="https://magdeleine.co/"
                       target="_blank"
-                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
                     >
                       magdeleine
                     </a>
                     <a
                       href="https://www.apollo-magazine.com/open-access-image-libraries-a-handy-list/"
                       target="_blank"
-                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
                     >
                       Open acces image libraries
                     </a>
                     <a
                       href="https://www.flaticon.com/"
                       target="_blank"
-                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
                     >
                       flaticon
                     </a>
                     <a
                       href="https://thenounproject.com/"
                       target="_blank"
-                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
                     >
                       thenounproject
                     </a>
                     <a
                       href="https://graphicburger.com/icons-set/"
                       target="_blank"
-                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom underline"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
                     >
                       graphicburger.com
                     </a>

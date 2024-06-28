@@ -25,8 +25,8 @@ const page = async ({ params }) => {
       </div>
       {workData.length > 0 ? (
         workData.map((work) => (
-          <div key={work.id} className="w-full sm:w-1/2 lg:w-1/4 p-2">
-            <div className="w-full relative border p-4 rounded-lg shadow-lg">
+          <div key={work.id} className="w-full sm:w-1/2  lg:w-1/3 p-2 ">
+            <div className="w-full relative border p-4 rounded-lg hover:bg-gray-100 transition-all duration-300 ease-in-out hover:shadow-xl shadow-lg">
               {work.uploadwork.endsWith(".pdf") ? (
                 <a
                   href={work.uploadwork}
