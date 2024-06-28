@@ -7,52 +7,31 @@ import {
 import "@/components/ui/accordion.css";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
-import Head from "next/head";
 
 const page = () => {
   return (
     <>
-      <Head>
-        <title>Grafisch Ontwerp & Illustratie - Over het atelier</title>
-        <meta
-          name="description"
-          content="De opleiding Grafisch Ontwerp en Illustratie aan de Sint-Lukas Academie Schaarbeek biedt zowel beginners als gevorderden een uitgebreide leerervaring. Of je nu start met de basisvaardigheden op maandag of je verdiept in geavanceerde technieken op dinsdag, onze cursussen helpen je om je creatieve talenten te ontwikkelen. Combineer lessen voor een snellere vooruitgang en ontdek de sterke connectie tussen inhoud en vorm door middel van experimenten en kritische reflectie."
-        />
-        <meta
-          name="keywords"
-          content="Grafisch Ontwerp, Illustratie, Sint-Lukas Academie, Schaarbeek, Kunstopleiding, Grafisch ontwerp en illustratie, Typografie, Lettering, Affiches, Boeken, Huisstijlen, Websites"
-        />
-        <meta name="author" content="Sint-Lukas Academie" />
-        <meta
-          property="og:title"
-          content="Grafisch Ontwerp & Illustratie - Sint-Lukas Academie Schaarbeek"
-        />
-        <meta
-          property="og:description"
-          content="De opleiding Grafisch Ontwerp en Illustratie aan de Sint-Lukas Academie Schaarbeek biedt zowel beginners als gevorderden een uitgebreide leerervaring. Of je nu start met de basisvaardigheden op maandag of je verdiept in geavanceerde technieken op dinsdag, onze cursussen helpen je om je creatieve talenten te ontwikkelen. Combineer lessen voor een snellere vooruitgang en ontdek de sterke connectie tussen inhoud en vorm door middel van experimenten en kritische reflectie."
-        />
-        <meta property="og:image" content="/GO-I_Building.jpg" />
-        <meta property="og:type" content="website" />
-      </Head>
-      <div className="flex flex-row mr-auto gap-12 sm:w-full md:w-3/4 pt-4 ">
-        <Image
-          src="/GO-I_Building.jpg"
-          alt="Grafisch ontwerp & illustratie - Sint-Lukas Academie Schaarbeek"
-          width={40}
-          height={60}
-          objectFit="cover"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="rounded-lg"
-        />
-        <Image
-          src="/GO-I_Building-2.jpg"
-          alt="Grafisch ontwerp & illustratie - Sint-Lukas Academie Schaarbeek"
-          width={40}
-          height={60}
-          objectFit="cover"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="hidden lg:block rounded-lg"
-        />
+      <div className="flex flex-row mr-auto gap-12 sm:w-full md:w-3/4 pt-4 relative h-96">
+        <div className="relative w-full lg:w-1/2 h-full">
+          <Image
+            src="/GO-I_Building.jpg"
+            alt="Grafisch ontwerp & illustratie - Sint-Lukas Academie Schaarbeek"
+            layout="fill"
+            objectFit="cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="rounded-lg"
+          />
+        </div>
+        <div className="relative lg:w-1/2 h-full hidden lg:block">
+          <Image
+            src="/GO-I_Building-2.jpg"
+            alt="Grafisch ontwerp & illustratie - Sint-Lukas Academie Schaarbeek"
+            layout="fill"
+            objectFit="cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="rounded-lg"
+          />
+        </div>
       </div>
       <Accordion
         type="single"
