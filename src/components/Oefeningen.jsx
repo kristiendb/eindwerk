@@ -47,7 +47,7 @@ const Oefeningen = async ({ params }) => {
               }`}
             >
               <div className="flex flex-col md:flex-row justify-between items-center">
-                <div className="w-full md:w-2/6 text-base flex flex-col">
+                <div className="w-full md:w-4/6 text-base flex flex-col">
                   <p className="font-bold">{task.title}</p>
                   <p>{task.description}</p>
                 </div>
