@@ -5,9 +5,6 @@ import NextTopLoader from "nextjs-toploader";
 export const metadata = {
   title: "Grafisch ontwerp en illustratie",
   description: "studentenplatform voor grafisch ontwerp en illustratie",
-  icons: {
-    icon: "/favicon.ico",
-  },
 };
 
 const layout = ({ children }) => {
