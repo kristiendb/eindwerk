@@ -40,25 +40,31 @@ const Voorbeelden = async ({ params }) => {
                 rel="noopener noreferrer"
                 className="block w-full h-60 relative cursor-pointer"
               >
-                <Image
-                  src={voorbeeld.exampleimage}
-                  alt={voorbeeld.description}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="rounded"
-                />
+                <div className="relative w-full h-full">
+                  <Image
+                    src={voorbeeld.exampleimage}
+                    alt={voorbeeld.description}
+                    style={{ objectFit: "cover" }}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="rounded"
+                  />
+                </div>
               </a>
             ) : (
               <Dialog>
                 <DialogTrigger asChild>
                   <div className="block w-full h-60 relative cursor-pointer">
-                    <Image
-                      src={voorbeeld.exampleimage}
-                      alt={voorbeeld.description}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="rounded"
-                    />
+                    <div className="relative w-full h-full">
+                      <Image
+                        src={voorbeeld.exampleimage}
+                        alt={voorbeeld.description}
+                        fill
+                        style={{ objectFit: "cover" }}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="rounded"
+                      />
+                    </div>
                   </div>
                 </DialogTrigger>
                 <DialogContent>
@@ -68,11 +74,12 @@ const Voorbeelden = async ({ params }) => {
                       {voorbeeld.description}
                     </DialogDescription>
                   </DialogHeader>
-                  <div className="w-full h-full relative">
+                  <div className="relative w-full h-full">
                     <Image
                       src={voorbeeld.exampleimage}
                       alt={voorbeeld.description}
                       fill
+                      style={{ objectFit: "cover" }}
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="rounded"
                     />

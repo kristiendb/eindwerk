@@ -1,24 +1,18 @@
 import Navigation from "@/components/Navigation";
 import "./globals.css";
 import NextTopLoader from "nextjs-toploader";
-import { Toaster } from "@/components/ui/toaster";
 
 export const metadata = {
   title: "Grafisch ontwerp en illustratie",
   description: "studentenplatform voor grafisch ontwerp en illustratie",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 const layout = ({ children }) => {
   return (
     <html lang="nl">
-      {/* <link rel="icon" href="favicon.svg" />
-      <meta property="og:title" content="Grafisch ontwerp en illustratie" />
-      <meta
-        property="og:description"
-        content="studentenplatform voor grafisch ontwerp en illustratie"
-      />
-      <meta property="og:image" content="/Logo_GO-I.jpg" /> */}
-
       <body className="font-space-grotesk overflow-x-hidden">
         <NextTopLoader
           color="#70f0b3"
@@ -39,7 +33,6 @@ const layout = ({ children }) => {
           <Navigation />
           <section>{children}</section>
         </div>
-        <Toaster />
       </body>
     </html>
   );

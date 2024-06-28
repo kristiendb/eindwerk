@@ -1,7 +1,21 @@
+// /** @type {import('next').NextConfig} */
+// const nextConfig = {
+//   images: {
+//     domains: ["gcrgljjodizocfzpwmvs.supabase.co"],
+//   },
+// };
+
+// export default nextConfig;
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["gcrgljjodizocfzpwmvs.supabase.co"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "gcrgljjodizocfzpwmvs.supabase.co",
+      },
+    ],
   },
 };
 
