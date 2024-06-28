@@ -25,11 +25,6 @@ export async function deleteTheoryAction(formData) {
     console.log("Delete error:", error);
   }
 
-  // if (error) {
-  //   console.log("Delete error:", error);
-  //   return { error: error.message };
-  // }
-  // console.log("Delete gedaan:", data);
   revalidatePath(formData.get("path"));
 }
 
@@ -182,16 +177,6 @@ export async function uploadTheoryAction(formData) {
     ]);
   }
 
-  // const { data: insertData, error } = await supabase.from("theory").insert([
-  //   {
-  //     chapters_idchapters: parseInt(chapterId),
-  //     description: description,
-  //     theorypdf: fileUrl,
-  //   },
-  // ]);
-  // if (error) {
-  //   console.log(error);
-  // }
   revalidatePath(formData.get("path"));
 }
 
@@ -201,7 +186,6 @@ export async function uploadExampleAction(state, formData) {
   const description = formData.get("description");
   const chapterId = formData.get("chapterId");
   const url = formData.get("url");
-  // const fileName = Math.random().toString(32).substring(2);
   const fileNameParts = file.name.split(".");
   const fileExtension = fileNameParts.length > 1 ? fileNameParts.pop() : "";
   const fileName =
@@ -307,7 +291,6 @@ export async function uploadResultAction(formData) {
   const description = formData.get("description");
   const taskId = formData.get("taskId");
   const path = formData.get("path");
-  // const fileName = Math.random().toString(32).substring(2) + ".pdf";
   const fileNameParts = file.name.split(".");
   const fileExtension = fileNameParts.length > 1 ? fileNameParts.pop() : "";
   const fileName =
@@ -445,12 +428,10 @@ export async function addChapterAction(state, formData) {
 
 export async function deleteUserAction(state, formData) {
   const id = formData.get("id");
-  // console.log(id);
+
   const supabase = createClient(true);
   const { data, error } = await supabase.auth.admin.deleteUser(id);
-  // console.log(data);
 
-  // console.log(error);
   revalidatePath(formData.get("path"));
   return { msg: "success" };
 }

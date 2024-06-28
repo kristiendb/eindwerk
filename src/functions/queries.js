@@ -37,32 +37,7 @@ export const selectUser = async (supabase, userId) => {
   return data;
 };
 
-export const selectStudents = async (supabase) => {
-  const { data, error } = await supabase
-    .from("users")
-    .select("*")
-    .eq("isteacher", true);
-
-  if (error) {
-    console.error("Error fetching students:", error);
-    return null;
-  }
-
-  console.log("SelectStudents data:", data); // Voeg extra logging toe
-
-  return data;
-};
-
-// export const selectStudents = async (supabase, student) => {
-//   let { data } = await supabase
-//     .from("users")
-//     .select("*")
-//     .eq("isteacher", student);
-//   return data;
-// };
-
 export const selectAllCourses = async (supabase) => {
-  // const supabase = createClient();
   let { data, error } = await supabase.from("courses").select("*");
   if (error) throw error;
   return data;
@@ -93,29 +68,6 @@ export const selectChaptersByCourseId = async (
   return data;
 };
 
-// export const selectChaptersByCourseId = async (
-//   supabase,
-//   courseId,
-//   searchParams
-// ) => {
-//   if (Object.keys(searchParams).length > 0) {
-//     let { data, error } = await supabase
-//       .from("chapters")
-//       .select("*, level (name), course: courses (color, title, id)")
-//       .eq("courses_idcourses", courseId);
-//     if (error) throw error;
-//     return data;
-//   } else {
-//     let { data, error } = await supabase
-//       .from("chapters")
-//       .select("*, level (name), course: courses (color, title, id)")
-//       .eq("courses_idcourses", courseId)
-//       .where("level_id", "eq", searchParams.levelId);
-//     if (error) throw error;
-//     return data;
-//   }
-// };
-
 export const selectTheoryByChapterId = async (supabase, chapterId) => {
   const { data } = await supabase
     .from("theory")
@@ -142,16 +94,6 @@ export const selectAssignmentByChapterId = async (supabase, chapterId) => {
     .eq("isassignment", true);
   return data;
 };
-
-// export const selectAssignmentByChapterId = async (supabase, chapterId) => {
-//   const { data } = await supabase
-//     .from("tasks")
-//     .select("title, description, taskpdf, isassignment")
-//     .eq("chapters_idchapters", chapterId)
-//     .eq("isassignment", true)
-//     .single();
-//   return data;
-// };
 
 export const selectExampleByChapterId = async (supabase, chapterId) => {
   const { data } = await supabase
@@ -194,32 +136,3 @@ export const selectPortfolio = async (supabase) => {
   const { data } = await supabase.from("portfolio").select("*");
   return data;
 };
-
-// export const getChapterDetails = async (supabase, chapterSlug, levelSlug) => {
-//   const { data: levelData, error: levelError } = await supabase
-//     .from("level")
-//     .select("id")
-//     .ilike("name", levelSlug)
-//     .single();
-
-//   if (levelError) {
-//     console.error("Error fetching level data:", levelError);
-//     return { data: null, error: levelError };
-//   }
-
-//   const levelId = levelData.id;
-
-//   const { data: chapterData, error: chapterError } = await supabase
-//     .from("chapters")
-//     .select("id, title, description, level_idlevel")
-//     .ilike("title", chapterSlug)
-//     .eq("level_idlevel", levelId)
-//     .single();
-
-//   if (chapterError) {
-//     console.error("Error fetching chapter data:", chapterError);
-//     return { data: null, error: chapterError };
-//   }
-
-//   return { data: chapterData, error: null };
-// };

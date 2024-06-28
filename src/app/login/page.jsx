@@ -1,7 +1,6 @@
 import { login } from "./actions";
 import LoginForm from "@/components/LoginForm";
 import Link from "next/link";
-import Tester from "@/components/Tester";
 export default function LoginPage({ searchParams }) {
   const errorMessage = searchParams.error;
   return (
