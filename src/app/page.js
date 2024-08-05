@@ -1,6 +1,15 @@
 import ButtonGreen from "@/components/ButtonGreen";
 import Link from "next/link";
+import ImagesLayout from "@/components/ImagesLayout";
 import Image from "next/image";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const Page = () => {
   return (
@@ -16,14 +25,61 @@ const Page = () => {
             <ButtonGreen>Lees Meer</ButtonGreen>
           </Link>
         </div>
-        <div className="col-span-1 h-80 relative">
-          <Image
-            src="/Ellen Splinter 2.png"
-            alt="Ellen Splinter - vaas"
-            fill
-            style={{ objectFit: "cover" }}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          />
+        <ImagesLayout
+          col={1}
+          src={"/Ellen Splinter 2.png"}
+          alt="Ellen Splinter - vaas"
+        />
+        <ImagesLayout
+          col={2}
+          src={"/648e8fed-e1be-4563-aaab-758530d29da1_rw_1920.png"}
+          alt=""
+          className="hidden lg:block"
+        />
+        <ImagesLayout col={1} src={"/Ine Hendrickx 2.webp"} alt="" />
+        <ImagesLayout
+          col={2}
+          src={"/648e8fed-e1be-4563-aaab-758530d29da1_rw_1920.png"}
+          alt=""
+          className="md:hidden lg:hidden"
+        />
+        <ImagesLayout col={2} src={"/Inge Paemen.jpg"} alt="" />
+        <ImagesLayout col={1} src={"/Orla Verstraeten 2.jpg"} alt="" />
+        <ImagesLayout col={1} src={"/Bo Billiet 2.webp"} alt="" />
+        <ImagesLayout col={2} src={"/Inge Pieters 4.jpg"} alt="" />
+        <ImagesLayout col={2} src={"/Laure Baert.jpg"} alt="" />
+        <ImagesLayout col={2} src={"/Véronique De Pauw.png"} alt="" />
+        <ImagesLayout
+          col={1}
+          src={"/Sander Lambrix Expo Open Atelier 2024 Flyer A6-2.png"}
+          alt=""
+        />
+        <ImagesLayout col={1} src={"/Janey Stouten 4.webp"} alt="" />
+        {/* <div className="col-span-1 h-80 relative overflow-hidden">
+          <Dialog>
+            <DialogTrigger>
+              <Image
+                src="/Ellen Splinter 2.png"
+                alt="Ellen Splinter - vaas"
+                fill
+                style={{ objectFit: "cover" }}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className=" transition-all transition-200 hover:scale-110"
+              />
+            </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Ellen Splinter - Vaas</DialogTitle>
+              </DialogHeader>
+              <Image
+                src="/Ellen Splinter 2.png"
+                alt="Ellen Splinter - vaas"
+                width={800}
+                height={600}
+                style={{ objectFit: "contain" }}
+              />
+            </DialogContent>
+          </Dialog>
         </div>
         <div className="col-span-2 h-80 relative hidden lg:block">
           <Image
@@ -125,7 +181,7 @@ const Page = () => {
             style={{ objectFit: "cover" }}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
-        </div>
+        </div> */}
       </div>
     </>
   );

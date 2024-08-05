@@ -4,6 +4,7 @@ import "server-only";
 import { createClient } from "@/utils/supabase/server";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+// import { Upload } from "tus-js-client";
 
 export async function deleteTheoryAction(formData) {
   const supabase = createClient();
@@ -134,6 +135,58 @@ export async function updateIntroductionAction(state, formData) {
   revalidatePath(formData.get("path"));
   return { msg: "success" };
 }
+
+// export async function uploadTheoryAction(formData) {
+//   const supabase = createClient();
+//   const {
+//     data: { user },
+//   } = await supabase.auth.getUser();
+
+//   if (user?.user_metadata?.role !== "admin") {
+//     throw new Error("Geen admin");
+//   }
+
+//   const file = formData.get("file");
+//   const description = formData.get("description");
+//   const chapterId = formData.get("chapterId");
+//   const fileName = Math.random().toString(32).substring(2) + ".pdf";
+
+//   const upload = new Upload(file, {
+//     endpoint: `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/resumable/theory-pdf/public/${fileName}`,
+//     retryDelays: [0, 1000, 3000, 5000],
+//     onError: function (error) {
+//       throw new Error(`Failed to upload file: ${error}`);
+//     },
+//     onSuccess: async function () {
+//       const fileUrl = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/theory-pdf/${fileName}`;
+
+//       const { data: existingData } = await supabase
+//         .from("theory")
+//         .select("id")
+//         .eq("chapters_idchapters", chapterId)
+//         .single();
+
+//       if (existingData) {
+//         await supabase
+//           .from("theory")
+//           .update({ description, theorypdf: fileUrl })
+//           .eq("chapters_idchapters", chapterId);
+//       } else {
+//         await supabase.from("theory").insert([
+//           {
+//             chapters_idchapters: parseInt(chapterId),
+//             description: description,
+//             theorypdf: fileUrl,
+//           },
+//         ]);
+//       }
+
+//       revalidatePath(formData.get("path"));
+//     },
+//   });
+
+//   upload.start();
+// }
 
 export async function uploadTheoryAction(formData) {
   const supabase = createClient();
