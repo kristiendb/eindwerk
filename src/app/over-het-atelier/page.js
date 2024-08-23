@@ -41,7 +41,7 @@ const page = () => {
       >
         <AccordionItem
           value="item-1"
-          className=" border-green-custom border-0.25 rounded-lg pl-2 pr-2 "
+          className=" border-black border-0.25 rounded-lg pl-2 pr-2 "
         >
           <AccordionTrigger className="font-medium text-xl">
             Introductie
@@ -88,7 +88,7 @@ const page = () => {
         </AccordionItem>
         <AccordionItem
           value="item-2"
-          className="mt-2 border-green-custom border-0.25 rounded-lg pl-2 pr-2"
+          className="mt-2 border-black border-0.25 rounded-lg pl-2 pr-2"
         >
           <AccordionTrigger className="font-medium text-xl">
             Aanpak
@@ -149,7 +149,7 @@ const page = () => {
         </AccordionItem>
         <AccordionItem
           value="item-3"
-          className="mt-2 border-green-custom border-0.25 rounded-lg pl-2 pr-2"
+          className="mt-2 border-black border-0.25 rounded-lg pl-2 pr-2"
         >
           <AccordionTrigger className="font-medium text-xl">
             Materiaal
@@ -178,7 +178,7 @@ const page = () => {
 
         <AccordionItem
           value="item-4"
-          className="mt-2 border-green-custom border-0.25 rounded-lg pl-2 pr-2"
+          className="mt-2 border-black border-0.25 rounded-lg pl-2 pr-2"
         >
           <AccordionTrigger className="font-medium text-xl">
             Studietraject
@@ -213,7 +213,7 @@ const page = () => {
 
         <AccordionItem
           value="item-5"
-          className="mt-2 border-green-custom border-0.25 rounded-lg pl-2 pr-2"
+          className="mt-2 border-black border-0.25 rounded-lg pl-2 pr-2"
         >
           <AccordionTrigger className="font-medium text-xl">
             Uurrooster
@@ -223,7 +223,7 @@ const page = () => {
             <div className="lg:flex lg:w-3/4 text-base pb-5 lg:flex-row space-x-0 space-y-8 w-full lg:space-x-12 lg:space-y-0">
               <div className="lg:w-1/2">
                 <p>
-                  Elke les gaat door van
+                  Elke les gaat door van&nbsp;
                   <span className="font-semibold">17:40 tot 21u</span>.
                 </p>
               </div>
@@ -236,7 +236,7 @@ const page = () => {
 
         <AccordionItem
           value="item-6"
-          className="mt-2 border-green-custom border-0.25 rounded-lg pl-2 pr-2"
+          className="mt-2 border-black border-0.25 rounded-lg pl-2 pr-2"
         >
           <AccordionTrigger className="font-medium text-xl">
             Locatie
@@ -246,7 +246,7 @@ const page = () => {
             <div className="lg:flex lg:w-3/4 text-base pb-5 lg:flex-row space-x-0 space-y-8 w-full lg:space-x-12 lg:space-y-0">
               <div className="lg:w-1/2">
                 <p>
-                  Het atelier gaat door in de academie:
+                  Het atelier gaat door in de academie:&nbsp;
                   <span className="font-semibold">
                     Groenstraat 156, 1030 Schaarbeek
                   </span>
@@ -261,7 +261,7 @@ const page = () => {
 
         <AccordionItem
           value="item-7"
-          className="mt-2 border-green-custom border-0.25 rounded-lg pl-2 pr-2"
+          className="mt-2 border-black border-0.25 rounded-lg pl-2 pr-2"
         >
           <AccordionTrigger className="font-medium text-xl">
             Contact

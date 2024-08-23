@@ -96,6 +96,12 @@ const Calendar = () => {
                 .format(new Date(selectedEvent.starttime))
                 .replace(/\//g, ".")}
             </h2>
+            <p>
+              {new Date(selectedEvent.starttime).toLocaleTimeString([], {
+                hour: "2-digit",
+                minute: "2-digit",
+              })}
+            </p>
             <p>{selectedEvent.title}</p>
             <p>{selectedEvent.description}</p>
             {selectedEvent.link ? (

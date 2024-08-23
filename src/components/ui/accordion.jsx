@@ -14,7 +14,7 @@ const AccordionItem = React.forwardRef(({ className, ...props }, ref) => (
     className={cn(
       "border-b",
       className,
-      "data-[state=open]:bg-neutral-100 hover:bg-neutral-100 duration-300 transition-all"
+      "data-[state=open]: hover:bg-neutral-100 duration-300 transition-all"
     )}
     {...props}
   />
