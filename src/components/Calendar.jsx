@@ -83,10 +83,15 @@ const Calendar = () => {
             events={events}
             eventClick={handleEventClick}
             height={"auto"}
+            eventTimeFormat={{
+              hour: "2-digit",
+              minute: "2-digit",
+              hour12: false,
+            }}
           />
         </div>
         {selectedEvent && (
-          <div className="ml-5 md:pt-16 pt-6 pb-6">
+          <div className="ml-5 md:w-1/4 md:pt-16 pt-6 pb-6">
             <h2 className="text-xl">
               {new Intl.DateTimeFormat("en-GB", {
                 year: "numeric",
@@ -97,10 +102,31 @@ const Calendar = () => {
                 .replace(/\//g, ".")}
             </h2>
             <p>
-              {new Date(selectedEvent.starttime).toLocaleTimeString([], {
-                hour: "2-digit",
-                minute: "2-digit",
-              })}
+              {new Date(selectedEvent.starttime).toLocaleDateString() !==
+              new Date(selectedEvent.endtime).toLocaleDateString() ? (
+                <>
+                  {new Date(selectedEvent.starttime)
+                    .toLocaleDateString()
+                    .replace(/-/g, ".")}
+                  &nbsp;-&nbsp;
+                  {new Date(selectedEvent.endtime)
+                    .toLocaleDateString()
+                    .replace(/-/g, ".")}
+                </>
+              ) : (
+                <>
+                  {new Date(selectedEvent.starttime).toLocaleTimeString([], {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                  })}
+                  &nbsp;-&nbsp;
+                  {new Date(selectedEvent.endtime).toLocaleTimeString([], {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                  })}
+                  uur
+                </>
+              )}
             </p>
             <p>{selectedEvent.title}</p>
             <p>{selectedEvent.description}</p>
