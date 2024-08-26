@@ -503,3 +503,31 @@ export async function updateChapterAction(state, formData) {
   revalidatePath(formData.get("path"));
   return { msg: "success" };
 }
+
+export async function updateShowcaseAction(formData) {
+  const supabase = createClient();
+  const showcaseId = formData.get("showcaseId");
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (user?.user_metadata?.role !== "admin") {
+    throw new Error("Geen admin");
+  }
+
+  try {
+    const { data, error } = await supabase
+      .from("work")
+      .update({ isshowcase: false })
+      .eq("id", parseInt(showcaseId));
+
+    if (error) {
+      throw error;
+    }
+  } catch (error) {
+    console.log("Update error:", error);
+  }
+
+  revalidatePath(formData.get("path"));
+}

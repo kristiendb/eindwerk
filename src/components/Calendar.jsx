@@ -88,12 +88,13 @@ const Calendar = () => {
               minute: "2-digit",
               hour12: false,
             }}
+            timeZone="Europe/Brussels"
           />
         </div>
         {selectedEvent && (
           <div className="ml-5 md:w-1/4 md:pt-16 pt-6 pb-6">
             <h2 className="text-xl">
-              {new Intl.DateTimeFormat("en-GB", {
+              {new Intl.DateTimeFormat("nl-BE", {
                 year: "numeric",
                 month: "2-digit",
                 day: "2-digit",
@@ -115,16 +116,14 @@ const Calendar = () => {
                 </>
               ) : (
                 <>
-                  {new Date(selectedEvent.starttime).toLocaleTimeString([], {
-                    hour: "2-digit",
-                    minute: "2-digit",
-                  })}
+                  {new Date(selectedEvent.starttime)
+                    .toISOString()
+                    .substring(11, 16)}
                   &nbsp;-&nbsp;
-                  {new Date(selectedEvent.endtime).toLocaleTimeString([], {
-                    hour: "2-digit",
-                    minute: "2-digit",
-                  })}
-                  uur
+                  {new Date(selectedEvent.endtime)
+                    .toISOString()
+                    .substring(11, 16)}
+                  &nbsp;uur (UTC)
                 </>
               )}
             </p>
