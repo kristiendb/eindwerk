@@ -170,8 +170,8 @@ const Page = () => {
         />
         <ImagesLayout
           col={1}
-          src={"/Anke Van den Bremt 2.webp"}
-          alt="Anke Van den Bremt"
+          src={"/Ellen Splinter 3.jpg"}
+          alt="Ellen Splinter"
         />
         <ImagesLayout
           col={1}

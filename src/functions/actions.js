@@ -29,6 +29,29 @@ export async function deleteTheoryAction(formData) {
   revalidatePath(formData.get("path"));
 }
 
+export async function deleteChapterAction(state, formData) {
+  const supabase = createClient();
+  const chapterId = formData.get("chapterId");
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (user?.user_metadata?.role !== "admin") {
+    throw new Error("Geen admin");
+  }
+  try {
+    const { data, error } = await supabase
+      .from("chapters")
+      .delete()
+      .eq("id", parseInt(chapterId));
+  } catch (error) {
+    console.log("Delete error:", error);
+  }
+
+  revalidatePath(formData.get("path"));
+}
+
 export async function deleteTaskAction(formData) {
   const supabase = createClient();
   const taskId = formData.get("taskId");
@@ -494,10 +517,11 @@ export async function updateChapterAction(state, formData) {
   const chapterId = formData.get("chapterId");
   const title = formData.get("title");
   const description = formData.get("description");
+  const level = formData.get("level");
 
   const { error } = await supabase
     .from("chapters")
-    .update({ title, description })
+    .update({ title, description, level_idlevel: level })
     .eq("id", chapterId);
 
   revalidatePath(formData.get("path"));

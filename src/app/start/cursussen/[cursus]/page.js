@@ -5,6 +5,7 @@ import { slugit } from "@/helpers";
 import Link from "next/link";
 import HoofdstukkenDialog from "@/components/HoofdstukkenDialog";
 import UpdateHoofdstukkenDialog from "@/components/UpdateHoofdstukkenDialog";
+import DeleteHoofdstukkenDialog from "@/components/DeleteHoofdstukkenDialog";
 
 const page = async ({ params, searchParams }) => {
   const [id] = params.cursus.split("-");
@@ -70,13 +71,22 @@ const page = async ({ params, searchParams }) => {
                   </div>
                 </Link>
                 {isAdmin && (
-                  <div className="absolute bottom-6 left-6 hidden group-hover:block">
-                    <UpdateHoofdstukkenDialog
-                      chapter={chapter}
-                      id={chapter.id}
-                      params={params}
-                    />
-                  </div>
+                  <>
+                    <div className="absolute bottom-6 left-6 hidden group-hover:block">
+                      <UpdateHoofdstukkenDialog
+                        chapter={chapter}
+                        id={chapter.id}
+                        params={params}
+                      />
+                    </div>
+                    <div className="absolute bottom-6 right-6 hidden group-hover:block">
+                      <DeleteHoofdstukkenDialog
+                        chapter={chapter}
+                        id={chapter.id}
+                        params={params}
+                      />
+                    </div>
+                  </>
                 )}
               </div>
             );
