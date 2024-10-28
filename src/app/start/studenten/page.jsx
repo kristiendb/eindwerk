@@ -4,6 +4,7 @@ import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 import { cloneElement } from "react";
+
 const Page = async () => {
   const columns = [
     {
@@ -17,6 +18,10 @@ const Page = async () => {
     {
       accessorKey: "firstname",
       header: "Voornaam",
+    },
+    {
+      accessorKey: "lastname",
+      header: "Achternaam",
     },
   ];
   const supabase = createClient(true);
@@ -39,6 +44,7 @@ const Page = async () => {
       id: user.id,
       email: user.email,
       firstname: user.user_metadata?.firstname,
+      lastname: user.user_metadata?.lastname,
     }));
 
   return (

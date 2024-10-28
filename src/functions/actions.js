@@ -555,3 +555,19 @@ export async function updateShowcaseAction(formData) {
 
   revalidatePath(formData.get("path"));
 }
+
+export const updateUserAction = async (state, formData) => {
+  const userId = formData.get("id");
+  const firstname = formData.get("firstname");
+  const lastname = formData.get("lastname");
+
+  const supabase = createClient(true);
+  const { error } = await supabase.auth.admin.updateUserById(userId, {
+    user_metadata: {
+      firstname: firstname || "",
+      lastname: lastname || "",
+    },
+  });
+
+  if (error) throw error;
+};

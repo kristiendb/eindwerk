@@ -19,7 +19,7 @@ import {
 } from "@/components/ui/dialog";
 import SubmitButton from "./SubmitButton";
 import { Button } from "@/components/ui/button";
-import { deleteUserAction } from "@/functions/actions";
+import { deleteUserAction, updateUserAction } from "@/functions/actions";
 import { useFormState } from "react-dom";
 import {
   Table,
@@ -31,6 +31,10 @@ import {
 } from "@/components/ui/table";
 
 const StudentsTable = ({ columns, data }) => {
+  const [updateState, updateFormAction] = useFormState(updateUserAction, {
+    msg: "pending",
+  });
+
   const [state, formAction] = useFormState(deleteUserAction, {
     msg: "pending",
   });
@@ -39,6 +43,39 @@ const StudentsTable = ({ columns, data }) => {
     data,
     columns: [
       ...columns,
+      {
+        id: "edit",
+        cell: ({ row }) => (
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button>Bewerk</Button>
+            </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Bewerk Student</DialogTitle>
+              </DialogHeader>
+              <form action={updateFormAction}>
+                <input type="hidden" name="id" value={row.original.id} />
+                <input
+                  type="text"
+                  name="firstname"
+                  defaultValue={row.original.firstname}
+                  placeholder="Voornaam"
+                  className="input-field"
+                />
+                <input
+                  type="text"
+                  name="lastname"
+                  defaultValue={row.original.lastname}
+                  placeholder="Achternaam"
+                  className="input-field"
+                />
+                <SubmitButton label="Opslaan" />
+              </form>
+            </DialogContent>
+          </Dialog>
+        ),
+      },
       {
         id: "delete",
         cell: ({ row }) => {

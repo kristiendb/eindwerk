@@ -15,7 +15,8 @@ import FeedbackDialog from "@/components/FeedbackDialog";
 const page = async ({ params }) => {
   const supabase = createClient();
   const { data: userData } = await supabase.auth.getUser();
-  const userId = userData.user.id;
+  // const userId = userData.user.id;
+  // const firstName = userData.user.user_metadata.firstname;
   const workData = await selectWorkByFeedback(supabase);
 
   return (
@@ -57,6 +58,7 @@ const page = async ({ params }) => {
               <div className="mt-4">
                 <p className="font-bold">{work.title}</p>
                 <p>{work.description}</p>
+                <p className="text-sm text-gray-500"></p>
                 <p className="text-sm text-gray-500">
                   Datum: {new Date(work.date).toLocaleDateString()}
                 </p>
