@@ -60,6 +60,15 @@ const Page = async () => {
                 <p className="text-sm text-gray-500">
                   Datum: {new Date(work.date).toLocaleDateString()}
                 </p>
+                <p className="text-sm text-gray-500">
+                  {work.tasks?.chapters?.title || "Geen hoofdstuk beschikbaar"}{" "}
+                  -{" "}
+                  {work.tasks?.chapters?.level?.name ||
+                    "Geen niveau beschikbaar"}
+                </p>
+                <p className="text-sm text-gray-500">
+                  {work.tasks?.title || "Geen taak beschikbaar"}
+                </p>
               </div>
               {work.feedback ? (
                 <Dialog>

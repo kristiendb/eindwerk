@@ -112,12 +112,32 @@ export const selectWorkByTaskId = async (supabase, taskId) => {
 };
 
 export const selectWorkByUserId = async (supabase, userId) => {
-  const { data } = await supabase
+  const { data, error } = await supabase
     .from("work")
-    .select("*")
+    .select(
+      `
+      *,
+      tasks (
+        title,
+        chapters ( title, level (
+            name
+          ) )
+      )
+    `
+    )
     .eq("users_userid", userId);
+
+  if (error) console.error("Error loading work data:", error);
   return data;
 };
+
+// export const selectWorkByUserId = async (supabase, userId) => {
+//   const { data } = await supabase
+//     .from("work")
+//     .select("*")
+//     .eq("users_userid", userId);
+//   return data;
+// };
 
 export const selectWorkByFeedback = async (supabase) => {
   const { data } = await supabase.from("work").select("*").is("feedback", null);

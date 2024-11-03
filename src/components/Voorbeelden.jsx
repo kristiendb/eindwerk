@@ -67,21 +67,20 @@ const Voorbeelden = async ({ params }) => {
                     </div>
                   </div>
                 </DialogTrigger>
-                <DialogContent>
+                <DialogContent className="flex flex-col  h-[80vh] w-full">
                   <DialogHeader>
                     <DialogTitle>Voorbeeld</DialogTitle>
                     <DialogDescription>
                       {voorbeeld.description}
                     </DialogDescription>
                   </DialogHeader>
-                  <div className="relative w-full h-full">
+                  <div className="relative flex-grow w-full h-[80vh]">
                     <Image
                       src={voorbeeld.exampleimage}
                       alt={voorbeeld.description}
                       fill
-                      style={{ objectFit: "cover" }}
+                      className="object-contain w-full h-full rounded"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="rounded"
                     />
                   </div>
                   {isAdmin && (
