@@ -94,6 +94,13 @@ const page = () => {
                     >
                       b-i-n-g-o.be
                     </a>
+                    <a
+                      href="https://www.instagram.com/adobecreate/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      Adobe Create
+                    </a>
                   </div>
                 </div>
               </div>
@@ -105,7 +112,7 @@ const page = () => {
             className="mt-2 border-light-blue-custom border-0.25 rounded-lg pl-2 pr-2"
           >
             <AccordionTrigger className="font-medium text-xl">
-              Printen
+              Printen en digitaal drukwerk
               <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
             </AccordionTrigger>
             <AccordionContent>
@@ -114,14 +121,53 @@ const page = () => {
                   <p>
                     Testprint, enkel exemplaar? Dan moet je niet naar een
                     drukkerij stappen maar printen. Je kan enkelzijdig printen
-                    op de fotoprinters in het atelier, tot A3+. <br /> <br />
-                    Er is niets mis met printen in een copy- of printshop. Ook
-                    daar kan je creatief mee zijn. Zij kunnen vaak op
-                    verschillende papiersoorten en groottes printen,
-                    schoonsnijden en binden.
+                    op de fotoprinters in het atelier, tot A3+. Er is niets mis
+                    met printen in een copy- of printshop. Ook daar kan je
+                    creatief mee zijn. Zij kunnen vaak op verschillende
+                    papiersoorten en groottes printen, schoonsnijden en binden.
+                    Sommige printshops bieden ook kwalitatief drukwerk aan voor
+                    kleine oplages op gespecialiseerde machines.
                   </p>
                 </div>
-                <div className="md:w-2/3 bg-slate-400 h-80"></div>
+                <div className="lg:w-2/3">
+                  <div className="p-4 lg:pt-0 lg:pl-4 lg:pr-4 lg:pb-4 flex flex-row flex-wrap gap-4">
+                    <a
+                      href="https://numerisart.be/print-prices-1/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      Numerisart
+                    </a>
+                    <a
+                      href="https://clickclickgraphics.com/contact/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      Click Click Graphics
+                    </a>
+                    <a
+                      href="https://www.allps.be/nl/printshops/d-copy/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      DCopy Bruxelles
+                    </a>
+                    <a
+                      href="https://dynaprint.be/nl/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      Dynaprint
+                    </a>
+                    <a
+                      href="https://www.facebook.com/theprintagency/?_rdr"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      The Print Agency
+                    </a>
+                  </div>
+                </div>
               </div>
             </AccordionContent>
           </AccordionItem>
@@ -131,55 +177,305 @@ const page = () => {
             className="mt-2 border-light-blue-custom border-0.25 rounded-lg pl-2 pr-2"
           >
             <AccordionTrigger className="font-medium text-xl">
-              Drukwerk
+              Offset, digitaal en letterpress drukwerk
               <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
             </AccordionTrigger>
             <AccordionContent>
               <div className="md:flex text-base pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
-                <div className="md:w-1/2">
+                <div className="md:w-1/3">
                   <p>
                     Wil je een oplage – meer dan een exemplaar – laten
-                    uitvoeren, dan kan je bij een drukkerij terecht. Online
-                    drukwerk (oplage, meer dan een exemplaar) bestellen bij
-                    o.a.:
-                    <a
-                      href="https://www.zwartopwit.be"
-                      target="_blank"
-                      className="underline"
-                    >
-                      zwartopwit.be
-                    </a>
-                    ,
-                    <a
-                      href="https://www.peterprint.be"
-                      target="_blank"
-                      className="underline"
-                    >
-                      peterprint.be
-                    </a>
-                    ,
-                    <a
-                      href="https://www.belprinto.be"
-                      target="_blank"
-                      className="underline"
-                    >
-                      belprinto.be
-                    </a>
-                    . <br /> Tips in Brussel: Click Click Graphics, dit kaartje
-                    samengesteld door Grafik Tips voor boekbinden, letterpress,
-                    zeefdruk en riso over heel België: Type & Press​​​​​​​
-                    Printen op formaat en papier kranten bij Newspaper Club
-                    (Londen)
+                    uitvoeren, dan kan je bij een drukkerij terecht.
+                    Tegenwoordig kan je vaak online bestellen. Voor een complex
+                    project ga je beter ter plaatse. Digitaal drukwerk is
+                    voordelig en kan zeer kwalitatief ondertussen. Offset
+                    drukwerk is verfijnd maar pas interessant vanaf een grote
+                    oplage.
                   </p>
                 </div>
-                <div className="md:w-1/2">
-                  <p></p>
+                <div className="lg:w-2/3">
+                  <div className="p-4 lg:pt-0 lg:pl-4 lg:pr-4 lg:pb-4 flex flex-row flex-wrap gap-4">
+                    <a
+                      href="https://www.zwartopwit.be/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      zwartopwit
+                    </a>
+                    <a
+                      href="https://www.peterprint.be/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      Peter Print
+                    </a>
+                    <a
+                      href="https://www.belprinto.be/nl"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      Belprinto
+                    </a>
+                    <a
+                      href="https://www.newspaperclub.com/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      Newspaper Club
+                    </a>
+                    <a
+                      href="https://abceurope.be/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      ABC
+                    </a>
+                    <a
+                      href="https://www.buroform.be/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      buro form
+                    </a>
+                    <a
+                      href="https://www.imagebuilding.be/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      image building
+                    </a>
+                    <a
+                      href="https://www.drukkerijdirix.be/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      Drukkerij Dirix
+                    </a>
+                    <a
+                      href="https://daddykate.be/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      Daddy Kate
+                    </a>
+                    <a
+                      href="https://www.artoosgroup.eu/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      Artoos Group
+                    </a>
+                    <a
+                      href="https://graphiusgroup.com/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      Graphius Group
+                    </a>
+                    <a
+                      href="https://antilopedebie.be/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      Antilope De Bie
+                    </a>
+                    <a
+                      href="https://www.typographe.be/en/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      Le Typographe
+                    </a>
+                    <a
+                      href="https://superdruk.squarespace.com/nl/bestellen"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      Superdruk
+                    </a>
+                    <a
+                      href="https://www.jozias.be/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      Jozias Boone
+                    </a>
+                  </div>
                 </div>
               </div>
             </AccordionContent>
           </AccordionItem>
           <AccordionItem
             value="item-4"
+            className="mt-2 border-light-blue-custom border-0.25 rounded-lg pl-2 pr-2"
+          >
+            <AccordionTrigger className="font-medium text-xl">
+              Risoprint en zeefdruk
+              <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
+            </AccordionTrigger>
+            <AccordionContent>
+              <div className="md:flex text-base pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
+                <div className="md:w-1/3">
+                  <p>
+                    Voor unieke kleuren of materialen kan je risoprinten of
+                    zeefdrukken.
+                  </p>
+                </div>
+                <div className="lg:w-2/3">
+                  <div className="p-4 lg:pt-0 lg:pl-4 lg:pr-4 lg:pb-4 flex flex-row flex-wrap gap-4">
+                    <a
+                      href="https://chezrosi.wordpress.com/tarifs/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      Chez Rosi
+                    </a>
+                    <a
+                      href="https://www.frausteiner.be/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      Frau Steiner
+                    </a>
+                    <a
+                      href="https://rdryerstudio.com/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      R.DRYER STUDIO
+                    </a>
+                    <a
+                      href="https://harrystudio.com/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      Harry Studio
+                    </a>
+                    <a
+                      href="https://icescreen.be/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      Ice Screen
+                    </a>
+                    <a
+                      href="https://www.instagram.com/chromodrome/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      Chromodrome
+                    </a>
+                    <a
+                      href="https://so-ri.info/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      SO-RI
+                    </a>
+                    <a
+                      href="https://www.studioboekenberg.com/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      Studio Boekenberg
+                    </a>
+                    <a
+                      href="https://www.topocopy.org/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      Topo Copy
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem
+            value="item-5"
+            className="mt-2 border-light-blue-custom border-0.25 rounded-lg pl-2 pr-2"
+          >
+            <AccordionTrigger className="font-medium text-xl">
+              Textiel, hout en stickers
+              <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
+            </AccordionTrigger>
+            <AccordionContent>
+              <div className="md:flex text-base pb-5 md:flex-row space-x-0 space-y-8 w-full md:space-x-12 md:space-y-0">
+                <div className="md:w-1/3">
+                  <p></p>
+                </div>
+                <div className="lg:w-2/3">
+                  <div className="p-4 lg:pt-0 lg:pl-4 lg:pr-4 lg:pb-4 flex flex-row flex-wrap gap-4">
+                    <a
+                      href="https://www.houseofu.com/en/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      House of U
+                    </a>
+                    <a
+                      href="https://muzefab.com/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      Muze
+                    </a>
+                    <a
+                      href="https://www.houthuys.com/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      Houthuys
+                    </a>
+                    <a
+                      href="https://les-imprimeurs-textile.com/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      Les Imprimeurs Textile
+                    </a>
+                    <a
+                      href="https://printactif.com/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      Print Actif
+                    </a>
+                    <a
+                      href="https://www.ink.brussels/en/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      ink.
+                    </a>
+                    <a
+                      href="https://new.lasercut.be/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      Lasercut.be
+                    </a>
+                    <a
+                      href="https://www.asuvorm.be/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      Asuvorm
+                    </a>
+                    <a
+                      href="https://altystick.be/"
+                      target="_blank"
+                      className="pt-3 pb-3 pl-6 pr-6 rounded-full bg-light-blue-custom hover:bg-opacity-40 transition-all duration-300 underline"
+                    >
+                      Altystick
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem
+            value="item-6"
             className="mt-2 border-light-blue-custom border-0.25 rounded-lg pl-2 pr-2"
           >
             <AccordionTrigger className="font-medium text-xl">
@@ -288,7 +584,7 @@ const page = () => {
           </AccordionItem>
 
           <AccordionItem
-            value="item-5"
+            value="item-7"
             className="mt-2 border-light-blue-custom border-0.25 rounded-lg pl-2 pr-2"
           >
             <AccordionTrigger className="font-medium text-xl">
