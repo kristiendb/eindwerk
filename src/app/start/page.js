@@ -42,7 +42,7 @@ const page = async () => {
             href="/start/info"
             className="col-span-1 row-span-1 h-40 md:h-72 border border-light-green-custom bg-light-green-custom hover:bg-opacity-80 rounded-3xl pl-6 pt-8 font-bold text-lg text-white"
             style={{
-              backgroundImage: "url('/info-GOI.jpg')",
+              backgroundImage: "url('/info_GOI.jpg')",
               backgroundSize: "300%",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "15% 60%",
