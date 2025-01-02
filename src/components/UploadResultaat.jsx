@@ -37,6 +37,9 @@ const UploadResultaat = ({ taskId, params }) => {
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             required
           />
+          <p className="text-red-600 text-sm mt-2">
+            Bestanden mogen niet groter zijn dan 5MB.
+          </p>
         </div>
         <input type="hidden" name="taskId" value={taskId} />
         <input

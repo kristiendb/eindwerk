@@ -2,10 +2,10 @@
 import { uploadTheoryAction } from "@/functions/actions";
 import SubmitButton from "./SubmitButton";
 
-const UploadTheory = ({ chapterId, params, theory }) => {
+const UploadTheory = ({ chapterId, params, formAction, state }) => {
   return (
     <div>
-      <form action={uploadTheoryAction}>
+      <form action={formAction}>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2">
             Omschrijving

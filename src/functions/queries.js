@@ -11,7 +11,9 @@ export const selectChaptersByLevel = async (supabase, level) => {
   const { data, error } = await supabase
     .from("chapters")
     .select("*")
-    .eq("level_id", level === "all" ? undefined : level);
+    .eq("level_id", level === "all" ? undefined : level)
+    .order("title", { ascending: true })
+    .order("level_idlevel", { ascending: true });
   return data;
 };
 
@@ -72,8 +74,8 @@ export const selectTheoryByChapterId = async (supabase, chapterId) => {
   const { data } = await supabase
     .from("theory")
     .select("id,description, introduction, theorypdf")
-    .eq("chapters_idchapters", chapterId)
-    .single();
+    .eq("chapters_idchapters", chapterId);
+  // .single();
   return data;
 };
 

@@ -58,7 +58,10 @@ const page = async ({ params }) => {
               <div className="mt-4">
                 <p className="font-bold">{work.title}</p>
                 <p>{work.description}</p>
-                <p className="text-sm text-gray-500"></p>
+                <p className="text-sm text-gray-500">
+                  {work.firstname} {work.lastname}
+                </p>
+
                 <p className="text-sm text-gray-500">
                   Datum: {new Date(work.date).toLocaleDateString()}
                 </p>

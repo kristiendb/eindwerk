@@ -4,6 +4,7 @@ import "server-only";
 import { createClient } from "@/utils/supabase/server";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import { toast } from "sonner";
 // import { Upload } from "tus-js-client";
 
 export async function deleteTheoryAction(formData) {
@@ -126,6 +127,36 @@ export async function uploadTasksAction(state, formData) {
   return { msg: "success" };
 }
 
+export async function updateTaskAction(state, formData) {
+  const supabase = createClient();
+  const taskId = formData.get("taskId");
+  console.log("taskId ontvangen in updateTaskAction:", taskId);
+  const title = formData.get("title");
+  const description = formData.get("description");
+  const path = formData.get("path");
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (user?.user_metadata?.role !== "admin") {
+    throw new Error("Geen admin");
+  }
+
+  const { error: updateError } = await supabase
+    .from("tasks")
+    .update({ title, description })
+    .eq("id", taskId);
+
+  if (updateError) {
+    console.log("Update Error:", updateError);
+    return { error: updateError.message };
+  }
+
+  revalidatePath(formData.get("path"));
+  return { msg: "success" };
+}
+
 export async function updateIntroductionAction(state, formData) {
   const supabase = createClient();
   const chapterId = formData.get("chapterId");
@@ -211,7 +242,51 @@ export async function updateIntroductionAction(state, formData) {
 //   upload.start();
 // }
 
-export async function uploadTheoryAction(formData) {
+// export async function uploadTheoryAction(formData) {
+//   const supabase = createClient();
+//   const {
+//     data: { user },
+//   } = await supabase.auth.getUser();
+
+//   if (user?.user_metadata?.role !== "admin") {
+//     throw new Error("Geen admin");
+//   }
+
+//   const file = formData.get("file");
+//   const description = formData.get("description");
+//   const chapterId = formData.get("chapterId");
+//   const fileName = Math.random().toString(32).substring(2) + ".pdf";
+
+//   const { data: uploadData } = await supabase.storage
+//     .from("theory-pdf")
+//     .upload(`public/${fileName}`, file);
+
+//   const fileUrl = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/theory-pdf/${uploadData.path}`;
+
+//   const { data: existingData } = await supabase
+//     .from("theory")
+//     .select("id")
+//     .eq("chapters_idchapters", chapterId)
+//     .single();
+
+//   if (existingData) {
+//     const { data: updateData } = await supabase
+//       .from("theory")
+//       .update({ description, theorypdf: fileUrl })
+//       .eq("chapters_idchapters", chapterId);
+//   } else {
+//     const { data: insertData } = await supabase.from("theory").insert([
+//       {
+//         chapters_idchapters: parseInt(chapterId),
+//         description: description,
+//         theorypdf: fileUrl,
+//       },
+//     ]);
+//   }
+
+//   revalidatePath(formData.get("path"));
+// }
+export async function uploadTheoryAction(state, formData) {
   const supabase = createClient();
   const {
     data: { user },
@@ -226,36 +301,39 @@ export async function uploadTheoryAction(formData) {
   const chapterId = formData.get("chapterId");
   const fileName = Math.random().toString(32).substring(2) + ".pdf";
 
-  const { data: uploadData } = await supabase.storage
+  // Upload het bestand naar Supabase Storage
+  const { data: uploadData, error: uploadError } = await supabase.storage
     .from("theory-pdf")
     .upload(`public/${fileName}`, file);
 
+  if (uploadError) {
+    console.error("Upload Error:", uploadError);
+    throw new Error("Fout bij uploaden van het bestand");
+  }
+
   const fileUrl = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/theory-pdf/${uploadData.path}`;
 
-  const { data: existingData } = await supabase
+  // Voeg een nieuwe theorie toe aan de database
+  const { data: insertData, error: insertError } = await supabase
     .from("theory")
-    .select("id")
-    .eq("chapters_idchapters", chapterId)
-    .single();
-
-  if (existingData) {
-    const { data: updateData } = await supabase
-      .from("theory")
-      .update({ description, theorypdf: fileUrl })
-      .eq("chapters_idchapters", chapterId);
-  } else {
-    const { data: insertData } = await supabase.from("theory").insert([
+    .insert([
       {
         chapters_idchapters: parseInt(chapterId),
         description: description,
         theorypdf: fileUrl,
       },
     ]);
+
+  if (insertError) {
+    console.error("Insert Error:", insertError);
+    throw new Error("Fout bij het toevoegen van de theorie aan de database");
   }
 
-  revalidatePath(formData.get("path"));
+  const path = formData.get("path");
+  revalidatePath(path);
+  return { msg: "success" };
+  // revalidatePath(formData.get("path"));
 }
-
 export async function uploadExampleAction(state, formData) {
   const supabase = createClient();
   const file = formData.get("file");
@@ -363,6 +441,11 @@ export async function updateExampleAction(formData) {
 export async function uploadResultAction(formData) {
   const supabase = createClient();
   const file = formData.get("file");
+  // if (file.size > 5 * 1024 * 1024) {
+  //   // Controleer of bestand groter is dan 5MB
+  //   toast.error("Upload mislukt, bestand mag niet groter zijn dan 5MB.");
+  //   return;
+  // }
   const title = formData.get("title");
   const description = formData.get("description");
   const taskId = formData.get("taskId");
@@ -375,6 +458,7 @@ export async function uploadResultAction(formData) {
 
   const { data: userData } = await supabase.auth.getUser();
   const userId = userData?.user?.id;
+  const userMetadata = userData?.user?.user_metadata;
 
   if (!userId) {
     throw new Error("Gebruiker niet ingelogd");
@@ -401,6 +485,8 @@ export async function uploadResultAction(formData) {
         users_userid: userId,
         uploadwork: fileUrl,
         date: new Date().toISOString(),
+        firstname: userMetadata?.firstname || "Onbekend",
+        lastname: userMetadata?.lastname || "",
       },
     ]);
   if (insertError) {
@@ -408,6 +494,68 @@ export async function uploadResultAction(formData) {
     return { error: insertError.message };
   }
   console.log("revalidate van ", path);
+  revalidatePath(path);
+}
+
+export async function updateResultAction(state, formData) {
+  const supabase = createClient();
+  const uploadId = formData.get("uploadId");
+  const title = formData.get("title");
+  const description = formData.get("description");
+  const path = formData.get("path");
+
+  if (!uploadId) {
+    throw new Error("Geen uploadId opgegeven");
+  }
+
+  // Update het werk in de database
+  const { error: updateError } = await supabase
+    .from("work")
+    .update({ title, description })
+    .eq("id", uploadId);
+
+  if (updateError) {
+    console.log("Update Error:", updateError);
+    return { error: updateError.message };
+  }
+
+  console.log("Resultaat bijgewerkt");
+  revalidatePath(formData.get("path"));
+  return { msg: "success" };
+}
+
+export async function deleteResultAction(formData) {
+  const supabase = createClient();
+  const uploadId = formData.get("uploadId"); // ID van het werk
+  const filePath = formData.get("filePath"); // Pad van het bestand in de storage
+  const path = formData.get("path");
+
+  if (!uploadId) {
+    throw new Error("Geen uploadId opgegeven");
+  }
+
+  // Verwijder het werk uit de database
+  const { error: deleteError } = await supabase
+    .from("work")
+    .delete()
+    .eq("id", uploadId);
+
+  if (deleteError) {
+    console.log("Delete Error:", deleteError);
+    return { error: deleteError.message };
+  }
+
+  // Verwijder het bestand uit Supabase Storage
+  const { error: storageError } = await supabase.storage
+    .from("results-pdf")
+    .remove([filePath]);
+
+  if (storageError) {
+    console.log("Storage Delete Error:", storageError);
+    return { error: storageError.message };
+  }
+
+  console.log("Resultaat verwijderd");
   revalidatePath(path);
 }
 

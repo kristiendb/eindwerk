@@ -31,7 +31,7 @@ const Layout = async ({ children, params }) => {
           >
             <AccordionItem
               value="item-1"
-              className={`border-${courseColor} border-0.25 rounded-lg pl-2 pr-2`}
+              className={`border-gray-300 border-0.25 rounded-lg pl-2 pr-2`}
             >
               <AccordionTrigger className="font-medium text-xl ">
                 Inleiding
@@ -48,7 +48,7 @@ const Layout = async ({ children, params }) => {
 
             <AccordionItem
               value="item-2"
-              className={`mt-2 border-${courseColor} border-0.25 rounded-lg pl-2 pr-2`}
+              className={`mt-2 border-gray-300 border-0.25 rounded-lg pl-2 pr-2`}
             >
               <AccordionTrigger className="font-medium text-xl">
                 Theorie
@@ -63,7 +63,7 @@ const Layout = async ({ children, params }) => {
 
             <AccordionItem
               value="item-3"
-              className={`mt-2 border-${courseColor} border-0.25 rounded-lg pl-2 pr-2`}
+              className={`mt-2 border-gray-300 border-0.25 rounded-lg pl-2 pr-2`}
             >
               <AccordionTrigger className="font-medium text-xl">
                 Oefeningen
@@ -77,7 +77,7 @@ const Layout = async ({ children, params }) => {
             </AccordionItem>
             <AccordionItem
               value="item-4"
-              className={`mt-2 border-${courseColor} border-0.25 rounded-lg pl-2 pr-2`}
+              className={`mt-2 border-gray-300 border-0.25 rounded-lg pl-2 pr-2`}
             >
               <AccordionTrigger className="font-medium text-xl">
                 Opdrachten
@@ -92,7 +92,7 @@ const Layout = async ({ children, params }) => {
 
             <AccordionItem
               value="item-5"
-              className={`mt-2 border-${courseColor} border-0.25 rounded-lg pl-2 pr-2`}
+              className={`mt-2 border-gray-300 border-0.25 rounded-lg pl-2 pr-2`}
             >
               <AccordionTrigger className="font-medium text-xl">
                 Voorbeelden
