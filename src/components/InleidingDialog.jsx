@@ -42,6 +42,9 @@ const InleidingDialog = ({ params, id, theory }) => {
                   : "Voeg Introductie Toe"} */}
             </DialogTitle>
           </DialogHeader>
+          <DialogDescription>
+            Pas de inleiding van dit hoofdstuk aan.
+          </DialogDescription>
           <UpdateInleiding
             formAction={formAction}
             state={state}

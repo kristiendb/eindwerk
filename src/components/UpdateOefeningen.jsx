@@ -2,8 +2,6 @@
 import SubmitButton from "./SubmitButton";
 
 const UpdateOefeningen = ({ task, params, formAction, state }) => {
-  console.log("Task data in UpdateOefeningen form:", task);
-
   return (
     <div>
       <form action={formAction}>

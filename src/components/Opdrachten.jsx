@@ -26,17 +26,14 @@ const Opdrachten = async ({ params }) => {
   if (userData?.user?.user_metadata?.role === "admin") {
     isAdmin = true;
   }
-  console.log("Tasks:", tasks);
 
   const workPromises = tasks.map(async (task) => {
     const workData = await selectWorkByTaskId(supabase, task.id);
-    console.log(`Work data for task ${task.id}:`, workData);
+
     return workData;
   });
 
   const workDataArray = await Promise.all(workPromises);
-
-  console.log("Work Data Array:", workDataArray);
 
   return (
     <div className="w-full flex flex-col space-y-4">

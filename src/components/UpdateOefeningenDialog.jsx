@@ -22,7 +22,6 @@ const UpdateOefeningenDialog = ({ params, task, id }) => {
       setOpen(false);
     }
   }, [state]);
-  console.log("Task received in UpdateOefeningenDialog:", task);
 
   return (
     <div>

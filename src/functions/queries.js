@@ -73,9 +73,22 @@ export const selectChaptersByCourseId = async (
 export const selectTheoryByChapterId = async (supabase, chapterId) => {
   const { data } = await supabase
     .from("theory")
-    .select("id,description, introduction, theorypdf")
+    .select("id,description, theorypdf")
     .eq("chapters_idchapters", chapterId);
   // .single();
+  return data;
+};
+
+export const selectTheoryIntroductionByChapterId = async (
+  supabase,
+  chapterId
+) => {
+  const { data } = await supabase
+    .from("theory")
+    .select("id, introduction")
+    .eq("chapters_idchapters", chapterId)
+    .single(); // Aangezien je maar één introductie/beschrijving verwacht.
+
   return data;
 };
 
