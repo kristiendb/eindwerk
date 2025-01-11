@@ -20,7 +20,7 @@ const page = async () => {
         <div className="grid grid-cols-2 grid-rows-2 gap-4  lg:grid-cols-4">
           <Link
             href="/start/agenda"
-            className="col-span-1 row-span-1 h-40 md:h-72 border border-red-custom bg-red-custom hover:bg-opacity-80 rounded-3xl pl-6 pt-8 font-bold text-lg text-white"
+            className="col-span-1 row-span-1 h-40 md:h-72  bg-red-custom hover:bg-opacity-80 rounded-3xl pl-6 pt-8 font-bold text-lg text-white"
             style={{
               backgroundImage: "url('/agenda-GOI.jpg')",
               backgroundSize: "150%",
@@ -40,7 +40,7 @@ const page = async () => {
           </Link>
           <Link
             href="/start/info"
-            className="col-span-1 row-span-1 h-40 md:h-72 border border-light-green-custom bg-light-green-custom hover:bg-opacity-80 rounded-3xl pl-6 pt-8 font-bold text-lg text-white"
+            className="col-span-1 row-span-1 h-40 md:h-72  bg-light-green-custom hover:bg-opacity-80 rounded-3xl pl-6 pt-8 font-bold text-lg text-white"
             style={{
               backgroundImage: "url('/info_GOI.jpg')",
               backgroundSize: "300%",
@@ -52,7 +52,7 @@ const page = async () => {
           </Link>
           <Link
             href="/start/cursussen"
-            className="col-span-1 row-span-1 lg:col-span-2 h-40 md:h-72 sm:col-span-1 hover:bg-opacity-80 border border-yellow-custom bg-yellow-custom rounded-3xl pl-6 pt-8 font-bold text-lg text-white"
+            className="col-span-1 row-span-1 lg:col-span-2 h-40 md:h-72 sm:col-span-1 hover:bg-opacity-80  bg-yellow-custom rounded-3xl pl-6 pt-8 font-bold text-lg text-white"
             style={{
               backgroundImage: "url('/cursus-GOI.jpg')",
               backgroundSize: "150%",
@@ -64,10 +64,10 @@ const page = async () => {
           </Link>
           <Link
             href="/start/mijn-werk"
-            className="col-span-1 row-span-1 lg:col-span-2 h-40 md:h-72 sm:col-span-1 hover:bg-opacity-80 border border-purple-custom bg-purple-custom rounded-3xl pl-6 pt-8 font-bold text-lg text-white"
+            className="col-span-1 row-span-1 lg:col-span-2 h-40 md:h-72 sm:col-span-1 hover:bg-opacity-80  bg-purple-custom rounded-3xl pl-6 pt-8 font-bold text-lg text-white"
             style={{
               backgroundImage: "url('/mijn-werk-GOI.jpg')",
-              backgroundSize: "100%",
+              backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "50% 50%",
             }}
@@ -76,10 +76,10 @@ const page = async () => {
           </Link>
           <Link
             href="/start/showcases"
-            className="col-span-1 row-span-2 h-40 md:h-72 md:col-span-2 border border-light-blue-custom bg-light-blue-custom hover:bg-opacity-80 rounded-3xl pl-6 pt-8 font-bold text-lg text-white"
+            className="col-span-1 row-span-2 h-40 md:h-72 md:col-span-2  bg-light-blue-custom hover:bg-opacity-80 rounded-3xl pl-6 pt-8 font-bold text-lg text-white"
             style={{
               backgroundImage: "url('/showcases-GOI.jpg')",
-              backgroundSize: "130%",
+              backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "50% 25%",
             }}
