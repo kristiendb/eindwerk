@@ -79,15 +79,25 @@ export const selectTheoryByChapterId = async (supabase, chapterId) => {
   return data;
 };
 
-export const selectTheoryIntroductionByChapterId = async (
-  supabase,
-  chapterId
-) => {
+// export const selectTheoryIntroductionByChapterId = async (
+//   supabase,
+//   chapterId
+// ) => {
+//   const { data } = await supabase
+//     .from("theory")
+//     .select("id, introduction")
+//     .eq("chapters_idchapters", chapterId)
+//     .single(); // Aangezien je maar één introductie/beschrijving verwacht.
+
+//   return data;
+// };
+
+export const selectIntroductionByChapterId = async (supabase, chapterId) => {
   const { data } = await supabase
-    .from("theory")
+    .from("chapters")
     .select("id, introduction")
-    .eq("chapters_idchapters", chapterId)
-    .single(); // Aangezien je maar één introductie/beschrijving verwacht.
+    .eq("id", chapterId)
+    .single();
 
   return data;
 };

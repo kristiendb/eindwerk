@@ -156,7 +156,6 @@ export async function updateTaskAction(state, formData) {
   revalidatePath(formData.get("path"));
   return { msg: "success" };
 }
-
 export async function updateIntroductionAction(state, formData) {
   const supabase = createClient();
   const chapterId = formData.get("chapterId");
@@ -171,24 +170,56 @@ export async function updateIntroductionAction(state, formData) {
   }
 
   const { data: existingData } = await supabase
-    .from("theory")
+    .from("chapters")
     .select("id")
-    .eq("chapters_idchapters", chapterId)
+    .eq("id", chapterId)
     .single();
 
   if (existingData) {
     const { data: updateData } = await supabase
-      .from("theory")
+      .from("chapters")
       .update({ introduction })
-      .eq("chapters_idchapters", chapterId);
+      .eq("id", chapterId);
   } else {
     const { data: insertData } = await supabase
-      .from("theory")
-      .insert([{ chapters_idchapters: chapterId, introduction }]);
+      .from("chapters")
+      .insert([{ id: chapterId, introduction }]);
   }
   revalidatePath(formData.get("path"));
   return { msg: "success" };
 }
+// export async function updateIntroductionAction(state, formData) {
+//   const supabase = createClient();
+//   const chapterId = formData.get("chapterId");
+//   const introduction = formData.get("introduction");
+
+//   const {
+//     data: { user },
+//   } = await supabase.auth.getUser();
+
+//   if (user?.user_metadata?.role !== "admin") {
+//     throw new Error("Geen admin");
+//   }
+
+//   const { data: existingData } = await supabase
+//     .from("theory")
+//     .select("id")
+//     .eq("chapters_idchapters", chapterId)
+//     .single();
+
+//   if (existingData) {
+//     const { data: updateData } = await supabase
+//       .from("theory")
+//       .update({ introduction })
+//       .eq("chapters_idchapters", chapterId);
+//   } else {
+//     const { data: insertData } = await supabase
+//       .from("theory")
+//       .insert([{ chapters_idchapters: chapterId, introduction }]);
+//   }
+//   revalidatePath(formData.get("path"));
+//   return { msg: "success" };
+// }
 
 // export async function uploadTheoryAction(formData) {
 //   const supabase = createClient();

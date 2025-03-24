@@ -1,6 +1,7 @@
 import { createClient } from "@/utils/supabase/server";
 import { selectTheoryByChapterId } from "@/functions/queries";
 import { selectTheoryIntroductionByChapterId } from "@/functions/queries";
+import { selectIntroductionByChapterId } from "@/functions/queries";
 import { updateIntroductionAction } from "@/functions/actions";
 import {
   Dialog,
@@ -16,7 +17,8 @@ const Inleiding = async ({ params }) => {
   const supabase = createClient();
   const [id] = params.hoofdstuk.split("-");
   const theory = await selectTheoryByChapterId(supabase, id);
-  const introduction = await selectTheoryIntroductionByChapterId(supabase, id);
+  // const introduction = await selectTheoryIntroductionByChapterId(supabase, id);
+  const introduction = await selectIntroductionByChapterId(supabase, id);
   const { data: userData } = await supabase.auth.getUser();
   let isAdmin = false;
 
