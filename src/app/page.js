@@ -27,6 +27,44 @@ const Page = () => {
         </div>
         <ImagesLayout
           col={1}
+          src={"/Véronique De Pauw.jpg"}
+          alt="Véronique De Pauw"
+        />
+        <ImagesLayout
+          col={2}
+          src={"/Simona Nikova.jpg"}
+          alt="Simona Nikova"
+          className="hidden lg:block"
+        />
+        <ImagesLayout col={1} src={"/Alice Deleu.jpg"} alt="Alice Deleu" />
+        <ImagesLayout
+          col={2}
+          src={"/Ellen Splinter.jpg"}
+          alt="Ellen Splinter"
+        />
+        <ImagesLayout
+          col={2}
+          src={"/Frédéric Rasier.jpg"}
+          alt="Frédéric Rasier"
+        />
+        <ImagesLayout
+          col={1}
+          src={"/Eva Vanderheyden.png"}
+          alt="Eva Vanderheyden"
+        />
+        <ImagesLayout
+          col={1}
+          src={"/Livina Stockmans.jpg"}
+          alt="Livina Stockmans"
+        />
+        <ImagesLayout
+          col={1}
+          src={"/Sander Lambrix.jpg"}
+          alt="Sander Lambrix"
+        />
+        <ImagesLayout col={1} src={"/Alice Deleu.png"} alt="Alice Deleu" />
+        <ImagesLayout
+          col={1}
           src={"/Ellen Splinter 2.png"}
           alt="Ellen Splinter"
         />
@@ -54,7 +92,7 @@ const Page = () => {
           alt="Véronique De Pauw"
         />
         <ImagesLayout col={1} src={"/Bo Billiet 2.webp"} alt="Bo Billiet" />
-        <ImagesLayout col={2} src={"/Inge Pieters 4.jpg"} alt="Inge Pieters" />
+        <ImagesLayout col={2} src={"/Ine Muys.JPG"} alt="Ine Muys" />
         <ImagesLayout col={2} src={"/Laure Baert.jpg"} alt="Laure Baert" />
         <ImagesLayout
           col={2}
@@ -115,7 +153,7 @@ const Page = () => {
           alt="Ine Hendrickx"
           className=" md:hidden"
         />
-        <ImagesLayout col={2} src={"/Ine Muys.JPG"} alt="Ine Muys" />
+        <ImagesLayout col={2} src={"/Inge Pieters 4.jpg"} alt="Inge Pieters" />
         <ImagesLayout
           col={1}
           src={"/Sarah De Clippele.jpg"}
