@@ -85,7 +85,11 @@ export async function uploadTasksAction(state, formData) {
   const description = formData.get("description");
   const chapterId = formData.get("chapterId");
   const isAssignment = formData.get("isAssignment") === "true";
-  const fileName = Math.random().toString(32).substring(2) + ".pdf";
+  // const fileName = Math.random().toString(32).substring(2) + ".pdf";
+  const originalName = file.name.replace(/\.[^/.]+$/, ""); // zonder extensie
+  const extension = file.name.split(".").pop(); // bv. "pdf"
+  const uniqueSuffix = Math.random().toString(32).substring(2, 10); // kort en random
+  const fileName = `${originalName}-${uniqueSuffix}.${extension}`;
 
   const {
     data: { user },
@@ -330,7 +334,11 @@ export async function uploadTheoryAction(state, formData) {
   const file = formData.get("file");
   const description = formData.get("description");
   const chapterId = formData.get("chapterId");
-  const fileName = Math.random().toString(32).substring(2) + ".pdf";
+  // const fileName = Math.random().toString(32).substring(2) + ".pdf";
+  const originalName = file.name.replace(/\.[^/.]+$/, ""); // zonder extensie
+  const extension = file.name.split(".").pop(); // bv. "pdf"
+  const uniqueSuffix = Math.random().toString(32).substring(2, 10); // kort en random
+  const fileName = `${originalName}-${uniqueSuffix}.${extension}`;
 
   // Upload het bestand naar Supabase Storage
   const { data: uploadData, error: uploadError } = await supabase.storage
@@ -373,9 +381,13 @@ export async function uploadExampleAction(state, formData) {
   const url = formData.get("url");
   const fileNameParts = file.name.split(".");
   const fileExtension = fileNameParts.length > 1 ? fileNameParts.pop() : "";
-  const fileName =
-    Math.random().toString(32).substring(2) +
-    (fileExtension ? `.${fileExtension}` : "");
+  // const fileName =
+  //   Math.random().toString(32).substring(2) +
+  //   (fileExtension ? `.${fileExtension}` : "");
+  const originalName = file.name.replace(/\.[^/.]+$/, ""); // zonder extensie
+  const extension = file.name.split(".").pop(); // bv. "pdf"
+  const uniqueSuffix = Math.random().toString(32).substring(2, 10); // kort en random
+  const fileName = `${originalName}-${uniqueSuffix}.${extension}`;
   const {
     data: { user },
   } = await supabase.auth.getUser();
@@ -483,10 +495,13 @@ export async function uploadResultAction(formData) {
   const path = formData.get("path");
   const fileNameParts = file.name.split(".");
   const fileExtension = fileNameParts.length > 1 ? fileNameParts.pop() : "";
-  const fileName =
-    Math.random().toString(32).substring(2) +
-    (fileExtension ? `.${fileExtension}` : "");
-
+  // const fileName =
+  //   Math.random().toString(32).substring(2) +
+  //   (fileExtension ? `.${fileExtension}` : "");
+  const originalName = file.name.replace(/\.[^/.]+$/, ""); // zonder extensie
+  const extension = file.name.split(".").pop(); // bv. "pdf"
+  const uniqueSuffix = Math.random().toString(32).substring(2, 10); // kort en random
+  const fileName = `${originalName}-${uniqueSuffix}.${extension}`;
   const { data: userData } = await supabase.auth.getUser();
   const userId = userData?.user?.id;
   const userMetadata = userData?.user?.user_metadata;

@@ -25,11 +25,7 @@ const Page = () => {
             <ButtonGreen>Lees Meer</ButtonGreen>
           </Link>
         </div>
-        <ImagesLayout
-          col={1}
-          src={"/Véronique De Pauw.jpg"}
-          alt="Véronique De Pauw"
-        />
+        <ImagesLayout col={1} src={"/Alice Deleu.png"} alt="Alice Deleu" />
         <ImagesLayout
           col={2}
           src={"/Simona Nikova.jpg"}
@@ -62,7 +58,32 @@ const Page = () => {
           src={"/Sander Lambrix.jpg"}
           alt="Sander Lambrix"
         />
-        <ImagesLayout col={1} src={"/Alice Deleu.png"} alt="Alice Deleu" />
+        <ImagesLayout
+          col={1}
+          src={"/Véronique De Pauw.jpg"}
+          alt="Véronique De Pauw"
+        />
+        <ImagesLayout
+          col={1}
+          src={"/Margaux Bertier-2.jpg"}
+          alt="Margaux Bertier"
+        />
+        <ImagesLayout
+          col={1}
+          src={"/Anouk Van de Kelder.jpg"}
+          alt="Anouk Van de Kelder"
+        />
+        <ImagesLayout
+          col={2}
+          src={"/Eva Vanderheyden-2.jpg"}
+          alt="Eva Vanderheyden"
+        />
+
+        <ImagesLayout
+          col={2}
+          src={"/Margaux Bertier.jpg"}
+          alt="Margaux Bertier"
+        />
         <ImagesLayout
           col={1}
           src={"/Ellen Splinter 2.png"}
@@ -115,6 +136,7 @@ const Page = () => {
           alt="Ine Hendrickx"
           className="hidden md:block"
         />
+
         <ImagesLayout
           col={2}
           src={"/Goele Pipeleers.png"}
