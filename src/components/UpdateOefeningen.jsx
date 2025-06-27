@@ -28,6 +28,16 @@ const UpdateOefeningen = ({ task, params, formAction, state }) => {
             className="mt-1 w-full border-gray-300 rounded-md"
           ></textarea>
         </div>
+        <div className="mt-2 mb-4">
+          <label className="block text-sm font-medium">
+            Nieuwe PDF uploaden
+          </label>
+          <input
+            type="file"
+            name="taskpdf"
+            className="mt-1 w-full border-gray-300 rounded-md"
+          />
+        </div>
         <SubmitButton label="Update" />
       </form>
     </div>

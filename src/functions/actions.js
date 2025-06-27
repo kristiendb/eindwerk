@@ -133,11 +133,14 @@ export async function uploadTasksAction(state, formData) {
 
 export async function updateTaskAction(state, formData) {
   const supabase = createClient();
+
   const taskId = formData.get("taskId");
-  console.log("taskId ontvangen in updateTaskAction:", taskId);
   const title = formData.get("title");
   const description = formData.get("description");
   const path = formData.get("path");
+
+  const file = formData.get("taskpdf");
+  let fileUrl = null;
 
   const {
     data: { user },
@@ -147,9 +150,38 @@ export async function updateTaskAction(state, formData) {
     throw new Error("Geen admin");
   }
 
+  // Enkel uploaden als er effectief een bestand is
+  if (file && typeof file === "object" && file.size > 0) {
+    const originalName = file.name.replace(/\.[^/.]+$/, "");
+    const extension = file.name.split(".").pop();
+    const uniqueSuffix = Math.random().toString(32).substring(2, 10);
+    const fileName = `${originalName}-${uniqueSuffix}.${extension}`;
+
+    const { data: uploadData, error: uploadError } = await supabase.storage
+      .from("task-pdf")
+      .upload(`public/${fileName}`, file);
+
+    if (uploadError) {
+      console.log("Upload Error:", uploadError);
+      return { error: uploadError.message };
+    }
+
+    fileUrl = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/task-pdf/${uploadData.path}`;
+  }
+
+  const updateData = {
+    title,
+    description,
+  };
+
+  // Enkel toevoegen als er een nieuw bestand is geüpload
+  if (fileUrl) {
+    updateData.taskpdf = fileUrl;
+  }
+
   const { error: updateError } = await supabase
     .from("tasks")
-    .update({ title, description })
+    .update(updateData)
     .eq("id", taskId);
 
   if (updateError) {
@@ -157,9 +189,44 @@ export async function updateTaskAction(state, formData) {
     return { error: updateError.message };
   }
 
-  revalidatePath(formData.get("path"));
+  revalidatePath(path);
+
   return { msg: "success" };
 }
+
+// export async function updateTaskAction(state, formData) {
+//   const supabase = createClient();
+//   const taskId = formData.get("taskId");
+//   console.log("taskId ontvangen in updateTaskAction:", taskId);
+//   const title = formData.get("title");
+//   const description = formData.get("description");
+//   const path = formData.get("path");
+//   const originalName = file.name.replace(/\.[^/.]+$/, "");
+//   const extension = file.name.split(".").pop();
+//   const uniqueSuffix = Math.random().toString(32).substring(2, 10);
+//   const fileName = `${originalName}-${uniqueSuffix}.${extension}`;
+
+//   const {
+//     data: { user },
+//   } = await supabase.auth.getUser();
+
+//   if (user?.user_metadata?.role !== "admin") {
+//     throw new Error("Geen admin");
+//   }
+
+//   const { error: updateError } = await supabase
+//     .from("tasks")
+//     .update({ title, description })
+//     .eq("id", taskId);
+
+//   if (updateError) {
+//     console.log("Update Error:", updateError);
+//     return { error: updateError.message };
+//   }
+
+//   revalidatePath(formData.get("path"));
+//   return { msg: "success" };
+// }
 export async function updateIntroductionAction(state, formData) {
   const supabase = createClient();
   const chapterId = formData.get("chapterId");
