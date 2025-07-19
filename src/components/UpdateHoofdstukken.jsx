@@ -46,6 +46,17 @@ const UpdateHoofdstukken = ({ chapter, id, params, formAction, state }) => {
             <option value="4">Verfijning</option>
           </select>
         </div>
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2">
+            Nieuwe afbeelding (optioneel)
+          </label>
+          <input
+            type="file"
+            name="image"
+            accept="image/*"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          />
+        </div>
         <input type="hidden" name="chapterId" value={id} />
         <input
           type="hidden"

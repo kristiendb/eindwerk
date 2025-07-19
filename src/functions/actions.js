@@ -736,13 +736,34 @@ export async function addChapterAction(state, formData) {
   const description = formData.get("description");
   const courseId = formData.get("courseId");
   const levelId = formData.get("levelId");
+  const image = formData.get("image"); // 👈 opgelet: dit is de naam van je input field
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  let imageUrl = null;
 
-  if (user?.user_metadata?.role !== "admin") {
-    throw new Error("Geen admin");
+  if (image && image.size > 0) {
+    const originalName = image.name.replace(/\.[^/.]+$/, "");
+    const extension = image.name.split(".").pop();
+    const uniqueSuffix = Math.random().toString(32).substring(2, 10);
+    const fileName = `${originalName}-${uniqueSuffix}.${extension}`;
+
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
+    if (user?.user_metadata?.role !== "admin") {
+      throw new Error("Geen admin");
+    }
+
+    const { data: uploadData, error: uploadError } = await supabase.storage
+      .from("chapter-images")
+      .upload(`public/${fileName}`, image);
+
+    if (uploadError) {
+      console.log("Upload Error:", uploadError);
+      return { error: uploadError.message };
+    }
+
+    imageUrl = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/chapter-images/${uploadData.path}`;
   }
 
   const { data, error } = await supabase.from("chapters").insert([
@@ -751,6 +772,7 @@ export async function addChapterAction(state, formData) {
       description,
       courses_idcourses: courseId,
       level_idlevel: levelId,
+      image_url: imageUrl,
     },
   ]);
 
@@ -762,6 +784,41 @@ export async function addChapterAction(state, formData) {
   revalidatePath(formData.get("path"));
   return { msg: "success" };
 }
+
+// export async function addChapterAction(state, formData) {
+//   const supabase = createClient();
+//   const title = formData.get("title");
+//   const description = formData.get("description");
+//   const courseId = formData.get("courseId");
+//   const levelId = formData.get("levelId");
+//   const imageUrl = formData.get("image_url");
+
+//   const {
+//     data: { user },
+//   } = await supabase.auth.getUser();
+
+//   if (user?.user_metadata?.role !== "admin") {
+//     throw new Error("Geen admin");
+//   }
+
+//   const { data, error } = await supabase.from("chapters").insert([
+//     {
+//       title,
+//       description,
+//       courses_idcourses: courseId,
+//       level_idlevel: levelId,
+//       image_url: imageUrl,
+//     },
+//   ]);
+
+//   if (error) {
+//     console.log("Insert Error:", error);
+//     return { error: error.message };
+//   }
+
+//   revalidatePath(formData.get("path"));
+//   return { msg: "success" };
+// }
 
 export async function deleteUserAction(state, formData) {
   const id = formData.get("id");
@@ -779,15 +836,68 @@ export async function updateChapterAction(state, formData) {
   const title = formData.get("title");
   const description = formData.get("description");
   const level = formData.get("level");
+  const image = formData.get("image");
+
+  let imageUrl = null;
+
+  // Afbeelding uploaden als er één is toegevoegd
+  if (image && typeof image.name === "string") {
+    const originalName = image.name.replace(/\.[^/.]+$/, "");
+    const extension = image.name.split(".").pop();
+    const uniqueSuffix = Math.random().toString(32).substring(2, 10);
+    const fileName = `${originalName}-${uniqueSuffix}.${extension}`;
+
+    const { data: uploadData, error: uploadError } = await supabase.storage
+      .from("chapter-images")
+      .upload(`public/${fileName}`, image);
+
+    if (uploadError) {
+      console.error("Upload Error:", uploadError);
+      return { error: uploadError.message };
+    }
+
+    imageUrl = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/chapter-images/${uploadData.path}`;
+  }
+
+  const updateData = {
+    title,
+    description,
+    level_idlevel: level,
+  };
+
+  if (imageUrl) {
+    updateData.image_url = imageUrl;
+  }
 
   const { error } = await supabase
     .from("chapters")
-    .update({ title, description, level_idlevel: level })
+    .update(updateData)
     .eq("id", chapterId);
+
+  if (error) {
+    console.error("Update Error:", error);
+    return { error: error.message };
+  }
 
   revalidatePath(formData.get("path"));
   return { msg: "success" };
 }
+
+// export async function updateChapterAction(state, formData) {
+//   const supabase = createClient();
+//   const chapterId = formData.get("chapterId");
+//   const title = formData.get("title");
+//   const description = formData.get("description");
+//   const level = formData.get("level");
+
+//   const { error } = await supabase
+//     .from("chapters")
+//     .update({ title, description, level_idlevel: level })
+//     .eq("id", chapterId);
+
+//   revalidatePath(formData.get("path"));
+//   return { msg: "success" };
+// }
 
 export async function updateShowcaseAction(formData) {
   const supabase = createClient();

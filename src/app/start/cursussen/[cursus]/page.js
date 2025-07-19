@@ -79,6 +79,80 @@ const page = async ({ params, searchParams }) => {
                     href="/start/cursussen/[cursus]-[hoofdstuk]"
                     as={`/start/cursussen/${chapter.course.id}-${courseSlug}/${chapter.id}-${chapterSlug}-${levelSlug}`}
                   >
+                    <div className="bg-white rounded-t-3xl h-[350px] shadow-[0_-2px_5px_rgba(0,0,0,0.15),_0_1px_3px_rgba(0,0,0,0.08)] hover:shadow-[0_-4px_12px_rgba(0,0,0,0.15),_0_3px_8px_rgba(0,0,0,0.08)] transition-all duration-300 ease-in-out flex flex-col overflow-hidden group">
+                      {/* Tekstinhoud */}
+                      <div className="p-6 h-[calc(100%-10rem)]">
+                        {/* <h4 className="text-sm font-bold text-gray-500 uppercase tracking-wide">
+                          {chapter.level.name}
+                        </h4> */}
+                        <h3 className="text-xl font-bold text-black mt-2 mb-2">
+                          {chapter.title}
+                        </h3>
+                        <p className="text-sm text-gray-700 font-hepta-slab line-clamp-3 h-[60px]">
+                          {chapter.description}
+                        </p>
+
+                        {/* Niveau-bolletjes */}
+                        <div className="flex items-center gap-1 mt-auto pt-2">
+                          {[1, 2, 3, 4].map((i) => (
+                            <span
+                              key={i}
+                              className={`w-2.5 h-2.5 rounded-full ${
+                                i <= chapter.level_idlevel
+                                  ? `bg-${chapter.course.color}`
+                                  : `bg-white border border-${chapter.course.color}`
+                              }`}
+                            />
+                          ))}
+                          <h4
+                            className={`text-sm font-normal text-${chapter.course.color} uppercase tracking-wide pl-3`}
+                          >
+                            {chapter.level.name}
+                          </h4>
+                        </div>
+                      </div>
+
+                      {/* Dummy afbeelding */}
+                      <div className="h-40 w-full overflow-hidden">
+                        <img
+                          src={
+                            chapter.image_url
+                              ? chapter.image_url
+                              : "/agenda-GOI.jpg"
+                          }
+                          alt="Voorbeeld"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </div>
+                  </Link>
+
+                  {/* Admin buttons */}
+                  {isAdmin && (
+                    <>
+                      <div className="absolute bottom-6 left-6 hidden group-hover:block">
+                        <UpdateHoofdstukkenDialog
+                          chapter={chapter}
+                          id={chapter.id}
+                          params={params}
+                        />
+                      </div>
+                      <div className="absolute bottom-6 right-6 hidden group-hover:block">
+                        <DeleteHoofdstukkenDialog
+                          chapter={chapter}
+                          id={chapter.id}
+                          params={params}
+                        />
+                      </div>
+                    </>
+                  )}
+                </div>
+
+                {/* <div key={chapter.id} className="relative group">
+                  <Link
+                    href="/start/cursussen/[cursus]-[hoofdstuk]"
+                    as={`/start/cursussen/${chapter.course.id}-${courseSlug}/${chapter.id}-${chapterSlug}-${levelSlug}`}
+                  >
                     <div
                       className={`bg-${chapter.course.color} ${colorShade} h-72 rounded-3xl hover:shadow-lg hover:shadow-slate-400 transition-all duration-300 ease-in-out shadow-md`}
                     >
@@ -111,7 +185,7 @@ const page = async ({ params, searchParams }) => {
                       </div>
                     </>
                   )}
-                </div>
+                </div> */}
               </>
             );
           })}
